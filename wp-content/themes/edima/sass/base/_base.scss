@@ -1,0 +1,22 @@
+* {
+  z-index: z('default');
+}
+.container {
+  @include outer-container();
+}
+
+html {
+  min-height:100%;
+}
+body {
+  min-height:100%;
+}
+
+// Used to toggle elements
+.show {
+  display:block !important;
+}
+
+.hide {
+  display:none !important;
+}

@@ -1,0 +1,57 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size * 0.90;
+  line-height: $base-line-height * 0.90;
+
+  @include media($l-up) {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $base-spacing;
+  font-weight:800;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 $base-spacing;
+}
+
+a:link,
+a:visited {
+  color: $link-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($link-color, 25%);
+  }
+}
+
+ul, ol {
+  margin-left:0px;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
