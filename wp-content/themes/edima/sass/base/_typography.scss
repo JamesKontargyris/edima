@@ -25,6 +25,11 @@ h6 {
   text-transform: uppercase;
 }
 
+h1 {
+  @include font-size(48, 54);
+
+}
+
 p {
   margin: 0 0 $base-spacing;
 }

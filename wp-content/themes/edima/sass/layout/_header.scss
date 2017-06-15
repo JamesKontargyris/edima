@@ -1,0 +1,121 @@
+header.site-header {
+  position:fixed;
+  width:100%;
+  background:
+          url(img/bg_maze_white_transparency.png) top left repeat,
+          linear-gradient(to bottom, lighten($blue, 5%) 0%, $blue 100%),
+          $blue;
+  height:7rem;
+  box-shadow: 0 0.2rem 0 rgba(black, 0.3);
+}
+
+.site-header__content {
+  @include outer-container();
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  align-content:center;
+  height:100%;
+}
+
+.site-header__mobile-menu-toggle-container {
+  display:block;
+  @include span-columns(3);
+
+  @include media($xl-up) {
+    display:none;
+  }
+}
+.site-header__mobile-menu-toggle-icon svg {
+    margin:0;
+    max-height:2.2rem;
+    max-width:2.2rem;
+    fill: white;
+}
+
+.site-header__logo {
+  @include span-columns(6);
+  text-align:center;
+
+  .site-header__logo-animated {
+    display:none;
+  }
+
+  h1 {
+    margin:0;
+  }
+
+  svg {
+    max-height:3rem;
+    margin-bottom:0.4rem; // positioning hack
+  }
+
+  @include media($xl-up) {
+    @include span-columns(2);
+    text-align:left;
+
+    svg {
+      max-height:3.5rem;
+      margin-bottom:0.2rem; // positioning hack
+
+      &:hover {
+
+      }
+    }
+  }
+}
+
+.site-header__nav {
+  position:absolute;
+  left:0;
+  top:7rem;
+  width:100%;
+  background:
+          url(img/pw_maze_white.png) top left repeat,
+          $blue;
+  box-shadow: 0 0.2rem 0 rgba(black, 0.3);
+
+  @include media($xl-up) {
+    @include span-columns(8);
+    position:relative;
+    top:0;
+    background:transparent;
+    box-shadow: none;
+  }
+}
+
+.site-header__primary-menu ul {
+  display:none;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  height:7rem;
+
+  @include media($xl-up) {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    align-content:center;
+  }
+
+  &.active {
+    display:block;
+  }
+}
+
+.site-header__sub-nav {
+  width:23%; // to account for the absolute positioned nav on mobile
+  text-align: right;
+
+  svg {
+    max-width:3.5rem;
+    max-height: 2.2rem;
+    fill:white;
+  }
+
+  @include media($xl-up) {
+    @include span-columns(2);
+  }
+
+
+}

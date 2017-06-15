@@ -1,0 +1,34 @@
+// Hide elements
+.hide {
+  display:none !important;
+}
+.hide--s {
+  @include media($xs) {
+    display: none !important;
+  }
+}
+.hide--s {
+  @include media($s) {
+    display: none !important;
+  }
+}
+.hide--m {
+  @include media($m) {
+    display: none !important;
+  }
+}
+.hide--l {
+  @include media($l) {
+    display: none !important;
+  }
+}
+.hide--xl {
+  @include media($xl) {
+    display: none !important;
+  }
+}
+
+// Show elements
+.show {
+  display:block !important;
+}

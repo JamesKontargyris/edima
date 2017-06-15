@@ -10,13 +10,7 @@ html {
 }
 body {
   min-height:100%;
-}
-
-// Used to toggle elements
-.show {
-  display:block !important;
-}
-
-.hide {
-  display:none !important;
+  background:
+          url(img/bg_maze_white.png) top left repeat,
+          darken(white, 4%);
 }
