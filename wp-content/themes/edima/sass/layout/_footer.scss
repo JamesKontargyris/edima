@@ -1,0 +1,40 @@
+footer.site-footer {
+  background:
+          linear-gradient(to bottom, lighten($dark-grey, 7%) 0%, $dark-grey 100%),
+          $dark-grey;
+}
+
+.site-footer__content {
+  @include outer-container();
+  padding-top:($vr * 3);
+  padding-bottom:($vr * 3);
+  color:$light-grey;
+  @include font-size(13, 21);
+
+  h6 {
+    color:white;
+  }
+}
+
+.site-footer__nav {
+  text-align: center;
+}
+
+.site-footer__logo {
+  svg {
+    max-width:10rem;
+  }
+}
+
+.site-footer__legal {
+  margin-top:$vr;
+  text-align: center;
+  @include font-size(11, 16);
+}
+
+.site-footer__column-one-quarter {
+  @include one-quarter;
+}
+.site-footer__column-two-quarters {
+  @include one-half;
+}

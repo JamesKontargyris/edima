@@ -13,18 +13,34 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edima' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'edima' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'edima' ), 'edima', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="site-footer">
+        <div class="site-footer__content">
+            <div class="site-footer__nav">
+                Menu
+            </div>
+        </div>
+
+        <div class="site-footer__content">
+            <div class="site-footer__column-one-quarter">
+                <div class="site-footer__logo">
+                    <?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo.svg'); ?>
+                    <br>Menu
+                </div>
+            </div>
+            <div class="site-footer__column-two-quarters">
+                <h6>Contact Us</h6>
+            </div>
+            <div class="site-footer__column-one-quarter">
+                <h6>Our Members</h6>
+            </div>
+        </div>
+
+        <div class="site-footer__content">
+            <div class="site-footer__legal">
+                &copy; EDiMA <?php echo date('Y'); ?>. All rights reserved. <br>
+                Menu
+            </div>
+        </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

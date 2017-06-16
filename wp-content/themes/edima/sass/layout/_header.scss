@@ -5,8 +5,9 @@ header.site-header {
           url(img/bg_maze_white_transparency.png) top left repeat,
           linear-gradient(to bottom, lighten($blue, 5%) 0%, $blue 100%),
           $blue;
-  height:7rem;
-  box-shadow: 0 0.2rem 0 rgba(black, 0.3);
+  height:8rem;
+  box-shadow: 0 0.3rem 0 rgba(black, 0.3);
+  /*border-bottom:0.3rem solid $red;*/
 }
 
 .site-header__content {
@@ -56,6 +57,7 @@ header.site-header {
 
     svg {
       max-height:3.5rem;
+      max-width:130px;
       margin-bottom:0.2rem; // positioning hack
 
       &:hover {
@@ -68,10 +70,10 @@ header.site-header {
 .site-header__nav {
   position:absolute;
   left:0;
-  top:7rem;
+  top:8rem;
   width:100%;
   background:
-          url(img/pw_maze_white.png) top left repeat,
+          url(img/bg_maze_white_transparency.png) top left repeat,
           $blue;
   box-shadow: 0 0.2rem 0 rgba(black, 0.3);
 

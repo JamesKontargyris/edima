@@ -1,0 +1,5 @@
+.site-content {
+  @include outer-container();
+  padding-top:$vr * 13;
+  padding-bottom:$vr * 5;
+}

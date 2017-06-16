@@ -6,11 +6,16 @@
 
     $('.site-header__logo').on('mouseover', function()
     {
-        $('.site-header__logo-static').css('display', 'none');
-        $('.site-header__logo-animated').css('display', 'block');
+        if (navigator.userAgent.search("Firefox") >= 0 || navigator.userAgent.search("Chrome") >= 0)
+        {
+            $('.site-header__logo-static').css('display', 'none');
+            $('.site-header__logo-animated').css('display', 'block');
+        }
     }).on('mouseout', function()
     {
-        $('.site-header__logo-static').css('display', 'block');
-        $('.site-header__logo-animated').css('display', 'none');
+        if (navigator.userAgent.search("Firefox") >= 0 || navigator.userAgent.search("Chrome") >= 0) {
+            $('.site-header__logo-static').css('display', 'block');
+            $('.site-header__logo-animated').css('display', 'none');
+        }
     });
 })();
