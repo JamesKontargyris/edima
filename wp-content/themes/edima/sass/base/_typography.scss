@@ -21,13 +21,25 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $base-spacing;
-  font-weight:800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-weight: 700;
+
+  &.with-line {
+    padding-bottom: $base-spacing;
+    border-bottom:1px solid $light-grey;
+  }
 }
 
 h1 {
-  @include font-size(48, 54);
+  @include font-size(24, 28);
+
+  @include media($m-up) {
+    @include font-size(32, 36);
+  }
+
+  @include media($l-up) {
+    @include font-size(42, 44);
+    letter-spacing: -0.1rem;
+  }
 }
 
 h5 {
@@ -39,7 +51,8 @@ h6 {
 }
 
 p {
-  margin: 0 0 $base-spacing;
+  margin-top:0;
+  margin-bottom:$base-spacing;
 }
 
 a:link,
@@ -51,7 +64,7 @@ a:visited {
   &:active,
   &:focus,
   &:hover {
-    color: shade($link-color, 25%);
+    color: $dark-grey;
   }
 }
 
@@ -67,4 +80,14 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+strong {
+  font-weight: 800;
+}
+
+// Text Helpers
+.text--upper {
+  text-transform: uppercase;
+  letter-spacing: 0rem;
 }

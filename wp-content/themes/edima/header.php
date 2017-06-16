@@ -15,7 +15,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,800,800i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
 
 <?php wp_head(); ?>
 </head>
@@ -36,9 +36,9 @@
 
             <div class="site-branding site-header__logo">
 		        <?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title">
+                    <h1 class="site-title margin--none">
 		        <?php else : ?>
-                    <p class="site-title">
+                    <p class="site-title margin--none">
 			    <?php endif; ?>
 
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -56,9 +56,10 @@
             <nav id="site-navigation" class="main-navigation site-header__nav" role="navigation">
 		        <?php
 		        wp_nav_menu( array(
-			        'theme_location' => 'menu-1',
+			        'theme_location' => 'primary',
 			        'menu_id'        => 'primary-menu',
                     'menu_class' => 'site-header__primary-menu',
+                    'depth' => '1',
 		        ) );
 		        ?>
             </nav> <!-- /site-header__nav-->

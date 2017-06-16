@@ -1,17 +1,19 @@
 header.site-header {
-  position:fixed;
+  position: relative;
+  box-sizing: border-box;
   width:100%;
+  z-index:100;
   background:
           url(img/bg_maze_white_transparency.png) top left repeat,
-          linear-gradient(to bottom, lighten($blue, 5%) 0%, $blue 100%),
+          linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
           $blue;
   height:8rem;
-  box-shadow: 0 0.3rem 0 rgba(black, 0.3);
-  /*border-bottom:0.3rem solid $red;*/
+  border-bottom:3px solid darken($blue, 10%);
 }
 
 .site-header__content {
   @include outer-container();
+  position:relative;
   display:flex;
   justify-content: space-between;
   align-items:center;
@@ -37,6 +39,7 @@ header.site-header {
 .site-header__logo {
   @include span-columns(6);
   text-align:center;
+  height:3.4rem;
 
   .site-header__logo-animated {
     display:none;
@@ -48,7 +51,6 @@ header.site-header {
 
   svg {
     max-height:3rem;
-    margin-bottom:0.4rem; // positioning hack
   }
 
   @include media($xl-up) {
@@ -56,13 +58,8 @@ header.site-header {
     text-align:left;
 
     svg {
-      max-height:3.5rem;
+      max-height:3.4rem;
       max-width:130px;
-      margin-bottom:0.2rem; // positioning hack
-
-      &:hover {
-
-      }
     }
   }
 }
@@ -74,7 +71,7 @@ header.site-header {
   width:100%;
   background:
           url(img/bg_maze_white_transparency.png) top left repeat,
-          $blue;
+          darken($blue, 3%);
   box-shadow: 0 0.2rem 0 rgba(black, 0.3);
 
   @include media($xl-up) {
@@ -83,25 +80,6 @@ header.site-header {
     top:0;
     background:transparent;
     box-shadow: none;
-  }
-}
-
-.site-header__primary-menu ul {
-  display:none;
-  list-style-type: none;
-  margin:0;
-  padding:0;
-  height:7rem;
-
-  @include media($xl-up) {
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    align-content:center;
-  }
-
-  &.active {
-    display:block;
   }
 }
 

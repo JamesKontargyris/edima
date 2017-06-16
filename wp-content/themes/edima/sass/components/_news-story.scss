@@ -1,0 +1,74 @@
+.news-story__hero {
+  padding:7rem 0;
+  background: linear-gradient(to right, rgba(black, 0.8) 0%, rgba(black, 0.3) 100%), url('img/tech.jpg') center, $dark-grey;
+  background-size: cover;
+  color:white;
+  text-shadow:0 2px 0 black;
+  border-bottom:3px solid $red;
+  margin-bottom:$base-spacing;
+
+  @include media($l-up) {
+    padding:16rem 0;
+    height: 60rem;
+    overflow:hidden;
+  }
+}
+.news-story__hero__content {
+  @include outer-container();
+}
+.news-story__category-headline,
+.news-story__headline,
+.news-story__meta {
+  @include media($l-up) {
+    @include span-columns(8);
+  }
+}
+
+.news-story__meta {
+  margin-top: $small-spacing;
+  @include font-size(13, 14);
+}
+
+.news-story__lead-paragraph {
+  @include font-size(16, 24);
+  color:$blue;
+  font-weight: 700;
+
+  @include media($l-up) {
+    @include font-size(21, 32);
+  }
+}
+
+.news-story__tags {
+  margin-top:$base-spacing * 2;
+  strong {
+    color:$green;
+  }
+}
+.news-story__tag-icon svg {
+  max-width:1.6rem;
+}
+
+.news-story__tag {
+  padding:0.5rem 1rem;
+  background-color: #e3e3e3;
+  border-radius: 8px;
+  font-weight: 800;
+  @include font-size(13, 14);
+  border-bottom:2px solid #d9d9d9;
+  color:$green !important;
+  &:hover {
+    color:$dark-grey !important;
+  }
+}
+
+.news-story__content {
+  @include media($xl-up) {
+    @include span-columns(8);
+  }
+}
+.news-story__sidebar {
+  @include media($xl-up) {
+    @include span-columns(4);
+  }
+}

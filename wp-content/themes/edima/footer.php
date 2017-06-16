@@ -28,10 +28,10 @@
                 </div>
             </div>
             <div class="site-footer__column-two-quarters">
-                <h6>Contact Us</h6>
+                <h6 class="text--upper">Contact Us</h6>
             </div>
             <div class="site-footer__column-one-quarter">
-                <h6>Our Members</h6>
+                <h6 class="text--upper">Our Members</h6>
             </div>
         </div>
 

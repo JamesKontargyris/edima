@@ -44,7 +44,9 @@ function edima_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'edima' ),
+		'primary' => esc_html__( 'Primary', 'edima' ),
+		'secondary' => esc_html__( 'Secondary', 'edima' ),
+		'edima' => esc_html__( 'EDiMA', 'edima' ),
 	) );
 
 	/*
@@ -109,6 +111,8 @@ function edima_scripts() {
 
 	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', true );
 	wp_enqueue_script( 'edima-vivus', 'http://cdn.jsdelivr.net/vivus/latest/vivus.min.js', array(), '20170615', true );
+
+	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
 
 	wp_enqueue_script( 'edima-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

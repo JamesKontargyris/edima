@@ -1,0 +1,16 @@
+.page-nav {
+  position:relative;
+  z-index:50;
+  background:
+          url(img/bg_maze_white_transparency.png),
+          linear-gradient(to bottom, $red 50%, darken($red, 5%) 100%),
+          $green;
+  padding:$base-spacing * 0.75 0;
+  color:lighten(desaturate(red, 25%), 30%);
+  border-bottom:2px solid darken($red, 20%);
+}
+
+.page-nav__content {
+  @include outer-container();
+  @include font-size(12, 14);
+}
