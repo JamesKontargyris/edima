@@ -5,9 +5,8 @@
           url(img/bg_maze_white_transparency.png),
           linear-gradient(to bottom, $red 50%, darken($red, 5%) 100%),
           $red;
-  padding:$base-spacing * 0.75 0;
+  padding:$base-spacing 0;
   color:lighten(desaturate($red, 25%), 40%);
-  border-bottom:2px solid darken($red, 20%);
 }
 
 .page-nav--green {
@@ -15,7 +14,7 @@
           url(img/bg_maze_white_transparency.png),
           linear-gradient(to bottom, $green 50%, darken($green, 5%) 100%),
           $green;
-  border-bottom:2px solid darken($green, 20%);
+  box-shadow:0 0.3rem 0 rgba(black, 0.3);
   color:lighten(desaturate($green, 25%), 40%);
 }
 
@@ -43,8 +42,8 @@
     text-align: center;
     @include font-size(15, 15);
 
-    @include media($l-up) {
-      @include font-size(13, 13);
+    @include media($xl-up) {
+      @include font-size(14, 14);
       &:not(.page-nav__menu__mobile-toggle) {
         display:block; // show on desktop
         float:left;
@@ -66,7 +65,7 @@
       display:block;
       padding-top:$base-spacing * 1.5;
 
-      @include media($l-up) {
+      @include media($xl-up) {
         padding:0;
       }
     }
@@ -86,8 +85,21 @@
   font-weight:800;
   cursor:pointer;
 
-  @include media($l-up) {
+  @include media($xl-up) {
     display:none; // Hide on desktop
+  }
+
+  &:before { // Little menu icon
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    content:'\f0c9';
+    margin-right:0.6rem;
+  }
+
+  &.active { // when the menu is open...
+    &:before { // Little close icon
+      content:'\f00d';
+    }
   }
 }
 

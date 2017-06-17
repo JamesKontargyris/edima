@@ -44,9 +44,10 @@ function edima_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'edima' ),
-		'secondary' => esc_html__( 'Secondary', 'edima' ),
-		'edima' => esc_html__( 'EDiMA', 'edima' ),
+		'primary' => esc_html__( 'Primary (Header)', 'edima' ),
+		'secondary' => esc_html__( 'Secondary (Footer)', 'edima' ),
+		'edima' => esc_html__( 'EDiMA (Footer)', 'edima' ),
+		'news' => esc_html__( 'News (Sub Menu)', 'edima' ),
 	) );
 
 	/*
@@ -115,7 +116,10 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
 
 	wp_enqueue_script( 'edima-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'edima-page-nav', get_template_directory_uri() . '/js/pageNav.js', array(), '20170617', true );
+
+	wp_enqueue_script( 'edima-fontawesome', 'https://use.fontawesome.com/6d6e2737fb.js', array(), '20170617', true );
 
 	wp_enqueue_script( 'edima-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'edima-header', get_template_directory_uri() . '/js/header.js', array(), '20170615', true );

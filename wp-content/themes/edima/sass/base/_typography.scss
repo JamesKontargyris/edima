@@ -81,79 +81,6 @@ ul, ol {
   margin-left:0px;
 }
 
-blockquote,
-.blockquote {
-  margin:0 0 $base-spacing;
-  width:100%;
-  font-weight: 800;
-
-  @include media($l-up) {
-    max-width:40rem;
-  }
-
-  p {
-    margin:0;
-    color:$blue;
-    font-style: normal;
-    @include font-size(16, 18);
-
-    @include media($l-up) {
-      @include font-size(18, 32);
-    }
-  }
-
-  &.pull--left {
-    float:left;
-
-    @include media($l) {
-      margin:4rem 4rem 4rem -5rem;
-
-    }
-
-    @include media($xl-up) {
-      margin: 4rem 4rem 4rem 0rem;
-    }
-  }
-
-  &.pull--right {
-    float:right;
-
-    @include media($l) {
-      margin:4rem -5rem 4rem 4rem;
-
-    }
-
-    @include media($xl-up) {
-      margin: 4rem 0rem 4rem 4rem;
-    }
-  }
-}
-
-.blockquote--red,
-.blockquote--blue,
-.blockquote--green {
-  padding:3rem;
-  p {
-    color:white;
-  }
-}
-
-.blockquote--red {
-  background:
-          url('img/bg_maze_white_transparency.png') top left repeat,
-          $red;
-}
-.blockquote--blue {
-  background:
-          url('img/bg_maze_white_transparency.png') top left repeat,
-          $blue;
-}
-.blockquote--green {
-  background:
-          url('img/bg_maze_white_transparency.png') top left repeat,
-          $red;
-}
-
 img,
 picture {
   margin: 0;
@@ -163,6 +90,100 @@ picture {
 strong {
   font-weight: 800;
 }
+
+figure {
+  figcaption {
+    font-style: italic;
+    font-size:90%;
+    text-align: center;
+    color:$grey;
+  }
+
+}
+
+
+blockquote,
+.blockquote {
+  margin:0 0 $base-spacing;
+  width:100%;
+  font-weight: 800;
+  border-radius: $base-border-radius;
+  border-color:transparent;
+
+  @include media($l-up) {
+    box-sizing: content-box;
+    max-width:40rem;
+  }
+
+  p {
+    margin:0;
+    color:$blue;
+    font-style: italic;
+    padding:0 !important;
+    @include font-size(16, 28);
+
+    @include media($l-up) {
+      @include font-size(18, 32);
+    }
+  }
+  p + p {
+    margin-bottom: $base-spacing;
+  }
+
+  &.pull--left {
+
+    @include media($l) {
+      float:left;
+      margin:2rem 4rem 2rem 0;
+    }
+
+    @include media($xl-up) {
+      float:left;
+      border-left-width: 40rem;
+      border-style: solid;
+      margin: 2rem 4rem 2rem -40rem;
+    }
+  }
+
+  &.pull--right {
+
+    @include media($l) {
+      float:right;
+      margin:2rem 0 2rem 4rem;
+    }
+
+    @include media($xl-up) {
+      float:right;
+      border-right-width: 40rem;
+      border-style: solid;
+      margin: 2rem -40rem 2rem 4rem;
+    }
+  }
+}
+
+.blockquote--red,
+.blockquote--blue,
+.blockquote--green {
+  padding:3rem;
+
+  p {
+    color:white;
+  }
+}
+
+.blockquote--red {
+  background: $red;
+  border-color:$red;
+}
+.blockquote--blue {
+  background-color: $blue;
+  border-color:$blue;
+}
+.blockquote--green {
+  background-color: $green;
+  border-color:$green;
+}
+
 
 // Text Helpers
 .text--upper {

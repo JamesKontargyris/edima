@@ -98,10 +98,6 @@
     }
   }
 
-  img {
-    margin-bottom:$base-spacing;
-  }
-
 }
 .news-story__sidebar {
   @include media($xl-up) {

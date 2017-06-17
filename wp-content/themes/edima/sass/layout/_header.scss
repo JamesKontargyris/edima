@@ -1,6 +1,5 @@
 header.site-header {
   position: relative;
-  box-sizing: border-box;
   width:100%;
   z-index:100;
   background:
@@ -8,7 +7,7 @@ header.site-header {
           linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
           $blue;
   height:8rem;
-  border-bottom:3px solid darken($blue, 10%);
+  border-bottom:0.3rem solid darken($blue, 10%);
 }
 
 .site-header__content {
