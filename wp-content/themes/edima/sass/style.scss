@@ -45,6 +45,7 @@ Text Domain: edima
 /// Components (modules)
 @import
 'components/breadcrumbs',
+'components/stripe',
 'components/buttons',
 'components/contact_form_7',
 'components/widgets',
@@ -53,7 +54,8 @@ Text Domain: edima
 'components/vertical_menu',
 'components/tweet',
 'components/news-story',
-'components/news-extract';
+'components/news-extract',
+'components/news-footer';
 
 /// Page-specific stylesheets
 //@import

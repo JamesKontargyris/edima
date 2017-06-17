@@ -12,7 +12,7 @@
   background:linear-gradient(to bottom, $green 0%, darken($green, 7%) 100%), $green;
   border-radius: $base-border-radius;
   padding:1rem 1.2rem;
-  border-bottom:2px solid rgba(black, 0.2);
+  border-bottom:2px solid rgba(black, 0.3);
   color:white !important;
 
   &:hover {
@@ -25,7 +25,7 @@
   background:linear-gradient(to bottom, white 0%, darken($light-grey, 4%) 100%), $light-grey;
   border-radius: $base-border-radius;
   padding:1rem 1.2rem;
-  border-bottom:2px solid rgba(black, 0.2);
+  border-bottom:2px solid rgba(black, 0.3);
   color:$green !important;
 
   &:hover {

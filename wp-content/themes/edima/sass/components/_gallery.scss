@@ -1,0 +1,29 @@
+.gallery {
+
+}
+
+.gallery__row-of-3 {
+
+  @include media($m-up) {
+    .gallery__item {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+  }
+}
+
+.gallery__row-of-4 {
+  @include media($m) {
+    .gallery__item {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+  @include media($l-up) {
+    .gallery__item {
+      @include span-columns(3);
+      @include omega(4n);
+    }
+  }
+}

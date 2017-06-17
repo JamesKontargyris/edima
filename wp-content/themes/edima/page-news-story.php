@@ -63,7 +63,7 @@ get_header(); ?>
                     </figure>
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ex nemo optio porro provident, tempora unde! Architecto beatae consequatur dolorum ea ex exercitationem fugiat in, ipsa ipsam molestias necessitatibus nesciunt nobis nulla numquam qui quo recusandae reprehenderit sunt tenetur totam unde voluptates voluptatibus. Culpa fuga ipsum modi quidem quis quos, sed! Aliquam animi at cumque doloribus est fugit modi, repellat repudiandae voluptate? Accusamus aliquid autem consequuntur culpa cum cumque dolorum enim et labore, minus molestiae natus, officiis qui ratione reprehenderit sit suscipit voluptatem voluptatibus? Consectetur dolore explicabo harum iste iure iusto mollitia, nobis obcaecati quidem quisquam recusandae tempore totam veniam.</p>
-                <blockquote class="blockquote--red pull--right">
+                <blockquote class="blockquote--grey pull--right">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias dolorum ducimus enim error esse fugiat harum ipsam itaque iure molestiae possimus, reprehenderit tenetur, totam veniam veritatis voluptatem voluptatibus! Consectetur?</p>
                 </blockquote>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ex nemo optio porro provident, tempora unde! Architecto beatae consequatur dolorum ea ex exercitationem fugiat in, ipsa ipsam molestias necessitatibus nesciunt nobis nulla numquam qui quo recusandae reprehenderit sunt tenetur totam unde voluptates voluptatibus. Culpa fuga ipsum modi quidem quis quos, sed! Aliquam animi at cumque doloribus est fugit modi, repellat repudiandae voluptate? Accusamus aliquid autem consequuntur culpa cum cumque dolorum enim et labore, minus molestiae natus, officiis qui ratione reprehenderit sit suscipit voluptatem voluptatibus? Consectetur dolore explicabo harum iste iure iusto mollitia, nobis obcaecati quidem quisquam recusandae tempore totam veniam.</p>
@@ -75,8 +75,11 @@ get_header(); ?>
 
                 <div class="news-story__tags">
                     <span class="news-story__tag-icon"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/tag.svg'); ?></span> <strong>Tags:</strong> <a href="#" class="news-story__tag">Tag1</a> <a href="#" class="news-story__tag">Tag2</a> <a href="#" class="news-story__tag">Tag3</a>
-                </div>
+                </div> <!-- / news-story__tags -->
+
+
             </div>
+
             <!--<div class="news-story__sidebar sidebar-content">
                 <aside>
                     <h5 class="text--upper">Latest News</h5>
@@ -111,6 +114,63 @@ get_header(); ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->
+
+    <div class="stripe stripe--light-light-grey stripe--with-line">
+        <div class="content-area">
+            <div class="news-footer__news">
+                <h5 class="text--upper"><i class="fa fa-newspaper-o"></i> More News</h5>
+                <div class="news-extract news-extract--horizontal">
+                    <a href="#">
+                        <img src="http://lorempixel.com/800/600" class="news-extract__image hide--s" alt="Headline" title="Headline">
+                        <span class="news-extract__headline">News Story Headline Lorem Ipsum Dolor</span>
+                    </a>
+                    <div class="news-extract__meta text--upper">16 June 2017 in <a href="#">Press Releases</a></div>
+                    <div class="news-extract__extract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nihil nulla numquam provident ullam! A aliquam amet dignissimos exercitationem id iste magnam odit qui, recusandae repellat repudiandae sed similique vel. <a href="#">Read more...</a></div>
+                </div>
+                <div class="news-extract news-extract--horizontal">
+                    <a href="#">
+                        <img src="http://lorempixel.com/800/600" class="news-extract__image hide--s" alt="Headline" title="Headline">
+                        <span class="news-extract__headline">News Story Headline Lorem Ipsum Dolor</span>
+                    </a>
+                    <div class="news-extract__meta text--upper">16 June 2017 in <a href="#">Press Releases</a></div>
+                    <div class="news-extract__extract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nihil nulla numquam provident ullam! A aliquam amet dignissimos exercitationem id iste magnam odit qui, recusandae repellat repudiandae sed similique vel. <a href="#">Read more...</a></div>
+                </div>
+                <div class="news-extract news-extract--horizontal">
+                    <a href="#">
+                        <img src="http://lorempixel.com/800/600" class="news-extract__image hide--s" alt="Headline" title="Headline">
+                        <span class="news-extract__headline">News Story Headline Lorem Ipsum Dolor</span>
+                    </a>
+                    <div class="news-extract__meta text--upper">16 June 2017 in <a href="#">Press Releases</a></div>
+                    <div class="news-extract__extract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nihil nulla numquam provident ullam! A aliquam amet dignissimos exercitationem id iste magnam odit qui, recusandae repellat repudiandae sed similique vel. <a href="#">Read more...</a></div>
+                </div>
+                <a href="#" class="button button--primary">All News</a>
+            </div> <!-- / news-footer__news -->
+
+            <hr class="hide--xl">
+
+            <div class="news-footer__tweets">
+                <h5 class="text--upper"><i class="fa fa-twitter"></i> @EDIMA_EU <a href="#" class="header-link">Follow Us</a></h5>
+                <div class="tweet__group tweet__group--fade">
+                    <div class="tweet">
+                        How 2 improve data access/transfer? <a href="#">#DA17EU</a> jury is out: Strong preference 4 soft approach (guidance) as opposed to default contract rules
+                        <div class="tweet__meta">54 minutes ago <div class="tweet__buttons"><a href="#"><i class="fa fa-reply"></i></a> <a href="#"><i class="fa fa-retweet"></i></a> <a href="#"><i class="fa fa-heart"></i></a></div></div>
+                    </div>
+                    <div class="tweet">
+                        How 2 improve data access/transfer? <a href="#">#DA17EU</a> jury is out: Strong preference 4 soft approach (guidance) as opposed to default contract rules
+                        <div class="tweet__meta">54 minutes ago <div class="tweet__buttons"><a href="#"><i class="fa fa-reply"></i></a> <a href="#"><i class="fa fa-retweet"></i></a> <a href="#"><i class="fa fa-heart"></i></a></div></div>
+                    </div>
+                    <div class="tweet">
+                        How 2 improve data access/transfer? <a href="#">#DA17EU</a> jury is out: Strong preference 4 soft approach (guidance) as opposed to default contract rules
+                        <div class="tweet__meta">54 minutes ago <div class="tweet__buttons"><a href="#"><i class="fa fa-reply"></i></a> <a href="#"><i class="fa fa-retweet"></i></a> <a href="#"><i class="fa fa-heart"></i></a></div></div>
+                    </div>
+                    <div class="tweet tweet--faded">
+                        &nbsp;
+                    </div>
+                </div>
+                <a href="#" class="button button--primary">More Tweets</a>
+            </div> <!-- / news-footer__tweets -->
+        </div>
+    </div>
 </div>
 
 <?php

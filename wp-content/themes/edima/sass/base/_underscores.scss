@@ -150,7 +150,7 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 hr {
@@ -364,13 +364,6 @@ q:after {
 blockquote,
 q {
   quotes: "" "";
-}
-
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
 }
 
 ul,

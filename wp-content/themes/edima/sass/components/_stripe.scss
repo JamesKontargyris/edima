@@ -1,0 +1,31 @@
+.stripe {
+  padding:$base-spacing 0;
+  overflow: hidden;
+}
+
+.stripe--with-line {
+  border-top:1px solid $red;
+}
+
+.stripe--white {
+  background-color: white;
+}
+
+.stripe--light-grey {
+  background-color: $light-grey;
+}
+
+.stripe--light-light-grey {
+  background-color: $light-light-grey;
+}
+
+.stripe--grey {
+  background-color: $grey;
+}
+
+.stripe--light-blue {
+  background-color: $light-blue;
+  &.stripe--with-line {
+    border-top:1px solid darken($light-blue, 7%);
+  }
+}

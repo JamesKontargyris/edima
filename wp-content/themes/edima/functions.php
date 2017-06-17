@@ -48,6 +48,7 @@ function edima_setup() {
 		'secondary' => esc_html__( 'Secondary (Footer)', 'edima' ),
 		'edima' => esc_html__( 'EDiMA (Footer)', 'edima' ),
 		'news' => esc_html__( 'News (Sub Menu)', 'edima' ),
+		'legal' => esc_html__( 'Legal Info (Footer)', 'edima' ),
 	) );
 
 	/*

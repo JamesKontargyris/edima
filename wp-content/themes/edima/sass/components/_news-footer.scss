@@ -1,0 +1,16 @@
+.news-footer__news,
+.news-footer__tweets {
+  position:relative;
+  margin-bottom:$base-spacing * 2;
+}
+
+@include media($xl-up) {
+  .news-footer__news {
+    @include span-columns(8.5);
+    margin-bottom:0;
+  }
+  .news-footer__tweets {
+    @include span-columns(3.5);
+    margin-bottom:0;
+  }
+}

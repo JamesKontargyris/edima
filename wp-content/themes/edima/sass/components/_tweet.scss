@@ -1,15 +1,49 @@
 .tweet {
   @include font-size(13, 18);
-  padding:1.2rem;
-  background-color: white;
-  border-bottom:2px solid $grey;
-  border-radius: $base-border-radius;
-  margin-bottom:$base-spacing;
+  padding:1.5rem;
+  border-bottom:1px solid $light-grey;
+  background:linear-gradient(to bottom, white 50%, darken(white, 5%) 100%);
+  border: 0.01rem solid rgba(black, 0.15);
+  margin-bottom:0.6rem;
+
+  &:first-child {
+  }
 }
+
 .tweet__meta {
   font-style: normal;
   @include font-size(12, 14);
   font-weight: 800;
   color:$grey;
   margin-top:$base-spacing / 2;
+}
+
+.tweet__buttons {
+  float:right;
+  a {
+    padding-left:10px;
+  }
+}
+
+.tweet__group {
+  position: relative;
+}
+
+.tweet--faded {
+  height:4rem;
+  &:after {
+    content: '';
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FAFAFA', endColorstr='#FAFAFA');
+    background-image: -webkit-linear-gradient(top, rgba(248, 244, 243, 0) 0%, #fafafa 100%);
+    background-image: -ms-linear-gradient(top, rgba(248, 244, 243, 0) 0%, #fafafa 100%);
+    background-image: linear-gradient(to bottom, rgba(black, 0) 0%, $light-light-grey 90%);
+    display: block;
+    position: absolute;
+    z-index:200;
+    pointer-event: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+  }
 }

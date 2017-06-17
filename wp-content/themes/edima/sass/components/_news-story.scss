@@ -29,6 +29,10 @@
   }
 }
 
+.news-story__category-headline a {
+  font-weight:800;
+}
+
 .news-story__breadcrumbs {
   display:none;
   position:absolute;
@@ -56,7 +60,7 @@
 }
 
 .news-story__tags {
-  margin-top:$base-spacing * 2;
+  margin:$base-spacing * 2 0;
   strong {
     color:$green;
   }

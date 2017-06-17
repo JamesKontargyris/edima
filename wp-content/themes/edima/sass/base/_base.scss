@@ -14,3 +14,10 @@ body {
           url(img/bg_maze_white.png) top left repeat,
           darken(white, 4%);
 }
+
+hr {
+  background-color: $grey;
+  border: 0;
+  height: 0.1rem;
+  margin: $base-spacing 0;
+}
