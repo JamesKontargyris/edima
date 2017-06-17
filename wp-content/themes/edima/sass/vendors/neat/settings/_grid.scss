@@ -12,6 +12,10 @@ $column: modular-scale(3, 1em, $golden) !default;
 
 $gutter: modular-scale(1, 1em, $golden) !default;
 
+// EDiMA Overrides
+$column: 56px;
+$gutter: 82px;
+
 /// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the `media()` mixin. Set with the `!global` flag.
 ///
 /// @type Number (Unitless)

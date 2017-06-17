@@ -1,0 +1,15 @@
+.tweet {
+  @include font-size(13, 18);
+  padding:1.2rem;
+  background-color: white;
+  border-bottom:2px solid $grey;
+  border-radius: $base-border-radius;
+  margin-bottom:$base-spacing;
+}
+.tweet__meta {
+  font-style: normal;
+  @include font-size(12, 14);
+  font-weight: 800;
+  color:$grey;
+  margin-top:$base-spacing / 2;
+}

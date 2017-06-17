@@ -4,6 +4,10 @@
   margin:0;
   padding: ($base-spacing * 2) 0;
 
+  &.active {
+    display:block;
+  }
+
   @include media($xl-up) {
     padding:0;
     height:8rem;
@@ -11,11 +15,13 @@
     justify-content: center;
     align-items:center;
     align-content:center;
+
+    &.active {
+      display:flex;
+    }
   }
 
-  &.active {
-    display:block;
-  }
+
 
   // smaller screens
   li {
@@ -35,7 +41,7 @@
   }
 
   // Larger screens
-  @include media($l-up) {
+  @include media($xl-up) {
     li {
       height:calc(100% + 0.3rem);
       &:not(:last-of-type) {
@@ -56,7 +62,8 @@
       }
 
       &.current-menu-item {
-        border-bottom:0.5rem solid $red;
+        border-bottom:0.5rem solid $green;
+        background: linear-gradient(to bottom, rgba($light-blue, 0) 0%, rgba($light-blue, 0.2) 100%);
         a {
           color:white;
         }

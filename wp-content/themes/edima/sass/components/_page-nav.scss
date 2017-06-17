@@ -4,13 +4,105 @@
   background:
           url(img/bg_maze_white_transparency.png),
           linear-gradient(to bottom, $red 50%, darken($red, 5%) 100%),
-          $green;
+          $red;
   padding:$base-spacing * 0.75 0;
-  color:lighten(desaturate(red, 25%), 30%);
+  color:lighten(desaturate($red, 25%), 40%);
   border-bottom:2px solid darken($red, 20%);
+}
+
+.page-nav--green {
+  background:
+          url(img/bg_maze_white_transparency.png),
+          linear-gradient(to bottom, $green 50%, darken($green, 5%) 100%),
+          $green;
+  border-bottom:2px solid darken($green, 20%);
+  color:lighten(desaturate($green, 25%), 40%);
 }
 
 .page-nav__content {
   @include outer-container();
-  @include font-size(12, 14);
+  @include font-size(13, 14);
+}
+
+.page-nav--center {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.page-nav__menu {
+  list-style: none;
+  padding:0;
+  margin:0;
+
+  li {
+    &:not(.page-nav__menu__mobile-toggle) {
+      display:none; // for mobile, toggled by page-nav__menu__mobile-toggle
+    }
+    text-align: center;
+    @include font-size(15, 15);
+
+    @include media($l-up) {
+      @include font-size(13, 13);
+      &:not(.page-nav__menu__mobile-toggle) {
+        display:block; // show on desktop
+        float:left;
+        padding:0 2rem;
+        &:first-child {
+          padding-left:0;
+        }
+        &:not(:last-child, .page-nav__menu__mobile-toggle) {
+          border-right:1px solid rgba(white, 0.3);
+        }
+      }
+    }
+
+    &.active {
+      display:block; // used to toggle visibility on mobile
+    }
+
+    a {
+      display:block;
+      padding-top:$base-spacing * 1.5;
+
+      @include media($l-up) {
+        padding:0;
+      }
+    }
+
+    a:link, a:visited {
+      color:white;
+    }
+    a:hover {
+      color:inherit;
+    }
+  }
+}
+
+.page-nav__menu__mobile-toggle {
+  display:block; // hide other li elements but show this toggle
+  text-transform: uppercase;
+  font-weight:800;
+  cursor:pointer;
+
+  @include media($l-up) {
+    display:none; // Hide on desktop
+  }
+}
+
+.page-nav__menu--right {
+  float:right;
+
+  li {
+    float:left;
+    padding:0 1rem;
+    height:100%;
+    &:last-child {
+      padding-right:0;
+    }
+    &:not(:first-child) {
+      border-left:1px solid darken($red, 15%);
+    }
+  }
 }

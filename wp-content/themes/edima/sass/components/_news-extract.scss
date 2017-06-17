@@ -1,0 +1,26 @@
+.news-extract {
+  margin-bottom:$base-spacing * 1.5;
+}
+
+.news-extract--sidebar {
+
+  @include media($xl-up) {
+    @include span-columns(12);
+  }
+}
+
+.news-extract__image {
+  max-width:80rem;
+}
+.news-extract__details {
+}
+.news-extract__headline {
+  @extend h5;
+  line-height:1.3;
+  margin-bottom:$small-spacing;
+}
+.news-extract__meta {
+  @include font-size(13, 14);
+  font-weight: 800;
+  color:$grey;
+}

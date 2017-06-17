@@ -3,7 +3,7 @@ $base-font-family: 'Montserrat', sans-serif;
 $heading-font-family: 'Montserrat', sans-serif;
 
 // Font Sizes
-$base-font-size: 1.5rem;
+$base-font-size: 1.6rem;
 
 // Line height
 $base-line-height: 1.8;
@@ -17,11 +17,12 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Primary Colours
-$blue: rgba(0, 59, 119, 1);
-$light-blue: rgb(31, 178, 240);
+$blue: rgb(0, 59, 119);
+$light-blue: rgb(168, 218, 220);
 $red: rgba(205, 15, 54, 1);
-$green: rgba(27, 153, 139, 1);
+$green: rgb(17, 165, 171);
 $light-grey: rgb(228, 228, 228);
+$grey: rgb(157, 157, 157);
 $dark-grey: rgba(71, 71, 71, 1);
 
 // Other Colours
@@ -32,7 +33,7 @@ $soft-black: #222222;
 // Font Colors
 $base-font-color: $soft-black;
 $action-color: $blue;
-$link-color:$red;
+$link-color:$green;
 
 // Border
 $base-border-color: $light-grey;

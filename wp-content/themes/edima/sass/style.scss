@@ -44,14 +44,16 @@ Text Domain: edima
 
 /// Components (modules)
 @import
-'components/logo',
-'components/icon',
+'components/breadcrumbs',
 'components/buttons',
 'components/contact_form_7',
 'components/widgets',
 'components/gallery',
 'components/page-nav',
-'components/news-story';
+'components/vertical_menu',
+'components/tweet',
+'components/news-story',
+'components/news-extract';
 
 /// Page-specific stylesheets
 //@import

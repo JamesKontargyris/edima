@@ -27,6 +27,10 @@ h6 {
     padding-bottom: $base-spacing;
     border-bottom:1px solid $light-grey;
   }
+
+  .header-link {
+    float:right;
+  }
 }
 
 h1 {
@@ -40,6 +44,10 @@ h1 {
     @include font-size(42, 44);
     letter-spacing: -0.1rem;
   }
+}
+
+h4 {
+  @include font-size(16, 24);
 }
 
 h5 {
@@ -58,6 +66,7 @@ p {
 a:link,
 a:visited {
   color: $link-color;
+  font-weight:500;
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
@@ -72,8 +81,77 @@ ul, ol {
   margin-left:0px;
 }
 
-blockquote {
-  font-style: italic;
+blockquote,
+.blockquote {
+  margin:0 0 $base-spacing;
+  width:100%;
+  font-weight: 800;
+
+  @include media($l-up) {
+    max-width:40rem;
+  }
+
+  p {
+    margin:0;
+    color:$blue;
+    font-style: normal;
+    @include font-size(16, 18);
+
+    @include media($l-up) {
+      @include font-size(18, 32);
+    }
+  }
+
+  &.pull--left {
+    float:left;
+
+    @include media($l) {
+      margin:4rem 4rem 4rem -5rem;
+
+    }
+
+    @include media($xl-up) {
+      margin: 4rem 4rem 4rem 0rem;
+    }
+  }
+
+  &.pull--right {
+    float:right;
+
+    @include media($l) {
+      margin:4rem -5rem 4rem 4rem;
+
+    }
+
+    @include media($xl-up) {
+      margin: 4rem 0rem 4rem 4rem;
+    }
+  }
+}
+
+.blockquote--red,
+.blockquote--blue,
+.blockquote--green {
+  padding:3rem;
+  p {
+    color:white;
+  }
+}
+
+.blockquote--red {
+  background:
+          url('img/bg_maze_white_transparency.png') top left repeat,
+          $red;
+}
+.blockquote--blue {
+  background:
+          url('img/bg_maze_white_transparency.png') top left repeat,
+          $blue;
+}
+.blockquote--green {
+  background:
+          url('img/bg_maze_white_transparency.png') top left repeat,
+          $red;
 }
 
 img,

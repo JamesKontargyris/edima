@@ -115,6 +115,7 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
 
 	wp_enqueue_script( 'edima-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'edima-page-nav', get_template_directory_uri() . '/js/pageNav.js', array(), '20170617', true );
 
 	wp_enqueue_script( 'edima-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'edima-header', get_template_directory_uri() . '/js/header.js', array(), '20170615', true );
