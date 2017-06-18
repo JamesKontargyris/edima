@@ -1,7 +1,10 @@
-.content-area {
+.container {
   @include outer-container();
-  padding-top:$vr * 2;
-  padding-bottom:$vr * 4;
+}
+.container--with-padding {
+  @include outer-container();
+  padding-top:$base-spacing * 2;
+  padding-bottom:$base-spacing;
 }
 
 .sidebar-content {

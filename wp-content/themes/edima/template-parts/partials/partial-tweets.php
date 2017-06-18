@@ -11,7 +11,6 @@
         </div>
     <?php endforeach; ?>
 
-    <div class="tweet tweet--faded">&nbsp;</div>
 
 </div>
 

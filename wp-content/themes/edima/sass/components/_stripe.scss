@@ -1,10 +1,22 @@
 .stripe {
-  padding:$base-spacing 0;
+  position:relative;
+  padding:$base-spacing * 2 0;
+  margin:0 0 $base-spacing * 2 0;
   overflow: hidden;
 }
+.stripe--small-padding {
+  padding: $base-spacing 0;
+}
+.stripe--no-margin {
+  margin:0;
+}
 
-.stripe--with-line {
-  border-top:1px solid $red;
+.stripe__content {
+  @include outer-container();
+}
+
+.stripe--border-bottom {
+  border-bottom:0.1rem dotted $grey;
 }
 
 .stripe--white {
@@ -12,7 +24,7 @@
 }
 
 .stripe--light-grey {
-  background-color: $light-grey;
+  background: linear-gradient($light-grey 33%, darken($light-grey, 8%)), $light-grey;
 }
 
 .stripe--light-light-grey {
@@ -20,12 +32,5 @@
 }
 
 .stripe--grey {
-  background-color: $grey;
-}
-
-.stripe--light-blue {
-  background-color: $light-blue;
-  &.stripe--with-line {
-    border-top:1px solid darken($light-blue, 7%);
-  }
+  background: linear-gradient($grey 33%, darken($grey, 8%)), $grey;
 }

@@ -1,6 +1,5 @@
 .news-story__hero {
   border-bottom:3px solid $red;
-  margin-bottom:$base-spacing;
 
   @include media($l-up) {
     height: 60rem;

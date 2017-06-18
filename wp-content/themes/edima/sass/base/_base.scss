@@ -1,9 +1,6 @@
 * {
   z-index: z('default');
 }
-.container {
-  @include outer-container();
-}
 
 html {
   min-height:100%;

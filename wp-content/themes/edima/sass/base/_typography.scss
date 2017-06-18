@@ -38,10 +38,36 @@ h1 {
 
   @include media($m-up) {
     @include font-size(32, 36);
+    letter-spacing: -0.1rem;
   }
 
   @include media($l-up) {
     @include font-size(42, 44);
+  }
+}
+
+h2 {
+  @include font-size(24, 28);
+  letter-spacing: -0.1rem;
+
+  @include media($m-up) {
+    @include font-size(28, 32);
+  }
+
+  @include media($l-up) {
+    @include font-size(34, 42);
+  }
+}
+
+h3 {
+  @include font-size(21, 28);
+
+  @include media($m-up) {
+    @include font-size(24, 28);
+  }
+
+  @include media($l-up) {
+    @include font-size(28, 36);
     letter-spacing: -0.1rem;
   }
 }

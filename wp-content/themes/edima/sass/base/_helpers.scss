@@ -41,6 +41,10 @@
   margin-right:0;
 }
 
+.margin--small-bottom {
+  margin-bottom:$base-spacing * 0.5;
+}
+
 // Text
 .text--red {
   color:$red;
@@ -50,4 +54,17 @@
 }
 .text--light-blue {
   color:$light-blue;
+}
+
+.text--with-underline {
+  padding-bottom: $base-spacing * 0.33;
+  border-bottom:0.3rem solid $red;
+  display:inline-block;
+}
+
+// Positioning
+.position--center-vertical {
+  display:flex;
+  align-content:center;
+  align-items:center;
 }

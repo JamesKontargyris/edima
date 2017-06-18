@@ -14,17 +14,7 @@
 
 get_header(); ?>
 
-<div class="news__sub-nav page-nav page-nav--green page-nav--center">
-    <div class="page-nav__content">
-        <ul class="page-nav__menu">
-            <li class="page-nav__menu__mobile-toggle">More News</li>
-            <li><a href="/news">All News</a></li>
-	        <?php foreach ( get_menu_items('news') as $item) : ?>
-                <li><a href="<?php echo $item['url']; ?>"><?php echo $item['title']; ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</div>
+<?php get_template_part('template-parts/partials/partial', 'news-sub-nav'); ?>
 
 <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
@@ -60,36 +50,38 @@ get_header(); ?>
         </div>
     </div>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-            <!--<div class="news-story__categories sidebar-content">
-                <aside>
-                    <ul class="vertical-menu vertical-menu__small vertical-menu--upper">
-                        <li class="vertical-menu__item"><a class="vertical-menu__link" href="#">All News</a></li>
-                        <li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 1</a></li>
-                        <li class="vertical-menu__item vertical-menu__item--active"><a class="vertical-menu__link" href="#">News Category 2</a></li>
-                        <li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 3</a></li>
-                        <li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 4</a></li>
-                        <li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 5</a></li>
-                    </ul>
-                </aside>
-            </div>-->
+    <div class="content-area">
+        <div id="primary" class="container--with-padding">
+            <main id="main" class="site-main" role="main">
+                <!--<div class="news-story__categories sidebar-content">
+					<aside>
+						<ul class="vertical-menu vertical-menu__small vertical-menu--upper">
+							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">All News</a></li>
+							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 1</a></li>
+							<li class="vertical-menu__item vertical-menu__item--active"><a class="vertical-menu__link" href="#">News Category 2</a></li>
+							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 3</a></li>
+							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 4</a></li>
+							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 5</a></li>
+						</ul>
+					</aside>
+				</div>-->
 
-            <div class="news-story__content">
+                <div class="news-story__content">
 
-                <?php the_content(); ?>
+				    <?php the_content(); ?>
 
-                <?php get_template_part('template-parts/partials/partial', 'news-tags'); ?>
+				    <?php get_template_part('template-parts/partials/partial', 'news-tags'); ?>
 
-            </div>
+                </div>
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div>
 
     <?php endwhile; endif; ?>
 
-    <div class="stripe stripe--light-light-grey stripe--with-line">
-        <div class="content-area">
+    <div class="stripe stripe--no-margin stripe--light-grey">
+        <div class="stripe__content">
             <div class="news-footer__news">
                 <?php get_template_part('template-parts/partials/partial', 'more-news'); ?>
             </div> <!-- / news-footer__news -->
