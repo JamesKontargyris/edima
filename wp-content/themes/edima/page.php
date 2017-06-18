@@ -20,12 +20,19 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+			switch(get_post_type()) {
+                case 'news_story' :
+	                get_template_part( 'template-parts/content', 'news-story' );
+	                break;
+                default :
+	                get_template_part( 'template-parts/content', 'page' );
+	                break;
+            }
 
 				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
+				/*if ( comments_open() || get_comments_number() ) :
 					comments_template();
-				endif;
+				endif;*/
 
 			endwhile; // End of the loop.
 			?>

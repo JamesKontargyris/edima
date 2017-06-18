@@ -165,3 +165,217 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+// EDiMA FUNCTiONS
+
+require_once('helpers.php');
+require_once('query_functions.php');
+
+/**
+ * Image sizes
+ */
+add_image_size( 'hero', 1500, 1000, true ); // used in hero banners
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function add_editor_styles() {
+	add_editor_style( 'style.css' );
+}
+add_action( 'admin_init', 'add_editor_styles' );
+
+
+add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+
+/**
+ * Mark (highlight) custom post type parent as active item in Wordpress Navigation. When you visit a custom post type's single page, the parent menu item (the post type archive) isn't marked as active. This code solves it by comparing the slug of the current post type with the navigation items, and adds a class accordingly.
+ *
+ * @param $classes
+ * @param $item
+ *
+ * @return array
+ */
+function add_current_nav_class($classes, $item) {
+
+	// Getting the current post details
+	global $post;
+
+	// Getting the post type of the current post
+	$current_post_type = get_post_type_object(get_post_type($post->ID));
+	$current_post_type_slug = $current_post_type->rewrite[slug];
+
+	// Getting the URL of the menu item
+	$menu_slug = strtolower(trim($item->url));
+
+	// If the menu item URL contains the current post types slug add the current-menu-item class
+	if (strpos($menu_slug,$current_post_type_slug) !== false) {
+
+		$classes[] = 'current-menu-item';
+
+	}
+
+	// Return the corrected set of classes to be added to the menu item
+	return $classes;
+
+}
+
+/**
+ * Make custom post types appear on archive pages
+ *
+ * @param $query
+ *
+ * @return mixed
+ */
+function namespace_add_custom_types( $query ) {
+	if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+		$query->set( 'post_type', array(
+			'post', 'nav_menu_item', 'news_story'
+		));
+		return $query;
+	}
+}
+add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+	return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+/**
+ * Callback function to insert 'styleselect' drop down menu into the $buttons array
+ *
+ * @param $buttons
+ *
+ * @return mixed
+ */
+function my_mce_buttons_2( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' ); // mce_buttons_2 is the second row
+
+/**
+ * Callback function to add custom styles to the WP editor
+ *
+ * @param $init_array
+ *
+ * @return mixed
+ */
+function my_mce_before_init_insert_formats( $init_array ) {
+	// Define the style_formats array
+	$style_formats = [
+		// Each array child is a format with it's own settings
+		[
+			'title' => 'Caption',
+			'block' => 'div',
+			'classes' => 'img-caption',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Lead Paragraph',
+			'block' => 'div',
+			'classes' => 'lead-paragraph',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Standard',
+			'block' => 'blockquote',
+			'classes' => '',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Standard, Pull Left',
+			'block' => 'blockquote',
+			'classes' => 'pull--left',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Standard, Pull Right',
+			'block' => 'blockquote',
+			'classes' => 'pull--right',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Blue',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--blue',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Blue, Pull Left',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--blue pull--left',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Blue, Pull Right',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--blue pull--right',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Grey',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--grey',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Grey, Pull Left',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--grey pull--left',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Grey, Pull Right',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--grey pull--right',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Green',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--green',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Green, Pull Left',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--green pull--left',
+			'wrapper' => true,
+		],
+		[
+			'title' => 'Blockquote - Green, Pull Right',
+			'block' => 'blockquote',
+			'classes' => 'blockquote--green pull--right',
+			'wrapper' => true,
+		],
+
+	];
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );
+
+	return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );

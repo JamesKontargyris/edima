@@ -1,6 +1,4 @@
 .news-story__hero {
-  background: linear-gradient(to right, rgba(black, 0.6) 25%, rgba(black, 0.1) 100%), url('img/tech.jpg') center, $dark-grey;
-  background-size: cover;
   border-bottom:3px solid $red;
   margin-bottom:$base-spacing;
 
@@ -29,8 +27,16 @@
   }
 }
 
-.news-story__category-headline a {
-  font-weight:800;
+.news-story__category {
+  &:not(:last-of-type) {
+    &:after {
+      content:', ';
+    }
+  }
+
+  a {
+    font-weight:800;
+  }
 }
 
 .news-story__breadcrumbs {
@@ -47,16 +53,6 @@
 .news-story__meta {
   margin-top: $small-spacing;
   @include font-size(13, 14);
-}
-
-.news-story__lead-paragraph {
-  @include font-size(16, 24);
-  color:$blue;
-  font-weight: 500;
-
-  @include media($l-up) {
-    @include font-size(24, 32);
-  }
 }
 
 .news-story__tags {

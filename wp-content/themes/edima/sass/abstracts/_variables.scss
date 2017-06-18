@@ -19,12 +19,12 @@ $base-z-index: 0;
 // Primary Colours
 $blue: rgb(0, 59, 119);
 $light-blue: rgb(153, 203, 205);
-$red: rgba(205, 15, 54, 1);
+$red: rgb(205, 15, 54);
 $green: rgb(0, 160, 163);
 $light-grey: rgb(228, 228, 228);
 $light-light-grey: lighten($light-grey, 5%);
 $grey: rgb(157, 157, 157);
-$dark-grey: rgba(71, 71, 71, 1);
+$dark-grey: rgb(71, 71, 71);
 
 // Other Colours
 $white: hsl(0, 0, 100);

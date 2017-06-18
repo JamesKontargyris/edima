@@ -1,5 +1,5 @@
 .tweet {
-  @include font-size(13, 18);
+  @include font-size(13, 21);
   padding:1.5rem;
   border-bottom:1px solid $light-grey;
   background:linear-gradient(to bottom, white 50%, darken(white, 5%) 100%);

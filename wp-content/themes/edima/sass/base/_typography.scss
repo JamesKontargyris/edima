@@ -91,17 +91,6 @@ strong {
   font-weight: 800;
 }
 
-figure {
-  figcaption {
-    font-style: italic;
-    font-size:90%;
-    text-align: center;
-    color:$grey;
-  }
-
-}
-
-
 blockquote,
 .blockquote {
   margin:0 0 $base-spacing;
@@ -109,11 +98,6 @@ blockquote,
   font-weight: 800;
   border-radius: $base-border-radius;
   border-color:transparent;
-
-  @include media($l-up) {
-    box-sizing: content-box;
-    max-width:40rem;
-  }
 
   p {
     margin:0;
@@ -128,6 +112,14 @@ blockquote,
   }
   p + p {
     margin-bottom: $base-spacing;
+  }
+
+  &.pull--left,
+  &.pull--right {
+    @include media($l-up) {
+      box-sizing: content-box;
+      max-width:40rem;
+    }
   }
 
   &.pull--left {
@@ -189,6 +181,23 @@ blockquote,
   border-color:$grey;
 }
 
+.img-caption {
+  font-style: italic;
+  font-size:90%;
+  text-align: center;
+  color:$grey;
+  margin-bottom:$base-spacing;
+}
+
+.lead-paragraph {
+  @include font-size(16, 24);
+  color:$blue;
+  font-weight: 500;
+
+  @include media($l-up) {
+    @include font-size(24, 32);
+  }
+}
 
 // Text Helpers
 .text--upper {
