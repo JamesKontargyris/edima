@@ -7,12 +7,20 @@
 }
 
 .news-archive__hero-story__image {
-  margin:-($base-spacing * 2) -2rem $base-spacing; // Fill the screen width and bump up against header on mobile
+  margin:-($base-spacing * 4) -2rem $base-spacing; // Fill the screen width and bump up against header on mobile
 
   @include media($l-up) {
     margin:0 0 0 0;
     @include span-columns(6);
+
+    img {
+      border-radius:0.5rem;
+      box-shadow:0 0 50px white;
+    }
   }
+}
+
+.news-archive__hero-story__headline {
 }
 .news-archive__hero-story__content {
   @include media($l-up) {
@@ -23,10 +31,11 @@
 .news-archive__hero-story__meta {
   @extend .news-extract__meta;
   @include font-size(14, 16);
+  font-weight:800;
   margin-bottom:$base-spacing;
 
   @include media($l-up) {
-    @include font-size(15, 16);
+    @include font-size(14, 16);
   }
 }
 
@@ -37,5 +46,13 @@
 
   @include media($l-up) {
     @include font-size(15, 21);
+  }
+}
+
+.news-archive__feature-story {
+  margin-bottom:$base-spacing * 2;
+
+  @include media($l-up) {
+    margin-bottom:0;
   }
 }

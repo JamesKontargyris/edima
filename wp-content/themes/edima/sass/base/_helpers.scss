@@ -41,12 +41,23 @@
   margin-right:0;
 }
 
+.margin--bottom {
+  margin-bottom:$base-spacing;
+}
+
+.margin--large-bottom {
+  margin-bottom:$base-spacing * 2;
+}
+
 .margin--small-bottom {
   margin-bottom:$base-spacing * 0.5;
 }
 
 // Text
 .text--red {
+  color:$red;
+}
+.text--light-red { // for use on darker backgrounds
   color:$red;
 }
 .text--blue {
@@ -60,6 +71,10 @@
   padding-bottom: $base-spacing * 0.33;
   border-bottom:0.3rem solid $red;
   display:inline-block;
+}
+
+.text--divider {
+  padding:0 5px;
 }
 
 // Positioning

@@ -13,8 +13,11 @@ body {
 }
 
 hr {
-  background-color: $grey;
   border: 0;
+  border-bottom:1px dotted $grey;
   height: 0.1rem;
   margin: $base-spacing 0;
+  &.large-spacing {
+    margin: $base-spacing * 2 0;
+  }
 }

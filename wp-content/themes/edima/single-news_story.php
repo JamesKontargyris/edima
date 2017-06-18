@@ -50,7 +50,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="content-area">
+    <div id="#content" class="content-area">
         <div id="primary" class="container--with-padding">
             <main id="main" class="site-main" role="main">
                 <!--<div class="news-story__categories sidebar-content">

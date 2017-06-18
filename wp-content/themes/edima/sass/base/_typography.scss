@@ -73,11 +73,12 @@ h3 {
 }
 
 h4 {
-  @include font-size(16, 24);
+  @include font-size(21, 24);
+  letter-spacing: -0.1rem;
 }
 
 h5 {
-  @include font-size(15, 21);
+  @include font-size(16, 21);
 }
 
 h6 {

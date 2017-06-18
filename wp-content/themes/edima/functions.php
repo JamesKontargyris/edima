@@ -111,7 +111,7 @@ add_action( 'widgets_init', 'edima_widgets_init' );
 function edima_scripts() {
 	wp_enqueue_style( 'edima-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', true );
+	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', false );
 	wp_enqueue_script( 'edima-vivus', 'http://cdn.jsdelivr.net/vivus/latest/vivus.min.js', array(), '20170615', true );
 
 	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
@@ -166,7 +166,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
+//-------------------------------------------------
 
 // EDiMA FUNCTiONS
 
@@ -177,6 +177,22 @@ require_once('query_functions.php');
  * Image sizes
  */
 add_image_size( 'hero', 1500, 1000, true ); // used in hero banners
+add_image_size( 'news-extract', 800, 500, true ); // used in hero banners
+
+// AJAX related stuff
+$ajaxurl = '';
+if( in_array('sitepress-multilingual-cms/sitepress.php', get_option('active_plugins')) ){
+	$ajaxurl .= admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
+} else{
+	$ajaxurl .= admin_url( 'admin-ajax.php');
+}
+wp_localize_script( 'edima-script', 'screenReaderText', array(
+	'expand'   => __( 'expand child menu', 'twentysixteen' ),
+	'collapse' => __( 'collapse child menu', 'twentysixteen' ),
+	'ajaxurl'  => $ajaxurl,
+	'noposts'  => esc_html__('No older posts found', 'twentysixteen'),
+	'loadmore' => esc_html__('Load more', 'twentysixteen')
+) );
 
 /**
  * Registers an editor stylesheet for the theme.
@@ -273,6 +289,20 @@ function my_mce_buttons_2( $buttons ) {
 }
 // Register our callback to the appropriate filter
 add_filter( 'mce_buttons_2', 'my_mce_buttons_2' ); // mce_buttons_2 is the second row
+
+/**
+ * Remove p tags from around images on TinyMCE content
+ *
+ * @param $content
+ *
+ * @return mixed
+ */
+function filter_ptags_on_images($content) {
+	$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+	return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+}
+add_filter('acf_the_content', 'filter_ptags_on_images');
+add_filter('the_content', 'filter_ptags_on_images');
 
 /**
  * Callback function to add custom styles to the WP editor

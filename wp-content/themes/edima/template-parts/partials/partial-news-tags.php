@@ -1,4 +1,4 @@
-<?php if($tags = get_terms('news_tags')) : ?>
+<?php if($tags = wp_get_post_terms(get_the_ID(), 'news_tags')) : ?>
 	<div class="news-story__tags">
 		<span class="news-story__tag-icon"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/tag.svg'); ?></span> <strong>Tags:</strong>
 		<?php foreach($tags as $tag) : ?>

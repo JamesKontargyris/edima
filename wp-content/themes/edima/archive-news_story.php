@@ -13,45 +13,89 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-    <?php get_template_part('template-parts/partials/partial', 'news-archive-style'); ?>
+    <div id="#content" class="content-area">
 
-    <div class="stripe stripe--border-bottom">
-        <div class="stripe__content">
-            <div class="news-archive news-archive__hero-story">
-                <div class="news-archive__hero-story__image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/tech.jpg" alt="">
+        <!-- Latest News Story Hero-->
+        <div class="news-archive__hero-story stripe stripe--large-padding stripe--border-bottom">
+            <div class="stripe__content">
+                <div class="news-archive">
+                    <?php $latest_news_story = get_latest_news(1, 0); ?>
+                    <?php if($latest_news_story->have_posts()) : while($latest_news_story->have_posts()) : $latest_news_story->the_post(); ?>
+
+                        <?php get_template_part('template-parts/partials/partial', 'news-archive-style'); // styling ?>
+
+                        <?php if(has_post_thumbnail()) : ?>
+                            <div class="news-archive__hero-story__image">
+                                <img src="<?php the_post_thumbnail_url('news-extract'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="news-archive__hero-story__content">
+                            <h5 class="text--upper text--red margin--small-bottom">Latest News</h5>
+                            <h2 class="news-archive__hero-story__headline"><?php the_title(); ?></h2>
+                            <div class="news-archive__hero-story__meta text--upper">
+                                <?php echo the_date('d F Y'); ?>
+                                <?php if(wp_get_post_terms(get_the_ID(), 'news_categories')) : ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories')); endif; ?>
+                            </div>
+                            <div class="news-archive__hero-story__extract"><?php the_excerpt(); ?></div>
+                            <a href="<?php echo get_the_permalink(); ?>" class="button button--primary">Read More</a>
+                        </div>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
+
                 </div>
-                <div class="news-archive__hero-story__content">
-                    <h5 class="text--upper text--red margin--small-bottom">Latest News</h5>
-                    <h2 class="news-archive__hero-story__headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, obcaecati</h2>
-                    <div class="news-archive__hero-story__meta text--upper">18 June 2017 in <a href="#">Press Releases</a></div>
-                    <div class="news-archive__hero-story__extract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at corporis cupiditate est et eum id, ipsam itaque neque nobis odit perspiciatis quas quo rerum, soluta temporibus voluptatem! Expedita, totam.</div>
-                    <a href="#" class="button button--primary">Read More</a>
+            </div>
+
+        </div>
+
+        <!-- /Latest News Story Hero-->
+
+        <!-- Featured stories -->
+        <?php $featured_stories = get_latest_news(3, 1); ?>
+        <?php if($featured_stories->have_posts()) : ?>
+            <div class="news-archive__feature-stories container">
+                <div class="gallery gallery__row-of-3">
+                    <?php while($featured_stories->have_posts()) : $featured_stories->the_post(); ?>
+                        <div class="gallery__item news-archive__feature-story">
+                            <div class="news-extract">
+                                <h6 class="text--upper margin--small-bottom">
+	                                <?php if(wp_get_post_terms(get_the_ID(), 'news_categories')) : echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories')); endif; ?>
+                                </h6>
+                                <a href="<?php echo get_the_permalink(); ?>">
+	                                <?php if(has_post_thumbnail()) : ?>
+                                        <img class="news-extract__image" src="<?php the_post_thumbnail_url('news-extract'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+	                                <?php endif; ?>
+                                    <span class="news-extract__headline"><?php the_title(); ?></span>
+                                </a>
+                                <div class="news-extract__meta text--upper"><?php echo the_date('d F Y'); ?></div>
+                                <div class="news-extract__extract margin--small-bottom"><?php the_excerpt(); ?></div>
+                                <a href="<?php echo get_the_permalink(); ?>" class="button button--primary button--small">Read More</a>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
+            </div>
+        <?php endif; wp_reset_postdata(); ?>
+        <!-- /Featured stories -->
+
+
+        <div class="stripe stripe--no-margin stripe--light-grey">
+            <div class="stripe__content">
+                <div class="news-footer__news">
+				    <?php get_template_part('template-parts/partials/partial', 'more-news'); ?>
+                </div> <!-- / news-footer__news -->
+
+                <hr class="hide--xl">
+
+                <div class="news-footer__tweets">
+				    <?php get_template_part('template-parts/partials/partial', 'tweets'); ?>
+                </div> <!-- / news-footer__tweets -->
             </div>
         </div>
 
     </div>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-
-
-
-
-
-			<?php
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<?php else : get_template_part( 'template-parts/content', 'none' ); ?>
+<?php endif; ?>
 
 <?php
-get_sidebar();
 get_footer();

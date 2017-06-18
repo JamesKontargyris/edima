@@ -7,6 +7,9 @@
 .stripe--small-padding {
   padding: $base-spacing 0;
 }
+.stripe--large-padding {
+  padding: $base-spacing * 4 0;
+}
 .stripe--no-margin {
   margin:0;
 }
@@ -16,7 +19,7 @@
 }
 
 .stripe--border-bottom {
-  border-bottom:0.1rem dotted $grey;
+  border-bottom:0.1rem solid $red;
 }
 
 .stripe--white {

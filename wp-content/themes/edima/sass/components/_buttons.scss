@@ -7,6 +7,10 @@
   margin-bottom:0.5rem;
 }
 
+.button--small {
+  @include font-size(10, 10);
+}
+
 .button--primary:link,
 .button--primary:visited {
   background:linear-gradient(to bottom, $green 0%, darken($green, 7%) 100%), $green;
