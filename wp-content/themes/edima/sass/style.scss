@@ -51,16 +51,14 @@ Text Domain: edima
 'components/widgets',
 'components/gallery',
 'components/page-nav',
-'components/vertical_menu',
 'components/tweet',
-'components/news-story',
 'components/news-extract',
-'components/news-archive',
 'components/news-filters',
 'components/news-footer',
 'components/social-media';
 
 /// Page-specific stylesheets
-//@import
-//'pages/home',
-//'pages/contact';
+@import
+'pages/tax-archive',
+'pages/news-story',
+'pages/news-archive';

@@ -14,4 +14,8 @@
     @include span-columns(3.5);
     margin-bottom:0;
   }
+
+  .news-footer__filters {
+    @include box();
+  }
 }

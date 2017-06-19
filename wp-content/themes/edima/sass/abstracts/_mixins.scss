@@ -325,8 +325,8 @@
     left: auto;
     right: auto;
   }
-  padding-left:1.5rem;
-  padding-right:1.5rem;
+  padding-left:2rem;
+  padding-right:2rem;
 
   @include media($l-up) {
     padding-left:3rem;
@@ -336,5 +336,18 @@
   @include media($xl-up) {
     padding-left: 7rem;
     padding-right: 7rem;
+  }
+}
+
+@mixin box($color: white) {
+  background:linear-gradient(to bottom, $color 40%, darken($color, 5%) 100%), $color;
+  padding:2rem;
+  border-radius: 0.5rem;
+  box-shadow:0 0.2rem 0.2rem rgba(black, 0.1);
+
+  // Any vertical menu active items in this box can spread a little wider, so the active element box stretches beyond the edges of this box
+  .vertical-menu > .vertical-menu__item > .vertical-menu__link.active {
+    margin:0 -2.5rem;
+    padding-left:2.5rem;
   }
 }

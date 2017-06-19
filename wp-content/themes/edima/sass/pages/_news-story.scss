@@ -1,5 +1,5 @@
 .news-story__hero {
-  border-bottom:3px solid $red;
+  border-bottom:0.3rem solid $red;
 
   @include media($l-up) {
     height: 60rem;
@@ -11,7 +11,7 @@
   position:relative;
   padding:7rem 2rem;
   color:white;
-  text-shadow:0 2px 0 black;
+  text-shadow:0 0.2rem 0 black;
 
   @include media($l-up) {
     padding:16rem 0;
@@ -69,14 +69,26 @@
   display:inline-block;
   padding:0.5rem 1rem;
   background-color: #e3e3e3;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   font-weight: 800;
   @include font-size(13, 14);
-  border-bottom:2px solid #d9d9d9;
+  border-bottom:0.2rem solid #d9d9d9;
   margin-bottom:$small-spacing;
   color:$green !important;
+
   &:hover {
     color:$dark-grey !important;
+    opacity:0.7;
+  }
+
+  &.active {
+    background-color:$green;
+    cursor:default;
+    color:white !important;
+    border-bottom:0.2rem solid darken($green, 5%);
+    &:hover {
+      opacity:1;
+    }
   }
 }
 

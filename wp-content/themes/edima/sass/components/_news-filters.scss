@@ -72,8 +72,8 @@
   }
 }
 
-.news-filter__group {
-  margin-bottom:$base-spacing;
+.news-filter__group:not(:last-child) {
+  margin-bottom:$base-spacing * 1.5;
 }
 
 .news-filter__group--tags {

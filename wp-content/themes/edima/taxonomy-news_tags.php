@@ -11,10 +11,10 @@ get_header(); ?>
 
 <?php
     // Get current news category info
-    $news_category = $wp_query->get_queried_object();
-    $cat_name      = $news_category->name;
-    $cat_id        = $news_category->term_id;
-    define('CAT_ID', $cat_id);
+    $news_tag = $wp_query->get_queried_object();
+    $tag_name      = $news_tag->name;
+    $tag_id        = $news_tag->term_id;
+    define('TAG_ID', $tag_id);
 ?>
 
 <?php get_template_part('template-parts/partials/partial', 'news-sub-nav'); ?>
@@ -24,15 +24,15 @@ get_header(); ?>
 
             <div class="container--with-padding margin--bottom">
                 <div class="tax-archive__main">
-                    <h5 class="text--upper margin--none text--grey">News in</h5>
-                    <h1 class="margin--bottom-large"><?php echo $cat_name; ?></h1>
-                    <?php $posts_by_news_category = get_news_by_news_category($cat_id, 5, 0); ?>
-                    <?php if ( $posts_by_news_category->have_posts() ) : ?>
-                        <?php while($posts_by_news_category->have_posts()) : $posts_by_news_category->the_post(); ?>
+                    <h5 class="text--upper margin--none text--grey">News tagged</h5>
+                    <h1 class="margin--bottom-large"><?php echo $tag_name; ?></h1>
+                    <?php $posts_by_news_tag = get_news_by_news_tag($tag_id, 5, 0); ?>
+                    <?php if ( $posts_by_news_tag->have_posts() ) : ?>
+                        <?php while($posts_by_news_tag->have_posts()) : $posts_by_news_tag->the_post(); ?>
                             <?php get_template_part('template-parts/partials/partial', 'horizontal-news-extract'); ?>
                         <?php endwhile; ?>
                     <?php else : ?>
-                        No news in this category.
+                        No news stories found.
                     <?php endif; ?>
                 </div>
                 <div class="tax-archive__sidebar">

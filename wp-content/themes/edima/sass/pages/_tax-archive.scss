@@ -1,0 +1,14 @@
+.tax-archive__main {
+  @include media($l-up) {
+    @include span-columns(8);
+  }
+}
+.tax-archive__sidebar {
+  margin-top:$base-spacing * 2;
+  @include box();
+
+  @include media($l-up) {
+    @include span-columns(4);
+    margin-top:0;
+  }
+}

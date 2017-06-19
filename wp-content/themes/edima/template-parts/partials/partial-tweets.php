@@ -1,5 +1,3 @@
-<h5 class="text--upper"><i class="fa fa-lg fa-twitter"></i> @EDIMA_EU <a href="https://twitter.com/intent/follow?screen_name=EDiMA_EU" target="_blank" class="header-link">Follow Us</a></h5>
-
 <div class="tweet__group tweet__group--fade">
 
     <?php $twitter = new Twitter; ?>

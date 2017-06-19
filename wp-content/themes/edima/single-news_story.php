@@ -45,7 +45,7 @@ get_header(); ?>
             </h5>
             <h1 class="news-story__headline"><?php the_title(); ?></h1>
             <div class="news-story__meta">
-                <?php if(get_field('author')) : ?>By <?php echo get_field('author'); ?><span class="text--divider">|</span><?php endif; ?><?php echo the_date('d F Y'); ?><span class="text--divider">|</span> Share: <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>
+                <?php if(get_field('author')) : ?>By <?php echo get_field('author'); ?><span class="text--divider">|</span><?php endif; ?><?php echo the_date('d F Y'); ?><span class="hide--s"><span class="text--divider">|</span> Share: <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?></span>
             </div>
         </div>
     </div>
@@ -76,14 +76,17 @@ get_header(); ?>
 
     <div class="stripe stripe--no-margin stripe--light-grey">
         <div class="stripe__content">
+            <h5 class="text--upper"><i class="fa fa-newspaper-o"></i> More News</h5>
             <div class="news-footer__news">
                 <?php get_template_part('template-parts/partials/partial', 'more-news'); ?>
             </div> <!-- / news-footer__news -->
 
             <hr class="hide--xl">
 
-            <div class="news-footer__tweets">
-                <?php get_template_part('template-parts/partials/partial', 'tweets'); ?>
+            <div class="news-footer__filters">
+	            <?php get_template_part('template-parts/partials/partial', 'news-filter-categories'); ?>
+	            <?php get_template_part('template-parts/partials/partial', 'news-filter-calendar'); ?>
+	            <?php get_template_part('template-parts/partials/partial', 'news-filter-tags'); ?>
             </div> <!-- / news-footer__tweets -->
         </div>
     </div>

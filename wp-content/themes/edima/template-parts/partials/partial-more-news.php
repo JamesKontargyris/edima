@@ -1,4 +1,3 @@
-<h5 class="text--upper"><i class="fa fa-newspaper-o"></i> More News</h5>
 <?php
     if( is_post_type_archive('news_story') ) {
         // This is the news archive page
@@ -10,17 +9,24 @@
 ?>
 <?php if($news_stories->have_posts()) : while($news_stories->have_posts()) : $news_stories->the_post();
 	?>
-	<div class="news-extract news-extract--horizontal">
-		<a href="<?php echo get_the_permalink(); ?>">
+    <div class="news-extract news-extract--horizontal">
+	    <?php if ( has_post_thumbnail() ) : ?>
+            <div class="news-extract__image">
+                <a href="<?php echo get_the_permalink(); ?>">
+                    <img src="<?php echo the_post_thumbnail_url('news-extract'); ?>" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>">
+                </a>
+            </div>
+	    <?php endif; ?>
 
-			<?php if ( has_post_thumbnail() ) : ?>
-				<img src="<?php echo the_post_thumbnail_url('news-extract'); ?>" class="news-extract__image hide--s" alt="<?php echo get_the_title(); ?>" title="<?php echo get_the_title(); ?>">
-			<?php endif; ?>
-			<span class="news-extract__headline"><?php the_title(); ?></span>
-		</a>
-		<div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?> </div>
-		<div class="news-extract__extract"><?php echo limit_text(get_the_excerpt(), 25); // so it is inline ?> <a href="#">Read more...</a></div>
-	</div>
+
+        <div class="news-extract__details">
+            <div class="news-extract__headline"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></div>
+            <div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?> </div>
+            <div class="news-extract__extract"><?php echo limit_text(get_the_excerpt(), 25); // so it is inline ?> <a href="#">Read more...</a></div>
+        </div>
+
+
+    </div>
 <?php endwhile; ?>
 <?php else : ?>
     No more news stories.
