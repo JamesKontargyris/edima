@@ -40,6 +40,7 @@ get_header(); ?>
                             </div>
                             <div class="news-archive__hero-story__extract"><?php the_excerpt(); ?></div>
                             <a href="<?php echo get_the_permalink(); ?>" class="button button--primary">Read More</a>
+                            <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>
                         </div>
                     <?php endwhile; endif; wp_reset_postdata(); ?>
 
@@ -68,6 +69,7 @@ get_header(); ?>
                                 <div class="news-extract__meta text--upper"><?php echo the_date('d F Y'); ?></div>
                                 <div class="news-extract__extract margin--small-bottom"><?php the_excerpt(); ?></div>
                                 <a href="<?php echo get_the_permalink(); ?>" class="button button--primary button--small">Read More</a>
+	                            <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>
                             </div>
                         </div>
                     <?php endwhile; ?>

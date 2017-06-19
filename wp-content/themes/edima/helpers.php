@@ -70,3 +70,48 @@ function limit_text($text, $limit) {
 	}
 	return $text;
 }
+
+// SOCIAL MEDIA LINKS
+function social_media_link_twitter($url = '', $title = '', $via = 'EDiMA_EU', $additional_classes = '')
+{
+	$link = '';
+
+	$link .= '<a href="https://twitter.com/intent/tweet?source=' . urlencode($url) . '&text=' . urlencode($title) . ' - ' . urlencode($url) . '&via=' . $via . '" target="_blank" alt="Share on Twitter" title="Share on Twitter" class="social-media__link social-media__link-twitter ' . $additional_classes . '">';
+	$link .= '<i class="fa fa-twitter"></i>';
+	$link .= '</a>';
+
+	return $link;
+}
+
+function social_media_link_facebook($url = '', $title = '', $additional_classes = '')
+{
+	$link = '';
+
+	$link .= '<a href="https://www.facebook.com/sharer/sharer.php?u=' . urlencode($url) . '&title=' . urlencode($title) . '" target="_blank" alt="Share on Facebook" title="Share on Facebook" class="social-media__link social-media__link-facebook ' . $additional_classes . '">';
+	$link .= '<i class="fa fa-facebook"></i>';
+	$link .= '</a>';
+
+	return $link;
+}
+
+function social_media_link_linkedin($url = '', $title = '', $summary = '', $additional_classes = '')
+{
+	$link = '';
+
+	$link .= '<a href="http://www.linkedin.com/shareArticle?mini=true&url=' . urlencode($url) . '&title=' . $title . '&summary=' . $summary . '" target="_blank" alt="Share on LinkedIn" title="Share on LinkedIn" class="social-media__link social-media__link-linkedin ' . $additional_classes . '">';
+	$link .= '<i class="fa fa-linkedin"></i>';
+	$link .= '</a>';
+
+	return $link;
+}
+
+function social_media_link_email($url = '', $description = '', $title = '', $additional_classes = '')
+{
+	$link = '';
+
+	$link .= '<a href="mailto:?body=' . $description . '%0A%0A' . urlencode($url) . '&subject=' . $title . '" alt="Share by Email" title="Share by Email" class="social-media__link social-media__link-email ' . $additional_classes . '">';
+	$link .= '<i class="fa fa-envelope-o"></i>';
+	$link .= '</a>';
+
+	return $link;
+}

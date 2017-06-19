@@ -45,7 +45,7 @@ get_header(); ?>
             </h5>
             <h1 class="news-story__headline"><?php the_title(); ?></h1>
             <div class="news-story__meta">
-                <?php if(get_field('author')) : ?>By <?php echo get_field('author'); ?> | <?php endif; ?><?php echo the_date('d F Y'); ?>
+                <?php if(get_field('author')) : ?>By <?php echo get_field('author'); ?><span class="text--divider">|</span><?php endif; ?><?php echo the_date('d F Y'); ?><span class="text--divider">|</span> Share: <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>
             </div>
         </div>
     </div>
@@ -53,24 +53,18 @@ get_header(); ?>
     <div id="#content" class="content-area">
         <div id="primary" class="container--with-padding">
             <main id="main" class="site-main" role="main">
-                <!--<div class="news-story__categories sidebar-content">
-					<aside>
-						<ul class="vertical-menu vertical-menu__small vertical-menu--upper">
-							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">All News</a></li>
-							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 1</a></li>
-							<li class="vertical-menu__item vertical-menu__item--active"><a class="vertical-menu__link" href="#">News Category 2</a></li>
-							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 3</a></li>
-							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 4</a></li>
-							<li class="vertical-menu__item"><a class="vertical-menu__link" href="#">News Category 5</a></li>
-						</ul>
-					</aside>
-				</div>-->
 
                 <div class="news-story__content">
 
 				    <?php the_content(); ?>
 
-				    <?php get_template_part('template-parts/partials/partial', 'news-tags'); ?>
+                    <?php get_template_part('template-parts/partials/partial', 'news-tags'); ?>
+
+                    <div class="margin--bottom-large">
+                        <span class="text--blue"><i class="fa fa-share"></i> Share:</span> <?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>
+                    </div>
+
+
 
                 </div>
 

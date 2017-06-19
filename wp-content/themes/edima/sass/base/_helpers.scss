@@ -41,15 +41,31 @@
   margin-right:0;
 }
 
+.margin--top {
+  margin-top:$base-spacing;
+}
+
+.margin--large-top,
+.margin--top-large {
+  margin-top:$base-spacing * 2;
+}
+
+.margin--small-top,
+.margin--top-small {
+  margin-top:$base-spacing * 0.5;
+}
+
 .margin--bottom {
   margin-bottom:$base-spacing;
 }
 
-.margin--large-bottom {
+.margin--large-bottom,
+.margin--bottom-large {
   margin-bottom:$base-spacing * 2;
 }
 
-.margin--small-bottom {
+.margin--small-bottom,
+.margin--bottom-small {
   margin-bottom:$base-spacing * 0.5;
 }
 
@@ -62,6 +78,9 @@
 }
 .text--blue {
   color:$blue;
+}
+.text--grey {
+  color:$grey;
 }
 .text--light-blue {
   color:$light-blue;
