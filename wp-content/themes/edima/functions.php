@@ -417,3 +417,19 @@ function my_mce_before_init_insert_formats( $init_array ) {
 }
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+/**
+ * Adds an active class to the link to the current date archive in .vertical-menu
+ * The filter is added and removed right before and after the call to wp_get_archives() or wp_get_archives_cpt(),
+ * so it doesn't affect other archive function calls
+ *
+ * @param $link_html
+ *
+ * @return mixed
+ */
+function date_archive_current_month_selector( $link_html ) {
+	$current_month = get_the_date("F Y");
+	if ( preg_match('/'.$current_month.'/i', $link_html ) )
+		$link_html = preg_replace('/<a/i', '<a class="active"', $link_html );
+	return $link_html;
+}

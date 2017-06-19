@@ -55,3 +55,23 @@ function get_news_by_news_tag($tax_id = '', $count = 3, $offset = 0, $ignore_ids
 
 	return new WP_Query($args);
 }
+
+function get_news_by_date($year = 0, $month = 0,  $count = 3, $offset = 0, $ignore_ids = []) {
+	$args = [
+		'post_status' => 'publish',
+		'post_type' => 'news_story',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'posts_per_page' => $count,
+		'post__not_in' => $ignore_ids,
+		'offset' => $offset,
+		'date_query' => [
+			[
+				'year' => $year,
+				'month' => $month
+			]
+		]
+	];
+
+	return new WP_Query($args);
+}

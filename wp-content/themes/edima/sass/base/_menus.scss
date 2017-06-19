@@ -79,8 +79,8 @@
 }
 .vertical-menu__link:link,
 .vertical-menu__link:visited,
-.vertical-menu a:link,
-.vertical-menu a:visited {
+.vertical-menu__item a:link,
+.vertical-menu__item a:visited {
   display:block;
   @include font-size(13,14);
   padding:0.7rem 0;

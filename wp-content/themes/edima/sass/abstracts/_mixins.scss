@@ -346,7 +346,8 @@
   box-shadow:0 0.2rem 0.2rem rgba(black, 0.1);
 
   // Any vertical menu active items in this box can spread a little wider, so the active element box stretches beyond the edges of this box
-  .vertical-menu > .vertical-menu__item > .vertical-menu__link.active {
+  .vertical-menu > .vertical-menu__item > .vertical-menu__link.active,
+  .vertical-menu > .vertical-menu__item > a.active {
     margin:0 -2.5rem;
     padding-left:2.5rem;
   }

@@ -115,3 +115,8 @@ function social_media_link_email($url = '', $description = '', $title = '', $add
 
 	return $link;
 }
+
+function month_number_to_name($month_number = 0) {
+	$dateObj   = DateTime::createFromFormat('!m', $month_number);
+	return $dateObj->format('F');
+}
