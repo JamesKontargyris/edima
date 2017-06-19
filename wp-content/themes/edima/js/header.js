@@ -21,5 +21,5 @@
     });
 
     // Sticky header on scroll
-    $(".site-header").sticky({topSpacing:0, zIndex:100});
+    $(".site-header").sticky({topSpacing:0, zIndex:10});
 })();

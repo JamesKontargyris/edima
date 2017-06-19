@@ -19,7 +19,7 @@
 			<span class="news-extract__headline"><?php the_title(); ?></span>
 		</a>
 		<div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?></div>
-		<div class="news-extract__extract"><?php echo get_the_excerpt(); // so it is inline ?> <a href="#">Read more...</a></div>
+		<div class="news-extract__extract"><?php echo limit_text(get_the_excerpt(), 25); // so it is inline ?> <a href="#">Read more...</a></div>
 	</div>
 <?php endwhile; ?>
 <?php else : ?>

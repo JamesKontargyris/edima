@@ -66,12 +66,14 @@
 }
 
 .news-story__tag {
+  display:inline-block;
   padding:0.5rem 1rem;
   background-color: #e3e3e3;
   border-radius: 8px;
   font-weight: 800;
   @include font-size(13, 14);
   border-bottom:2px solid #d9d9d9;
+  margin-bottom:$small-spacing;
   color:$green !important;
   &:hover {
     color:$dark-grey !important;

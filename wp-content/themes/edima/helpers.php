@@ -32,6 +32,15 @@ function get_menu_items($menu_name = 'primary')
 	return $items;
 }
 
+/**
+ * Process categories and lay them out in a nice, linked row with commas
+ *
+ * @param array $categories
+ * @param string $category_item_class
+ * @param string $category_link_class
+ *
+ * @return string
+ */
 function inline_categories($categories = [], $category_item_class = 'news-story__category', $category_link_class = 'news-story__category-link')
 {
 	$categories_output = "";
@@ -43,4 +52,21 @@ function inline_categories($categories = [], $category_item_class = 'news-story_
 	}
 
 	return $categories_output;
+}
+
+/**
+ * Truncate text
+ *
+ * @param $text
+ * @param $limit
+ *
+ * @return string
+ */
+function limit_text($text, $limit) {
+	if (str_word_count($text, 0) > $limit) {
+		$words = str_word_count($text, 2);
+		$pos = array_keys($words);
+		$text = substr($text, 0, $pos[$limit]) . '...';
+	}
+	return $text;
 }

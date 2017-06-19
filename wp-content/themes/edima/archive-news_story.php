@@ -10,6 +10,7 @@
 get_header(); ?>
 
 <?php get_template_part('template-parts/partials/partial', 'news-sub-nav'); ?>
+<?php get_template_part('template-parts/partials/partial', 'news-filters'); ?>
 
 <?php if ( have_posts() ) : ?>
 
@@ -44,15 +45,13 @@ get_header(); ?>
 
                 </div>
             </div>
-
         </div>
-
         <!-- /Latest News Story Hero-->
 
         <!-- Featured stories -->
         <?php $featured_stories = get_latest_news(3, 1); ?>
         <?php if($featured_stories->have_posts()) : ?>
-            <div class="news-archive__feature-stories container">
+            <div class="news-archive__feature-stories container margin--bottom">
                 <div class="gallery gallery__row-of-3">
                     <?php while($featured_stories->have_posts()) : $featured_stories->the_post(); ?>
                         <div class="gallery__item news-archive__feature-story">

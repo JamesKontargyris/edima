@@ -120,6 +120,8 @@ function edima_scripts() {
 
 	wp_enqueue_script( 'edima-page-nav', get_template_directory_uri() . '/js/pageNav.js', array(), '20170617', true );
 
+	wp_enqueue_script( 'edima-news', get_template_directory_uri() . '/js/news.js', array(), '20170618', true );
+
 	wp_enqueue_script( 'edima-fontawesome', 'https://use.fontawesome.com/6d6e2737fb.js', array(), '20170617', true );
 
 	wp_enqueue_script( 'edima-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -315,6 +317,12 @@ function my_mce_before_init_insert_formats( $init_array ) {
 	// Define the style_formats array
 	$style_formats = [
 		// Each array child is a format with it's own settings
+		[
+			'title' => 'Uppercase',
+			'block' => 'span',
+			'classes' => 'text--upper',
+			'wrapper' => true,
+		],
 		[
 			'title' => 'Caption',
 			'block' => 'div',

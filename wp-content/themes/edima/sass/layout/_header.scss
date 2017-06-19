@@ -1,7 +1,7 @@
 header.site-header {
   position: relative;
   width:100%;
-  z-index:100;
+  z-index:10;
   background:
           url(img/bg_maze_white_transparency.png) top left repeat,
           linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),

@@ -71,3 +71,23 @@
   }
 
 }
+
+.news-filter-menu {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.news-filter-menu__link:link,
+.news-filter-menu__link:visited,
+.news-filter-menu a:link,
+.news-filter-menu a:visited {
+  display:block;
+  color:white !important;
+  @include font-size(13,14);
+  font-weight: 400;
+  padding:0.7rem 0;
+}
+.news-filter-menu__link:hover,
+.news-filter-menu a:hover {
+  color:tint($blue, 40%) !important;
+}
