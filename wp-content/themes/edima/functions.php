@@ -427,9 +427,8 @@ add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
  *
  * @return mixed
  */
-function date_archive_current_month_selector( $link_html ) {
-	$current_month = get_the_date("F Y");
-	if ( preg_match('/'.$current_month.'/i', $link_html ) )
+function date_archive_current_month_selector( $link_html ) { // Uses ARCHIVE_DATE as defined in content-news-date-archive.php
+	if ( defined('ARCHIVE_DATE') && preg_match('/'.ARCHIVE_DATE.'/i', $link_html ) )
 		$link_html = preg_replace('/<a/i', '<a class="active"', $link_html );
 	return $link_html;
 }

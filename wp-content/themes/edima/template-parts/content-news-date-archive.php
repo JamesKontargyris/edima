@@ -3,6 +3,7 @@
 // Get the date filter details
 $year  = get_the_date( _x( 'Y', 'monthly archives date format' ) );
 $month = get_query_var( 'monthnum' );
+define( 'ARCHIVE_DATE', get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
 ?>
 
 <div class="container--with-padding margin--bottom">
