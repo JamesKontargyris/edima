@@ -1,6 +1,7 @@
 .tax-archive__main {
   @include media($l-up) {
     @include span-columns(8);
+    @include shift(4);
   }
 }
 .tax-archive__sidebar {
@@ -9,6 +10,7 @@
 
   @include media($l-up) {
     @include span-columns(4);
+    @include shift(-12);
     margin-top:0;
   }
 }

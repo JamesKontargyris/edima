@@ -12,7 +12,7 @@
         <div class="news-extract__headline"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></div>
         <div class="news-extract__meta text--upper">
             <?php echo get_the_date('d F Y'); ?>
-	        <?php if( ! is_tax('news_categories')) : // Don't show the news category listing is we're on a news category archive page ?>
+	        <?php if( ! is_tax('news_categories') && ! $_POST['is_tax_news_categories']) : // Don't show the news category listing is we're on a news category archive page. the POST value is used during the AJAX call when loading more stories ?>
                 in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?>
             <?php endif; ?>
         </div>

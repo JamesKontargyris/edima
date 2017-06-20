@@ -1,10 +1,21 @@
 <?php
 	require_once('../../../../../wp-blog-header.php');
 
-    if(isset($_POST['is_date'])) { // this is a date archive
-	    $news_stories = get_news_by_date($_POST['year'], $_POST['month'], 5, $_POST['offset']);
+	if($_POST['is_date']) { // this is a date archive
+
+	      $news_stories = get_news_by_date( $_POST['year'], $_POST['month'], get_option( 'posts_per_page' ), $_POST['offset'] );
+
+	} elseif($_POST['is_tax_news_categories']) { // this is a news category taxonomy archive
+	       $news_stories = get_news_by_news_category($_POST['cat_id'], get_option( 'posts_per_page' ), $_POST['offset']);
+
+	} elseif($_POST['is_tax_news_tags']) { // this is a news tags taxonomy archive
+		$news_stories = get_news_by_news_tags($_POST['tag_id'], get_option( 'posts_per_page' ), $_POST['offset']);
+
 	} else {
-		$news_stories = get_latest_news(3, $_POST['offset']);
+
+    	// It's the homepage
+		$news_stories = get_latest_news(get_option( 'posts_per_page' ), $_POST['offset']);
+
 	}
 
 

@@ -9,7 +9,6 @@
 get_header(); ?>
 
 <?php get_template_part('template-parts/partials/partial', 'news-sub-nav'); ?>
-<?php get_template_part('template-parts/partials/partial', 'news-filters'); ?>
 
 <?php if ( have_posts() ) : ?>
 

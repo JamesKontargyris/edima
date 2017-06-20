@@ -26,14 +26,15 @@ get_header(); ?>
                 <div class="tax-archive__main">
                     <h5 class="text--upper margin--none text--grey">News in</h5>
                     <h1 class="margin--bottom-large"><?php echo $cat_name; ?></h1>
-                    <?php $posts_by_news_category = get_news_by_news_category($cat_id, 5, 0); ?>
+                    <?php $posts_by_news_category = get_news_by_news_category($cat_id, get_option( 'posts_per_page' ), 0); ?>
                     <?php if ( $posts_by_news_category->have_posts() ) : ?>
                         <?php while($posts_by_news_category->have_posts()) : $posts_by_news_category->the_post(); ?>
                             <?php get_template_part('template-parts/partials/partial', 'horizontal-news-extract'); ?>
                         <?php endwhile; ?>
                     <?php else : ?>
-                        No news in this category.
+                        No news stories found.
                     <?php endif; ?>
+                    <div class="news-ajax"></div>
                 </div>
                 <div class="tax-archive__sidebar">
                     <?php get_template_part('template-parts/partials/partial', 'news-filter-categories'); ?>

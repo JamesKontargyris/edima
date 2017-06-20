@@ -26,7 +26,7 @@ get_header(); ?>
                 <div class="tax-archive__main">
                     <h5 class="text--upper margin--none text--grey">News tagged</h5>
                     <h1 class="margin--bottom-large"><?php echo $tag_name; ?></h1>
-                    <?php $posts_by_news_tag = get_news_by_news_tag($tag_id, 5, 0); ?>
+                    <?php $posts_by_news_tag = get_news_by_news_tag($tag_id, get_option( 'posts_per_page' ), 0); ?>
                     <?php if ( $posts_by_news_tag->have_posts() ) : ?>
                         <?php while($posts_by_news_tag->have_posts()) : $posts_by_news_tag->the_post(); ?>
                             <?php get_template_part('template-parts/partials/partial', 'horizontal-news-extract'); ?>
@@ -34,6 +34,7 @@ get_header(); ?>
                     <?php else : ?>
                         No news stories found.
                     <?php endif; ?>
+                    <div class="news-ajax"></div>
                 </div>
                 <div class="tax-archive__sidebar">
                     <?php get_template_part('template-parts/partials/partial', 'news-filter-categories'); ?>

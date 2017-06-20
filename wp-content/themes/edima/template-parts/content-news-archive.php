@@ -1,3 +1,5 @@
+<?php get_template_part('template-parts/partials/partial', 'news-filters'); ?>
+
 <!-- Latest News Story Hero-->
 <div class="news-archive__hero-story stripe stripe--large-padding stripe--border-bottom">
 	<div class="stripe__content">
