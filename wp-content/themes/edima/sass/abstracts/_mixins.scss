@@ -340,7 +340,7 @@
 }
 
 @mixin box($color: white) {
-  background:linear-gradient(to bottom, $color 40%, darken($color, 5%) 100%), $color;
+  background:linear-gradient(to bottom, $color 50%, darken($color, 4%) 100%), $color;
   padding:2rem;
   border-radius: 0.5rem;
   box-shadow:0 0.2rem 0.2rem rgba(black, 0.1);

@@ -11,7 +11,7 @@
 		<?php endif; ?>
 		<span class="news-extract__headline"><?php the_title(); ?></span>
 	</a>
-	<div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?></div>
+	<div class="news-extract__meta text--upper"><?php echo get_the_date('n F Y'); ?></div>
 	<div class="news-extract__extract margin--small-bottom"><?php echo limit_text(get_the_excerpt(), 25); ?></div>
 	<a href="<?php echo get_the_permalink(); ?>" class="button button--primary button--small">Read More</a>
 	<?php get_template_part('template-parts/partials/partial', 'social-media-links'); ?>

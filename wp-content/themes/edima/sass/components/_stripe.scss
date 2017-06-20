@@ -37,3 +37,19 @@
 .stripe--grey {
   background: linear-gradient($grey 33%, darken($grey, 8%)), $grey;
 }
+
+.stripe--light-green {
+  background: linear-gradient($light-green 33%, darken($light-green, 8%)), $light-green;
+}
+
+.stripe--light-green--fade {
+  background: linear-gradient(to bottom, $light-green 20%, rgba($light-green, 0) 50%);
+}
+
+.stripe--light-blue {
+  background: lighten($light-blue, 3%);
+}
+
+.stripe--light-blue--fade {
+  background: linear-gradient(to bottom, lighten($light-blue, 2%) 20%, rgba($light-blue, 0) 50%);
+}

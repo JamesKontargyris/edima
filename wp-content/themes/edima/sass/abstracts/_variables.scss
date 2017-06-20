@@ -17,14 +17,15 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Primary Colours
-$blue: rgb(0, 59, 119);
-$light-blue: rgb(153, 203, 205);
-$red: rgb(205, 15, 54);
-$green: rgb(0, 160, 163);
-$light-grey: rgb(233, 233, 233);
+$blue: #003b77;
+$light-blue: #cfdae6;
+$red: #cd0f36;
+$green: #00a0a3;
+$light-green: #daebe9;
+$light-grey: #ebebeb;
 $light-light-grey: lighten($light-grey, 5%);
-$grey: rgb(157, 157, 157);
-$dark-grey: rgb(90, 90, 90);
+$grey: #9d9d9d;
+$dark-grey: #5a5a5a;
 
 // Other Colours
 $white: hsl(0, 0, 100);

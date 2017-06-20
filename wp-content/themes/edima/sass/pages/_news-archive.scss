@@ -1,8 +1,10 @@
 .news-archive__hero-story {
   @include clearfix;
+  padding:$base-spacing * 2 0;
   @include media($l-up) {
     display:flex;
     align-items:  center;
+    padding:$base-spacing * 4 0;
   }
 }
 

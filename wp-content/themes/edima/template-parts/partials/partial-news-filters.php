@@ -1,5 +1,5 @@
 <div class="news-filters">
-	<div class="news-filter__content">
+	<div class="news-filters__content">
 		<div class="news-filters__tab"><a href="#">News Archive</a></div>
 
         <?php get_template_part('template-parts/partials/partial', 'news-filter-categories'); ?>

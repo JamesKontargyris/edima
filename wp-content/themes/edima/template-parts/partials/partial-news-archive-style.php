@@ -19,7 +19,7 @@
         -o-filter: blur(5px) grayscale(25%);
 	}
 
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 768px) {
         .news-archive__hero-story .stripe__content:before {
             background:white;
 		}

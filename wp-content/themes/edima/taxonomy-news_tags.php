@@ -23,8 +23,13 @@ get_header(); ?>
         <main id="main" class="site-main" role="main">
 
             <div class="container--with-padding margin--bottom">
+
+                <div class="breadcrumbs">
+		            <?php breadcrumbs(); ?>
+                </div>
+
                 <div class="tax-archive__main">
-                    <h5 class="text--upper margin--none text--grey">News tagged</h5>
+                    <h5 class="text--upper margin--none">News tagged</h5>
                     <h1 class="margin--bottom-large"><?php echo $tag_name; ?></h1>
                     <?php $posts_by_news_tag = get_news_by_news_tag($tag_id, get_option( 'posts_per_page' ), 0); ?>
                     <?php if ( $posts_by_news_tag->have_posts() ) : ?>

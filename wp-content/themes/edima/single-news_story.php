@@ -74,7 +74,7 @@ get_header(); ?>
 
     <?php endwhile; endif; ?>
 
-    <div class="stripe stripe--no-margin stripe--light-grey">
+    <div class="stripe stripe--no-margin stripe--light-blue--fade">
         <div class="stripe__content">
             <h5 class="text--upper"><i class="fa fa-newspaper-o"></i> More News</h5>
             <div class="news-footer__news">

@@ -6,6 +6,7 @@
 
   &.active {
     display:block;
+    z-index:6000;
   }
 
   @include media($xl-up) {
@@ -82,8 +83,13 @@
 .vertical-menu__item a:link,
 .vertical-menu__item a:visited {
   display:block;
-  @include font-size(13,14);
-  padding:0.7rem 0;
+  @include font-size(15,16);
+  padding:1.2rem 0;
+
+  @include media($l-up) {
+    @include font-size(13,14);
+    padding:0.7rem 0;
+  }
 
   &.active {
     border-radius: $base-border-radius;

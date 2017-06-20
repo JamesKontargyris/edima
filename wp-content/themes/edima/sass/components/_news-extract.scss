@@ -41,7 +41,7 @@
   .news-extract__image { // applied to container div if horizontal
     box-shadow:none;
 
-    @include media($l-up) {
+    @include media($m-up) {
       @include span-columns(4);
       margin-right:$gutter * 0.25;
     }
@@ -52,7 +52,7 @@
     }
   }
   .news-extract__details {
-    @include media($l-up) {
+    @include media($m-up) {
       @include span-columns(8);
     }
   }
