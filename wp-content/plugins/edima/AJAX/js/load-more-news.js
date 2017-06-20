@@ -2,12 +2,16 @@
     // The maximum number of pages the current query can return.
     var max = parseInt(ajax_load_more_news.maxStories),
     url = ajax_load_more_news.url,
-    offset = parseInt(ajax_load_more_news.offset);
+    offset = parseInt(ajax_load_more_news.offset),
+    isDate = parseInt(ajax_load_more_news.isDate),
+    isNewsArchive = parseInt(ajax_load_more_news.isNewsArchive),
+    year = parseInt(ajax_load_more_news.year),
+    month = parseInt(ajax_load_more_news.month);
 
     if(max > offset) {
-        $('.news-footer__news')
-            .append('<div class="ajax-more-news-placeholder-7"></div>')
-            .append('<a href="#" class="button button--primary ajax-more-news-button" data-offset="7">More News</a>');
+        $('.news-ajax')
+            .append('<div class="ajax-more-news-placeholder-' + offset + '"></div>')
+            .append('<a href="#" class="button button--primary ajax-more-news-button" data-offset="' + offset + '">More News</a>');
     }
 
     $('.ajax-more-news-button').click(function() {
@@ -17,7 +21,7 @@
         // Show that we're working.
         moreNewsButton.text('Loading news stories...');
 
-        $('.ajax-more-news-placeholder-' + offset).load(url, { 'offset': offset }, function()
+        $('.ajax-more-news-placeholder-' + offset).load(url, { 'offset': offset, 'is_date': isDate, 'is_news_archive': isNewsArchive, 'year': year, 'month': month }, function()
         {
             var offsetNew = parseInt(offset + 3);
             if(max - offsetNew > 1) {

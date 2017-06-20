@@ -52,6 +52,7 @@
 		<div class="news-footer__news">
 			<h5 class="text--upper"><i class="fa fa-newspaper-o"></i> More News</h5>
 			<?php get_template_part('template-parts/partials/partial', 'more-news'); ?>
+            <div class="news-ajax"></div> <!-- Placeholder for ajax more news loader button etc. -->
 		</div> <!-- / news-footer__news -->
 
 		<hr class="hide--xl">

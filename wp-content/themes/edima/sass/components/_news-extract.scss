@@ -57,3 +57,11 @@
     }
   }
 }
+
+.news-extract__category {
+  &:not(:last-child) {
+    &:after {
+      content: ', ';
+    }
+  }
+}
