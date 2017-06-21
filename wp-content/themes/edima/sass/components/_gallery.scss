@@ -2,9 +2,25 @@
 
 }
 
-.gallery__row-of-3 {
+.gallery__item {
+  margin-bottom: $base-spacing;
+}
+
+.gallery__row-of-2 {
 
   @include media($m-up) {
+    .gallery__item {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+  }
+}
+
+
+.gallery__row-of-3 {
+
+  @include media($l-up) {
     .gallery__item {
       @include span-columns(4);
       @include omega(3n);

@@ -86,6 +86,22 @@
   color:$light-blue;
 }
 
+.text--white {
+  color:white;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
 .text--with-underline {
   padding-bottom: $base-spacing * 0.33;
   border-bottom:0.3rem solid $red;
@@ -96,9 +112,60 @@
   padding:0 5px;
 }
 
+.text--page-intro {
+  margin:0;
+  @include font-size(14, 20);
+
+  @include media($m-up) {
+    @include font-size(15, 21);
+    width: 70%;
+  }
+}
+
+.text--page-intro--centered {
+  margin:0 auto;
+}
+
 // Positioning
 .position--center-vertical {
   display:flex;
   align-content:center;
   align-items:center;
+}
+
+// Icons
+.icon--hero {
+  display:block;
+  margin:0 auto $base-spacing;
+  max-width:4.8rem;
+}
+
+// Grid
+.grid--one-quarter {
+  @include one-quarter-nom;
+}
+.grid--one-quarter-o {
+  @include one-quarter;
+}
+
+.grid--half {
+  @include one-half-nom;
+}
+.grid--half-o {
+  @include one-half;
+}
+
+.grid--two-thirds {
+  @include two-thirds-nom;
+}
+
+.grid--one-third {
+  @include one-third-nom;
+}
+.grid--one-third-o {
+  @include one-third;
+}
+
+.grid--three-quarters {
+  @include three-quarters-nom;
 }

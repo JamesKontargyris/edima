@@ -1,0 +1,99 @@
+.policy-area-tile__group {
+  @include clearfix();
+  margin:$base-spacing * 3 0 $base-spacing * 2;
+}
+
+.policy-area-tile {
+  position: relative;
+  display:flex;
+  margin-bottom:$base-spacing;
+  align-items: center;
+  justify-content: center;
+  height:25rem;
+  text-align: center;
+  border-radius: $base-border-radius * 2;
+  overflow: hidden;
+  box-shadow:0 0.2rem 0.2rem rgba(black, 0.3);
+  transition: all 0.3s;
+}
+
+.policy-area-tile__bg {
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: -100;
+}
+
+.policy-area-tile__full-size-link {
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 9999;
+
+  &:hover ~ a {
+    background-color:white;
+    color:$green !important;
+  }
+}
+
+.policy-area-tile__content {
+  position: absolute;
+  bottom:0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:rgba(black, 0.3);
+  padding:1.5rem 1.5rem 4.5rem;
+  width:100%;
+  transition: all 0.5s;
+  cursor:pointer;
+}
+
+.policy-area-tile__title {
+  @include font-size(18, 20);
+  font-weight: 800;
+  text-transform: uppercase;
+  color:white;
+  text-shadow:0 -0.1rem 0 #919191;
+}
+
+.policy-area-tile__description {
+  display:none;
+  @include font-size(12, 16);
+  color:white;
+}
+
+.policy-area-tile__title,
+.policy-area-tile__description {
+  margin-bottom: $small-spacing;
+}
+
+.policy-area-tile__link {
+  position:absolute;
+  bottom:$base-spacing;
+  border-radius: 10rem;
+  background-color:$green;
+  padding:0.7rem;
+  color:white !important;
+  transition: background-color 0.5s ease;
+  margin:0;
+
+  &:hover {
+    background-color:white;
+    color:$green !important;
+  }
+}
+
+.policy-area-tile:hover .policy-area-tile__content,
+.policy-area-tile:active .policy-area-tile__content{
+  height: 100%;
+  background-color: rgba($green, 0.8);
+}
+
+.policy-area-tile:hover .policy-area-tile__bg {
+  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='3'%20/></filter></svg>#blur");
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+}

@@ -95,7 +95,7 @@ a:visited {
   color: $link-color;
   font-weight:500;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
+  transition: all $base-duration $base-timing;
 
   &:active,
   &:focus,

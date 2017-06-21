@@ -1,0 +1,45 @@
+.page-header {
+}
+
+.page-header__title {
+  font-weight:300;
+  @include font-size(28, 32);
+
+  @include media($m-up) {
+    @include font-size(36, 42);
+    letter-spacing: -0.2rem;
+  }
+
+  @include media($l-up) {
+    @include font-size(42, 48);
+  }
+}
+
+.page-header__hero-image {
+  display: block;
+  max-height:12rem;
+  margin:0 auto $base-spacing;
+
+  @include media($xl-up) {
+    max-width:18rem;
+  }
+}
+
+.page-header__arrow {
+  position:absolute;
+  bottom:-1.8rem;
+  left:50%;
+  margin-left:-1.8rem;
+  background:
+          url(img/bg_maze_white.png) top left repeat,
+          darken(white, 4%);
+  color:$blue;
+  @include font-size(18,18);
+  line-height:3.6rem;
+  border-radius: 50%;
+  width:3.6rem;
+  height:3.6rem;
+  text-align: center;
+  box-shadow:0 -0.2rem 0.5rem rgba(black, 0.05);
+  @include bob();
+}

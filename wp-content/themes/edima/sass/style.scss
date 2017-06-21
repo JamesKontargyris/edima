@@ -31,7 +31,8 @@ Text Domain: edima
 'base/base',
 'base/typography',
 'base/menus',
-'base/helpers';
+'base/helpers',
+'base/animations';
 
 /// Layout (page partials)
 @import
@@ -45,9 +46,9 @@ Text Domain: edima
 /// Components (modules)
 @import
 'components/breadcrumbs',
+'components/page-header',
 'components/stripe',
 'components/buttons',
-'components/contact_form_7',
 'components/widgets',
 'components/gallery',
 'components/page-nav',
@@ -55,7 +56,8 @@ Text Domain: edima
 'components/news-extract',
 'components/news-filters',
 'components/news-footer',
-'components/social-media';
+'components/social-media',
+'components/policy-area-tile';
 
 /// Page-specific stylesheets
 @import

@@ -112,6 +112,9 @@ function edima_scripts() {
 	wp_enqueue_style( 'edima-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', false );
+
+	wp_enqueue_script( 'edima-parallax', get_template_directory_uri() . '/js/parallax.min.js', array(), '20170621', false );
+
 	wp_enqueue_script( 'edima-vivus', 'http://cdn.jsdelivr.net/vivus/latest/vivus.min.js', array(), '20170615', true );
 
 	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
@@ -125,7 +128,12 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-fontawesome', 'https://use.fontawesome.com/6d6e2737fb.js', array(), '20170617', true );
 
 	wp_enqueue_script( 'edima-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'edima-header', get_template_directory_uri() . '/js/header.js', array(), '20170615', true );
+
+	wp_enqueue_script( 'edima-site-js', get_template_directory_uri() . '/js/site.js', array(), '20170621', true );
+	wp_enqueue_script( 'edima-page-header-js', get_template_directory_uri() . '/js/page-header.js', array(), '20170621', true );
+	wp_enqueue_script( 'edima-policy-area-js', get_template_directory_uri() . '/js/policy-area.js', array(), '20170621', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

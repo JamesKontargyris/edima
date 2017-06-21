@@ -2,54 +2,77 @@
   position:relative;
   padding:$base-spacing * 2 0;
   margin:0 0 $base-spacing * 2 0;
-  overflow: hidden;
 }
+
 .stripe--small-padding {
   padding: $base-spacing 0;
 }
+
 .stripe--large-padding {
-  padding: $base-spacing * 4 0;
+  padding: $base-spacing * 2 0;
+
+  @include media($l-up) {
+    padding: $base-spacing * 3.5 0;
+  }
 }
-.stripe--no-margin {
-  margin:0;
+
+.stripe--xlarge-padding {
+  padding: $base-spacing * 3 0;
+
+  @include media($l-up) {
+    padding: $base-spacing * 5 0;
+  }
 }
 
 .stripe__content {
   @include outer-container();
 }
 
-.stripe--border-bottom {
-  border-bottom:0.3rem solid $red;
+.stripe__content--side-padding {
+  @include media($l-up) {
+    padding-left:$column * 2;
+    padding-right:$column * 2;
+  }
 }
 
+
+
+// COLOURS
 .stripe--white {
   background-color: white;
 }
-
+.stripe--blue {
+  background: linear-gradient($blue 33%, darken($blue, 3%)), $blue;
+}
+.stripe--green {
+  background: linear-gradient($green 33%, darken($green, 3%)), $green;
+}
+.stripe--red {
+  background: linear-gradient($red 33%, darken($red, 3%)), $red;
+}
+.stripe--orange {
+  background: linear-gradient($orange 33%, darken($orange, 3%)), $orange;
+}
 .stripe--light-grey {
   background: linear-gradient($light-grey 33%, darken($light-grey, 8%)), $light-grey;
 }
-
 .stripe--light-light-grey {
   background-color: $light-light-grey;
 }
-
 .stripe--grey {
   background: linear-gradient($grey 33%, darken($grey, 8%)), $grey;
 }
-
 .stripe--light-green {
   background: linear-gradient($light-green 33%, darken($light-green, 8%)), $light-green;
 }
-
-.stripe--light-green--fade {
-  background: linear-gradient(to bottom, $light-green 20%, rgba($light-green, 0) 50%);
-}
-
 .stripe--light-blue {
   background: lighten($light-blue, 3%);
 }
 
+// FADED
+.stripe--light-green--fade {
+  background: linear-gradient(to bottom, $light-green 20%, rgba($light-green, 0) 50%);
+}
 .stripe--light-blue--fade {
   background: linear-gradient(to bottom, lighten($light-blue, 2%) 20%, rgba($light-blue, 0) 50%);
 }

@@ -229,6 +229,25 @@
   }
 }
 
+// 3/4 on Desktop - no omega
+@mixin three-quarters-nom {
+  @include media($xs) {
+    @include span-columns(12);
+  }
+  @include media($s) {
+    @include span-columns(12);
+  }
+  @include media($m) {
+    @include span-columns(12);
+  }
+  @include media($l) {
+    @include span-columns(12);
+  }
+  @include media($xl) {
+    @include span-columns(9);
+  }
+}
+
 // 1/2 on Desktop
 @mixin one-half {
   @include media($xs) {

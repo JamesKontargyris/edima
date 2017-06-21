@@ -7,7 +7,8 @@ header.site-header {
           linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
           $blue;
   height:8rem;
-  border-bottom:0.3rem solid darken($blue, 10%);
+  /*border-bottom:0.3rem solid darken($blue, 10%);*/
+  border-bottom:0.3rem solid $green;
 }
 
 .site-header__content {

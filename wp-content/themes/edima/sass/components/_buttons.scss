@@ -39,13 +39,17 @@
 
 .button--tertiary:link,
 .button--tertiary:visited {
-  border-radius: $base-border-radius;
+  border-radius: 10rem;
   border:1px solid $green;
   padding:1rem 1.2rem;
   color:$green !important;
 
   &:hover {
     border:1px solid darken($light-grey, 5%);
+  }
+
+  &.button--small {
+    padding:0.6rem 1rem;
   }
 }
 
