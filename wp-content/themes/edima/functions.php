@@ -188,14 +188,11 @@ require_once('query_functions.php');
  */
 add_image_size( 'hero', 1500, 1000, true ); // used in hero banners
 add_image_size( 'news-extract', 800, 500, true ); // used in hero banners
+add_image_size( 'policy-area-tile', 800, 500, true ); // used in hero banners
 
 // AJAX related stuff
 $ajaxurl = '';
-if( in_array('sitepress-multilingual-cms/sitepress.php', get_option('active_plugins')) ){
-	$ajaxurl .= admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
-} else{
-	$ajaxurl .= admin_url( 'admin-ajax.php');
-}
+$ajaxurl .= admin_url( 'admin-ajax.php');
 wp_localize_script( 'edima-script', 'screenReaderText', array(
 	'expand'   => __( 'expand child menu', 'twentysixteen' ),
 	'collapse' => __( 'collapse child menu', 'twentysixteen' ),

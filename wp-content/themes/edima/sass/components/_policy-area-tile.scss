@@ -86,7 +86,9 @@
 }
 
 .policy-area-tile:hover .policy-area-tile__content,
-.policy-area-tile:active .policy-area-tile__content{
+.policy-area-tile:active .policy-area-tile__content,
+.policy-area-tile__content:hover,
+.policy-area-tile__content:active {
   height: 100%;
   background-color: rgba($green, 0.8);
 }

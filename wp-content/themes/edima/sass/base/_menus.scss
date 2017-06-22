@@ -83,7 +83,7 @@
 .vertical-menu__item a:link,
 .vertical-menu__item a:visited {
   display:block;
-  @include font-size(15,16);
+  @include font-size(14,15);
   padding:1.2rem 0;
 
   @include media($l-up) {

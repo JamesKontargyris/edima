@@ -24,8 +24,11 @@ h6 {
   font-weight: 700;
 
   &.with-line {
-    padding-bottom: $base-spacing;
-    border-bottom:1px solid $light-grey;
+    display:inline-block;
+    padding-bottom: $small-spacing * 0.5;
+    border-bottom-width:3px;
+    border-bottom-style: solid;
+    border-bottom-color:$base-font-color;
   }
 
   .header-link {
@@ -34,7 +37,7 @@ h6 {
 }
 
 h1 {
-  @include font-size(24, 28);
+  @include font-size(26, 30);
 
   @include media($m-up) {
     @include font-size(32, 36);

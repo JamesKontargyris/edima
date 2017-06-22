@@ -20,3 +20,28 @@
     margin-top:0;
   }
 }
+
+.structure--sidebar {
+  @include media($xl-up) {
+    @include span-columns(3.5);
+  }
+}
+
+.structure--main-col {
+  @include media($xl-up) {
+    @include span-columns(8.5);
+  }
+}
+
+.structure--sidebar--pull-left {
+  @include media($xl-up) {
+    @include shift(-12);
+  }
+}
+
+.structure--main-col--pull-right {
+  @include media($xl-up) {
+    @include shift(3.5);
+  }
+}
+

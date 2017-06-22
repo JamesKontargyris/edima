@@ -1,0 +1,68 @@
+.policy-area__sidebar-menu {
+  @include box();
+}
+
+.policy-area__hero {
+  @include media($xl-up) {
+    height:45rem;
+  }
+}
+
+.policy-area__hero__content {
+  @include outer-container();
+
+  @include media($xl-up) {
+    display:flex;
+    align-items: center;
+    width:70%;
+    min-width:90rem;
+  }
+}
+
+.policy-area__hero__text {
+  padding:$base-spacing * 2 0 0;
+  text-align: center;
+
+  @include media($m) {
+    padding:$base-spacing * 3 5rem 0;
+  }
+
+  @include media($xl-up) {
+    @include span-columns(6);
+    text-align: left;
+    padding:0;
+  }
+}
+.policy-area__hero__title {
+}
+
+.policy-area__hero__description {
+  @include font-size(14, 18);
+
+  @include media($m-up) {
+    @include font-size(15, 23);
+  }
+}
+
+.policy-area__hero__graphic {
+  img {
+    display:block;
+    max-width:20rem;
+    margin:0 auto;
+
+    @include media($m-up) {
+      max-width:30rem;
+    }
+
+    @include media($xl-up) {
+      max-width:45rem;
+    }
+  }
+
+  @include media($xl-up) {
+    @include span-columns(5);
+    img {
+      width:45rem; // To ensure the image keeps its dimensions and isn't resized
+    }
+  }
+}

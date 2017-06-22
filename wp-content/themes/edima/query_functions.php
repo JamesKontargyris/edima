@@ -75,3 +75,15 @@ function get_news_by_date($year = 0, $month = 0,  $count = 3, $offset = 0, $igno
 
 	return new WP_Query($args);
 }
+
+function get_policy_areas($count = 9999999, $offset = 0, $ignore_ids = []) {
+	$args = [
+		'post_status' => 'publish',
+		'post_type' => 'policy_area',
+		'posts_per_page' => $count,
+		'post__not_in' => $ignore_ids,
+		'offset' => $offset,
+	];
+
+	return new WP_Query($args);
+}
