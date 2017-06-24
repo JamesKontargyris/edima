@@ -1,5 +1,5 @@
 .gallery {
-
+  @include clearfix;
 }
 
 .gallery__item {

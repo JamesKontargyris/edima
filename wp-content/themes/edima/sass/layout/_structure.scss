@@ -7,7 +7,7 @@
   padding-bottom:$base-spacing;
 }
 .container--narrow {
-  @include media(xl-up) {
+  @include media($xl-up) {
     padding-left:$column * 2;
     padding-right:$column * 2;
   }

@@ -11,6 +11,10 @@
   @include font-size(10, 10);
 }
 
+.button--xsmall {
+  @include font-size(8, 8);
+}
+
 .button--primary:link,
 .button--primary:visited {
   background:linear-gradient(to bottom, $green 0%, darken($green, 7%) 100%), $green;
@@ -21,6 +25,11 @@
 
   &:hover {
     background:linear-gradient(to top, $green 0%, darken($green, 7%) 100%), $green;
+  }
+
+  &.button--small,
+  &.button--xsmall {
+    padding:0.6rem 1rem;
   }
 }
 
@@ -35,6 +44,11 @@
   &:hover {
     background:linear-gradient(to top, white 0%, darken($light-grey, 4%) 100%), white;
   }
+
+  &.button--small,
+  &.button--xsmall {
+    padding:0.6rem 1rem;
+  }
 }
 
 .button--tertiary:link,
@@ -48,7 +62,8 @@
     border:1px solid darken($light-grey, 5%);
   }
 
-  &.button--small {
+  &.button--small,
+  &.button--xsmall {
     padding:0.6rem 1rem;
   }
 }

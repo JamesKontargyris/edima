@@ -87,7 +87,6 @@
   padding:1.2rem 0;
 
   @include media($l-up) {
-    @include font-size(13,14);
     padding:0.7rem 0;
   }
 

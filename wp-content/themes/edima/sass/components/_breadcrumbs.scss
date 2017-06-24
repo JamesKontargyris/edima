@@ -4,7 +4,6 @@
   @include media($l-up) {
     display: block;
     @include font-size(12,12);
-    margin-top:-($base-spacing * 0.75);
-    margin-bottom:$base-spacing * 1.25;
+    margin:$base-spacing 0;
   }
 }

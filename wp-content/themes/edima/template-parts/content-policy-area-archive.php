@@ -46,11 +46,3 @@
         </div>
     </div>
 <?php endif; ?>
-
-
-
-<script>
-    (function() {
-        // Apply background parallax image to .page-header
-    })();
-</script>

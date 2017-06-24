@@ -1,0 +1,17 @@
+// Used on single policy area pages
+
+.related-news {
+  &:not(:last-of-type) {
+    margin-bottom: $base-spacing;
+  }
+}
+
+.related-news__link {
+  @include font-size(16, 18);
+}
+.related-news__meta {
+  @include font-size(12, 13);
+  text-transform: uppercase;
+  font-weight: 700;
+  color:$grey;
+}

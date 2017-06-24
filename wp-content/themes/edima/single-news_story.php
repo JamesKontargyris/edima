@@ -21,7 +21,7 @@ get_header(); ?>
     <?php if(has_post_thumbnail()) : ?>
         <style>
             .news-story__hero {
-                background: linear-gradient(to right, rgba(0,0,0, 0.6) 25%, rgba(0,0,0, 0.1) 100%), url(<?php the_post_thumbnail_url('hero') ?>) center, rgb(0, 59, 119);
+                background: linear-gradient(to right, rgba(0,0,0, 0.6) 25%, rgba(0,0,0, 0.3) 100%), url(<?php the_post_thumbnail_url('hero') ?>) center, rgb(0, 59, 119);
                 background-size: cover;
             }
         </style>
@@ -85,7 +85,6 @@ get_header(); ?>
 
             <div class="news-footer__filters">
 	            <?php get_template_part('template-parts/partials/partial', 'news-filter-categories'); ?>
-	            <?php get_template_part('template-parts/partials/partial', 'news-filter-calendar'); ?>
 	            <?php get_template_part('template-parts/partials/partial', 'news-filter-tags'); ?>
             </div> <!-- / news-footer__tweets -->
         </div>

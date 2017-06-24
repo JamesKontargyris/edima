@@ -35,10 +35,10 @@
 
 // Margin
 .margin--none {
-  margin-top:0;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
 }
 
 .margin--top {
@@ -64,6 +64,11 @@
   margin-bottom:$base-spacing * 2;
 }
 
+.margin--none-bottom,
+.margin--bottom-none {
+  margin-bottom:0 !important;
+}
+
 .margin--small-bottom,
 .margin--bottom-small {
   margin-bottom:$base-spacing * 0.5;
@@ -71,23 +76,60 @@
 
 // Text
 .text--red {
-  color:$red;
-}
-.text--light-red { // for use on darker backgrounds
-  color:$red;
+  color:$red !important;
+
+  &.with-line {
+    border-bottom-color:$red;
+  }
 }
 .text--blue {
-  color:$blue;
+  color:$blue !important;
+
+  &.with-line {
+    border-bottom-color:$blue;
+  }
+}
+.text--green {
+  color:$green !important;
+
+  &.with-line {
+    border-bottom-color:$green;
+  }
 }
 .text--grey {
-  color:$grey;
+  color:$grey !important;
+
+  &.with-line {
+    border-bottom-color:$grey;
+  }
+}
+.text--orange {
+  color:$orange !important;
+
+  &.with-line {
+    border-bottom-color:$orange;
+  }
+}
+.text--dark-orange {
+  color:shade($orange, 30%) !important;
+
+  &.with-line {
+    border-bottom-color:shade($orange, 30%);
+  }
 }
 .text--light-blue {
-  color:$light-blue;
-}
+  color:$light-blue !important;
 
+  &.with-line {
+    border-bottom-color:$light-blue;
+  }
+}
 .text--white {
-  color:white;
+  color:white !important;
+
+  &.with-line {
+    border-bottom-color:white;
+  }
 }
 
 .text--left {

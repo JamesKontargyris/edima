@@ -41,8 +41,7 @@
 .news-story__breadcrumbs {
   display:none;
   position:absolute;
-  top:$base-spacing * 2; // to account for negative margin on .breadcrumbs
-  @include shift(1.5);
+  top:$base-spacing;
 
   @include media($l-up) {
     display: block;
