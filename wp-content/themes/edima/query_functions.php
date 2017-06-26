@@ -76,14 +76,32 @@ function get_news_by_date($year = 0, $month = 0,  $count = 3, $offset = 0, $igno
 	return new WP_Query($args);
 }
 
-function get_policy_areas($count = 9999999, $offset = 0, $ignore_ids = []) {
+function get_news_by_policy_area($policy_area_id = 0, $count = -1, $offset = 0, $ignore_ids = [])
+{
 	$args = [
 		'post_status' => 'publish',
-		'post_type' => 'policy_area',
+		'post_type' => 'news_story',
+		'orderby' => 'date',
+		'order' => 'DESC',
 		'posts_per_page' => $count,
 		'post__not_in' => $ignore_ids,
 		'offset' => $offset,
+		'meta_key' => 'policy_areas',
+		'meta_value' => '"' . $policy_area_id . '"',
+		'meta_compare' => 'LIKE'
 	];
 
 	return new WP_Query($args);
+}
+
+function get_policy_areas($count = 9999999, $offset = 0, $ignore_ids = []) {
+	$args = [
+		'post_status'    => 'publish',
+		'post_type'      => 'policy_area',
+		'posts_per_page' => $count,
+		'post__not_in'   => $ignore_ids,
+		'offset'         => $offset,
+	];
+
+	return new WP_Query( $args );
 }

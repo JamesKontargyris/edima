@@ -60,8 +60,9 @@
 
 .policy-area-tile__description {
   display:none;
-  @include font-size(12, 16);
+  @include font-size(13, 16);
   color:white;
+  padding:1rem;
 }
 
 .policy-area-tile__title,

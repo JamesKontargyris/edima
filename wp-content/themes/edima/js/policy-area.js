@@ -8,11 +8,9 @@
         $this.find('.policy-area-tile__description').hide();
     });
 
-    $('.policy-area__related-info-block__content').css('display', 'none');
-
     $('.policy-area__related-info-block__title').on('click', function()
     {
-        $(this).toggleClass('active').next('.policy-area__related-info-block__content').slideToggle();
+        $(this).toggleClass('inactive').next('.policy-area__related-info-block__content').slideToggle();
     })
 
 })();

@@ -24,7 +24,7 @@ get_header(); ?>
 
             <div class="container--with-padding margin--bottom">
 
-                <div class="breadcrumbs">
+                <div class="breadcrumbs tax-archive__breadcrumbs">
 		            <?php breadcrumbs(); ?>
                 </div>
 

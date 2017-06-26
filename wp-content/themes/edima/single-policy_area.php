@@ -20,30 +20,7 @@ get_header(); ?>
 
 <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-	<?php if(has_post_thumbnail()) : ?>
-		<style>
-			.policy-area__hero {
-				background:
-                        linear-gradient(to top, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 1.2rem),
-                        linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 1.2rem),
-                        /*url(<?php echo get_template_directory_uri(); ?>/img/bg_circuitry_small.png) top left repeat,*/
-                        linear-gradient(to bottom right, #EDAE49 30%, #dc8d50 100%),
-                        #EDAE49;
-			}
-
-            .policy-area__hero__title,
-            .policy-area__hero__description {
-                color:black;
-            }
-
-		</style>
-	<?php else : ?>
-		<style>
-			.policy-area__hero {
-				background: rgb(0, 59, 119);
-			}
-		</style>
-	<?php endif; ?>
+    <?php get_template_part('template-parts/partials/partial', 'policy-area-hero'); ?>
 
 	<div id="#content" class="content-area">
 
@@ -59,12 +36,14 @@ get_header(); ?>
             <div class="policy-area__hero__content">
 
                 <div class="policy-area__hero__text">
-                    <h6 class="text--upper with-line text--dark-orange">Key Policies</h6>
+                    <h6 class="text--upper with-line policy-area__hero__mini-title">Key Policies</h6>
                     <h1 class="policy-area__hero__title"><?php the_title(); ?></h1>
                     <div class="policy-area__hero__description margin--none"><?php echo limit_text(get_the_excerpt(), 30); ?></div>
                 </div>
                 <div class="policy-area__hero__graphic">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/ux_graphic.png" alt="">
+                    <?php if(get_field('graphic')) : ?>
+                        <img src="<?php echo get_field('graphic'); ?>" alt="<?php the_title(); ?>">
+                    <?php endif; ?>
                 </div>
 
             </div>
@@ -77,21 +56,27 @@ get_header(); ?>
 
 	                <?php the_content(); ?>
 
-                    <div class="policy-area__related-info-block">
-                        <h6 class="policy-area__related-info-block__title text--upper"><?php the_title(); ?> Links</h6>
-                        <div class="policy-area__related-info-block__content">
-                            <ul class="standard-list">
-                                <li class="standard-list__item"><a class="standard-list__link" href="#">A related link</a></li>
-                                <li class="standard-list__item"><a class="standard-list__link" href="#">A related link</a></li>
-                                <li class="standard-list__item"><a class="standard-list__link" href="#">A related link</a></li>
-                            </ul>
+	                <?php if ( have_rows( 'links') ): ?>
+
+                        <div class="policy-area__related-info-block">
+                            <h6 class="policy-area__related-info-block__title policy-area__related-info-block__title--<?php echo get_field('colour_scheme'); ?> text--upper text--<?php echo get_field('banner_text_colour'); ?>"><i class="policy-area__related-info-block__title__icon fa fa-link"></i> <?php the_title(); ?> Links</h6>
+                            <div class="policy-area__related-info-block__content">
+                                <ul class="standard-list">
+
+                                    <?php while ( have_rows('links') ) : the_row(); ?>
+                                        <li class="standard-list__item"><a class="standard-list__link" href="<?php the_sub_field('link_url'); ?>" target="_blank"><?php  the_sub_field('link_text'); ?></a></li>
+                                    <?php endwhile; ?>
+
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+
+                    <?php endif; ?>
 
                     <div class="policy-area__related-info-block">
-                        <h6 class="policy-area__related-info-block__title text--upper"><?php the_title(); ?> Documents</h6>
+                        <h6 class="policy-area__related-info-block__title policy-area__related-info-block__title--<?php echo get_field('colour_scheme'); ?> text--upper text--<?php echo get_field('banner_text_colour'); ?>"><i class="policy-area__related-info-block__title__icon fa fa-file-text-o"></i> <?php the_title(); ?> Documents</h6>
                         <div class="policy-area__related-info-block__content">
-                            <div class="gallery gallery__row-of-2 margin--none">
+                            <div class="gallery gallery__row-of-1 margin--none">
                                 <div class="gallery__item margin--bottom-none">
                                     <div class="related-doc">
                                         <img class="related-doc__cover-image" src="http://lorempixel.com/80/112">
@@ -107,15 +92,20 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="policy-area__related-info-block">
-                        <h6 class="policy-area__related-info-block__title text--upper"><?php the_title(); ?> News</h6>
-                        <div class="policy-area__related-info-block__content">
-                            <div class="related-news">
-                                <a href="#" class="related-news__link">News</a>
-                                <div class="related-news__meta"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'related-news__category', 'related-news__category-link'); ?></div>
+                    <?php $news = get_news_by_policy_area($policy_area_id);
+                        if($news->have_posts()) :?>
+                        <div class="policy-area__related-info-block">
+                            <h6 class="policy-area__related-info-block__title policy-area__related-info-block__title--<?php echo get_field('colour_scheme'); ?> text--upper text--<?php echo get_field('banner_text_colour'); ?>"><i class="policy-area__related-info-block__title__icon fa fa-newspaper-o"></i> <?php the_title(); ?> News</h6>
+                            <div class="policy-area__related-info-block__content">
+                                <?php while($news->have_posts()) : $news->the_post(); ?>
+                                    <div class="related-news">
+                                        <a href="<?php echo get_the_permalink(); ?>" class="related-news__link"><?php the_title(); ?></a>
+                                        <div class="related-news__meta"><?php echo get_the_date('d F Y'); ?></div>
+                                    </div>
+                                <?php endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
 
                 </div>
 
@@ -126,7 +116,7 @@ get_header(); ?>
 	                    <?php if($policy_areas->have_posts()) : ?>
                             <ul class="vertical-menu">
 			                    <?php while($policy_areas->have_posts()) : $policy_areas->the_post(); ?>
-                                    <li class="vertical-menu__item"><a href="<?php echo get_the_permalink(); ?>" class="vertical-menu__link <?php if(get_the_ID() == $policy_area_id) : ?> active <?php endif; ?>"><?php the_title(); ?></a></li>
+                                    <li class="vertical-menu__item vertical-menu__item--large-spacing"><a href="<?php echo get_the_permalink(); ?>" class="vertical-menu__link <?php if(get_the_ID() == $policy_area_id) : ?> active <?php endif; ?>"><?php the_title(); ?></a></li>
 			                    <?php endwhile; wp_reset_postdata(); ?>
                             </ul>
 	                    <?php endif; ?>
@@ -136,18 +126,19 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php $policy_areas = get_policy_areas(3, 0); ?>
-		<?php if($policy_areas->have_posts()) : ?>
-            <hr>
+		<?php $more_policy_areas = get_policy_areas(3, 0, [get_the_ID()]); ?>
+		<?php if($more_policy_areas->have_posts()) : ?>
             <div class="container container--narrow container--with-padding">
-                <h3 class="text--center text--blue">More Policy Areas</h3>
+                <hr class="large-spacing">
+                <h4 class="text--center">More Policy Areas</h4>
                 <div class="policy-area-tile__group">
                     <div class="gallery gallery__row-of-3">
 
-						<?php while($policy_areas->have_posts()) : $policy_areas->the_post(); ?>
+						<?php while($more_policy_areas->have_posts()) : $more_policy_areas->the_post(); ?>
                             <div class="gallery__item">
                                 <div class="policy-area-tile">
-                                    <div class="policy-area-tile__bg" style="background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 30%), <?php if(has_post_thumbnail()) : ?> url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>) center no-repeat,<?php endif; ?> linear-gradient(to bottom right, #EDAE49 30%, #dc8d50 100%), #EDAE49; background-size: auto, contain, auto;"></div> <!--bg element for blurring on rollover-->
+                                    <!--bg element for blurring on rollover-->
+                                    <?php get_template_part('template-parts/partials/partial', 'policy-area-tile-bg'); ?>
                                     <a class="policy-area-tile__full-size-link" href="<?php echo get_the_permalink(); ?>"></a> <!--full size link-->
                                     <div class="policy-area-tile__content">
                                         <div class="policy-area-tile__title"><?php the_title(); ?></div>

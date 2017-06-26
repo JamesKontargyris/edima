@@ -21,8 +21,8 @@
 .news-story__headline,
 .news-story__meta {
   @include media($l-up) {
-    @include shift(1.5);
-    @include span-columns(8);
+    @include shift(1);
+    @include span-columns(6);
   }
 }
 
@@ -42,6 +42,8 @@
   display:none;
   position:absolute;
   top:$base-spacing;
+  left:0;
+  @include outer-container();
 
   @include media($l-up) {
     display: block;

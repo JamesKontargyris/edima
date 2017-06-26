@@ -26,12 +26,14 @@
 <?php if($policy_areas->have_posts()) : ?>
     <div class="container container--narrow">
         <div class="policy-area-tile__group">
-            <div class="gallery gallery__row-of-3">
+            <div class="gallery gallery__row-of-2">
 
                 <?php while($policy_areas->have_posts()) : $policy_areas->the_post(); ?>
                     <div class="gallery__item">
                         <div class="policy-area-tile">
-                            <div class="policy-area-tile__bg" style="background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 30%), <?php if(has_post_thumbnail()) : ?> url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>) center no-repeat,<?php endif; ?> linear-gradient(to bottom right, #EDAE49 30%, #dc8d50 100%), #EDAE49; background-size: auto, contain, auto;"></div> <!--bg element for blurring on rollover-->
+                            <!--bg element for blurring on rollover-->
+                            <?php get_template_part('template-parts/partials/partial', 'policy-area-tile-bg'); ?>
+
                             <a class="policy-area-tile__full-size-link" href="<?php echo get_the_permalink(); ?>"></a> <!--full size link-->
                             <div class="policy-area-tile__content">
                                 <div class="policy-area-tile__title"><?php the_title(); ?></div>

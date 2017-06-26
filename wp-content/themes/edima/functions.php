@@ -188,7 +188,7 @@ require_once('query_functions.php');
  */
 add_image_size( 'hero', 1500, 1000, true ); // used in hero banners
 add_image_size( 'news-extract', 800, 500, true ); // used in hero banners
-add_image_size( 'policy-area-tile', 800, 500, true ); // used in hero banners
+add_image_size( 'policy-area-graphic', 600, 600, true ); // used in hero banners
 
 // AJAX related stuff
 $ajaxurl = '';

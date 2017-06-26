@@ -2,17 +2,24 @@
   @include clearfix;
   padding:1.3rem;
   background:linear-gradient(to bottom, white 50%, darken(white, 10%) 100%);
-  border: 0.01rem solid lighten($grey, 10%);
-  border-bottom:0.3rem solid $grey;
+  border: 0.01rem solid lighten($grey, 20%);
   border-radius: 0.5rem;
 }
 
 .related-doc__cover-image {
   @include span-columns(3);
+
+  @include media($m-up) {
+    @include span-columns(2);
+  }
 }
 
 .related-doc__details {
   @include span-columns(9);
+
+  @include media($m-up) {
+    @include span-columns(10);
+  }
 }
 
 .related-doc__title {

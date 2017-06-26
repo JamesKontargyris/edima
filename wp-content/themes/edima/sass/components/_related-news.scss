@@ -15,3 +15,11 @@
   font-weight: 700;
   color:$grey;
 }
+
+.related-news__category {
+  &:not(:last-of-type) {
+    &:after {
+      content:', ';
+    }
+  }
+}

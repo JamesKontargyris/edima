@@ -132,6 +132,14 @@
   }
 }
 
+.text--black {
+  color:black !important;
+
+  &.with-line {
+    border-bottom-color:black;
+  }
+}
+
 .text--left {
   text-align: left;
 }

@@ -1,7 +1,7 @@
 .policy-area__sidebar-menu {
   @include box();
   @include media($xl-up) {
-    margin-top:-5.5rem;
+    margin-top:-5rem;
   }
 }
 
@@ -105,30 +105,82 @@
 }
 
 .policy-area__related-info-block__title {
+  position: relative;
   color:white;
-  background: linear-gradient(to bottom, $blue 30%, darken($blue, 5%) 100%), $blue;
-  padding:0.8rem;
-  border-radius: 0.5rem;
+  padding:0.8rem 1.2rem;
+  border-radius:0.5rem 0.5rem 0 0;
   margin:0;
   cursor: pointer;
   box-shadow:0 0.2rem 0 rgba(black, 0.2);
 
+  &:hover {
+    opacity:0.7;
+  }
+
 
   &:before {
+    position:absolute;
+    right:1rem;
     font-family: 'FontAwesome';
-    content: '\f0d7';
+    content: '\f0d8';
     margin:0 1rem;
   }
 
-  &.active {
-    border-radius:0.5rem 0.5rem 0 0;
+  &.inactive {
+    border-radius: 0.5rem;
 
     &:before {
       font-family: 'FontAwesome';
-      content: '\f0d8';
+      content: '\f0d7';
       margin:0 1rem;
     }
   }
+}
+
+.policy-area__related-info-block__title--red {
+  background:
+          linear-gradient($red 0%, shade($red, 10%) 100%),
+          $red;
+}
+
+.policy-area__related-info-block__title--blue {
+  background:
+          linear-gradient($blue 0%, shade($blue, 10%) 100%),
+          $blue;
+}
+
+.policy-area__related-info-block__title--green {
+  background:
+          linear-gradient($green 0%, shade($green, 10%) 100%),
+          $green;
+}
+
+.policy-area__related-info-block__title--orange {
+  background:
+          linear-gradient($orange 0%, shade($orange, 10%) 100%),
+          $orange;
+}
+
+.policy-area__related-info-block__title--grey {
+  background:
+          linear-gradient($grey 0%, shade($grey, 10%) 100%),
+          $grey;
+}
+
+.policy-area__related-info-block__title--light-grey {
+  background:
+          linear-gradient($light-grey 0%, shade($light-grey, 10%) 100%),
+          $light-grey;
+}
+
+.policy-area__related-info-block__title--dark-grey {
+  background:
+          linear-gradient($dark-grey 0%, shade($dark-grey, 10%) 100%),
+          $dark-grey;
+}
+
+.policy-area__related-info-block__title__icon {
+  margin-right: 0.5rem;
 }
 
 .policy-area__related-info-block__content {

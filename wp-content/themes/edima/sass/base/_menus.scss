@@ -78,6 +78,13 @@
   padding:0;
   margin:0;
 }
+
+.vertical-menu__item--large-spacing {
+  &:not(:last-of-type) {
+    margin-bottom:1rem;
+  }
+}
+
 .vertical-menu__link:link,
 .vertical-menu__link:visited,
 .vertical-menu__item a:link,
@@ -87,7 +94,7 @@
   padding:1.2rem 0;
 
   @include media($l-up) {
-    padding:0.7rem 0;
+    padding:1rem 0;
   }
 
   &.active {
