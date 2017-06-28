@@ -14,7 +14,7 @@ class Twitter
 	public function get_latest_tweets($count = 3, $include_retweets = false)
 	{
 		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-		$getfield = "?screen_name=$this->screen_name&count=$count&include_rts=$include_retweets";
+		$getfield = "?screen_name=" . get_theme_mod('twitter_handle', $this->screen_name) . "&count=$count&include_rts=$include_retweets";
 		$requestMethod = 'GET';
 
 		$twitter = new TwitterAPIExchange($this->settings);

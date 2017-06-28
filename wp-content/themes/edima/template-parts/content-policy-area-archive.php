@@ -1,21 +1,18 @@
-<style>
-    .page-header {
-       background:
-                url(<?php echo get_template_directory_uri(); ?>/img/bg_circuitry_small.png),
-                #d4e9ef;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: repeat;
-        background-size:auto;
-    }
-</style>
+<?php get_template_part('template-parts/partials/partial', 'policy-areas-sub-nav'); ?>
 
-<div class="page-header stripe stripe--large-padding parallax">
+<div class="policy-area-archive__page-header stripe stripe--large-padding">
     <div class="stripe__content stripe__content--side-padding">
         <!--<img src="<?php /*echo get_template_directory_uri(); */?>/img/policy-area-temp-header-image.png" alt="" class="page-header__hero-image">-->
         <div class="page-header__content">
-            <h1 class="page-header__title text--center text--blue">Policy Areas</h1>
-            <p class="page-header__intro text--center text--page-intro text--page-intro--centered">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipisicing elit.</p>
+
+            <?php if(get_theme_mod('policy_area_banner_heading')) : ?>
+                <h1 class="page-header__title"><?php echo get_theme_mod('policy_area_banner_heading', 'Policy Areas'); ?></h1>
+	        <?php endif; ?>
+
+	        <?php if(get_theme_mod('policy_area_banner_text')) : ?>
+                <p class="page-header__intro text--page-intro text--page-intro--centered"><?php echo get_theme_mod('policy_area_banner_text'); ?></p>
+	        <?php endif; ?>
+
         </div>
         <!--<div class="page-header__arrow"><i class="fa fa-caret-down"></i></div>-->
     </div>
@@ -24,9 +21,9 @@
 
 <?php $policy_areas = get_policy_areas(); ?>
 <?php if($policy_areas->have_posts()) : ?>
-    <div class="container container--narrow">
+    <div class="container">
         <div class="policy-area-tile__group">
-            <div class="gallery gallery__row-of-2">
+            <div class="gallery gallery__row-of-<?php echo get_theme_mod('policy_area_no_tiles_per_row', '3'); ?>">
 
                 <?php while($policy_areas->have_posts()) : $policy_areas->the_post(); ?>
                     <div class="gallery__item">

@@ -8,6 +8,7 @@
   .news-footer__news {
     @include span-columns(8.5);
     margin-bottom:0;
+    padding-right:$column * 0.5;
   }
   .news-footer__tweets,
   .news-footer__filters {

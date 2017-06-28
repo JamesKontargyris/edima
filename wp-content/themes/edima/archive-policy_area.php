@@ -12,11 +12,7 @@ get_header(); ?>
 
 	<div id="#content" class="content-area">
 		<?php
-		if( is_date()) {
-			get_template_part('template-parts/content', 'policy-area-date-archive');
-		} else {
-			get_template_part('template-parts/content', 'policy-area-archive');
-		}
+		    get_template_part('template-parts/content', 'policy-area-archive');
 		?>
 	</div>
 

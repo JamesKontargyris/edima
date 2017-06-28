@@ -94,7 +94,7 @@ function get_news_by_policy_area($policy_area_id = 0, $count = -1, $offset = 0, 
 	return new WP_Query($args);
 }
 
-function get_policy_areas($count = 9999999, $offset = 0, $ignore_ids = []) {
+function get_policy_areas($count = -1, $offset = 0, $ignore_ids = [], $random = false) {
 	$args = [
 		'post_status'    => 'publish',
 		'post_type'      => 'policy_area',
@@ -102,6 +102,10 @@ function get_policy_areas($count = 9999999, $offset = 0, $ignore_ids = []) {
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
 	];
+
+	if($random) {
+		$args['orderby'] = 'rand';
+	}
 
 	return new WP_Query( $args );
 }

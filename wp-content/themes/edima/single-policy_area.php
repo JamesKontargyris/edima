@@ -17,6 +17,7 @@ get_header(); ?>
 <?php
     $policy_area_id = get_the_ID();
 ?>
+<?php get_template_part('template-parts/partials/partial', 'policy-areas-sub-nav'); ?>
 
 <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
@@ -126,9 +127,9 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php $more_policy_areas = get_policy_areas(3, 0, [get_the_ID()]); ?>
+		<?php $more_policy_areas = get_policy_areas(3, 0, [get_the_ID()], true); ?>
 		<?php if($more_policy_areas->have_posts()) : ?>
-            <div class="container container--narrow container--with-padding">
+            <div class="container container--with-padding">
                 <hr class="large-spacing">
                 <h4 class="text--center">More Policy Areas</h4>
                 <div class="policy-area-tile__group">

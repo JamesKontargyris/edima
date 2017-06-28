@@ -27,12 +27,25 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+
+  // IE Positioning Hack:
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    display:block;
+    text-align: center;
+  }
 }
 
 .page-nav__menu {
   list-style: none;
   padding:0;
   margin:0;
+
+  // IE Positioning Hack:
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    display:inline-block;
+  }
 
   li {
     &:not(.page-nav__menu__mobile-toggle) {
