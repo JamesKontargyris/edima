@@ -130,25 +130,27 @@ function get_documents( $featured = false, $count = - 1, $offset = 0, $ignore_id
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
-		'orderby'        => 'meta_key',
-		'meta_key' => 'date',
 		'order'          => 'ASC',
+		'orderby'        => 'file_date',
 	];
 
 	if ( ! $featured ) {
 		$args['meta_query'] = [
-			[
-				'key'   => 'featured',
-				'value' => 'yes',
-				'compare'    => 'NOT LIKE',
+			'featured' => [
+				'key'     => 'featured',
+				'value'   => 'yes',
+				'compare' => 'NOT LIKE',
+			],
+			'file_date' => [
+				'key' => 'file_date',
 			]
 		];
 	} else {
 		$args['meta_query'] = [
 			[
-				'key'   => 'featured',
-				'value' => 'yes',
-				'compare'    => 'LIKE',
+				'key'     => 'featured',
+				'value'   => 'yes',
+				'compare' => 'LIKE',
 			]
 		];
 	}
