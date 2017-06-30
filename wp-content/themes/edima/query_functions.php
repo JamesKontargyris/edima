@@ -130,8 +130,8 @@ function get_documents( $featured = false, $count = - 1, $offset = 0, $ignore_id
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
-		'order'          => 'ASC',
-		'orderby'        => 'file_date',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
 	];
 
 	if ( ! $featured ) {
@@ -141,17 +141,14 @@ function get_documents( $featured = false, $count = - 1, $offset = 0, $ignore_id
 				'value'   => 'yes',
 				'compare' => 'NOT LIKE',
 			],
-			'file_date' => [
-				'key' => 'file_date',
-			]
 		];
 	} else {
 		$args['meta_query'] = [
-			[
+			'featured' => [
 				'key'     => 'featured',
 				'value'   => 'yes',
 				'compare' => 'LIKE',
-			]
+			],
 		];
 	}
 
@@ -164,7 +161,7 @@ function get_documents_by_policy_area( $policy_area_id = 0, $count = - 1, $offse
 		'post_status'    => 'publish',
 		'post_type'      => 'document',
 		'orderby'        => 'date',
-		'order'          => 'ASC',
+		'order'          => 'DESC',
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
@@ -181,7 +178,7 @@ function get_documents_by_document_category( $tax_id = '', $count = 3, $offset =
 		'post_status'    => 'publish',
 		'post_type'      => 'document',
 		'orderby'        => 'date',
-		'order'          => 'ASC',
+		'order'          => 'DESC',
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,

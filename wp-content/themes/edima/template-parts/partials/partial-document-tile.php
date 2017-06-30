@@ -28,7 +28,7 @@
         </div>
         <div class="document__details <?php if( is_tax('document_categories') ) : ?> document__details--height-auto document__details--full-width <?php endif; ?>">
             <div class="document__meta">
-				<?php echo get_field('file_date') ? get_field('file_date') . ' | ' : ''; ?>
+				<?php echo get_the_date('j M y') . ' | '; ?>
 				<?php echo get_field('file_type') ? get_field('file_type') . ' | ' : ''; ?>
 				<?php echo get_field('file_size') ? get_field('file_size') : ''; ?>
             </div>
