@@ -123,18 +123,19 @@ function get_members( $count = - 1, $offset = 0, $ignore_ids = [] ) {
 	return new WP_Query( $args );
 }
 
-function get_documents( $with_featured = true, $count = - 1, $offset = 0, $ignore_ids = [] ) {
+function get_documents( $featured = false, $count = - 1, $offset = 0, $ignore_ids = [] ) {
 	$args = [
 		'post_status'    => 'publish',
 		'post_type'      => 'document',
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
-		'orderby'        => 'date',
+		'orderby'        => 'meta_key',
+		'meta_key' => 'date',
 		'order'          => 'ASC',
 	];
 
-	if ( ! $with_featured ) {
+	if ( ! $featured ) {
 		$args['meta_query'] = [
 			[
 				'key'   => 'featured',
@@ -142,24 +143,15 @@ function get_documents( $with_featured = true, $count = - 1, $offset = 0, $ignor
 				'compare'    => 'NOT LIKE',
 			]
 		];
+	} else {
+		$args['meta_query'] = [
+			[
+				'key'   => 'featured',
+				'value' => 'yes',
+				'compare'    => 'LIKE',
+			]
+		];
 	}
-
-	return new WP_Query( $args );
-}
-
-function get_featured_documents( $count = - 1, $offset = 0, $ignore_ids = [] ) {
-	$args = [
-		'post_status'    => 'publish',
-		'post_type'      => 'document',
-		'posts_per_page' => $count,
-		'post__not_in'   => $ignore_ids,
-		'offset'         => $offset,
-		'orderby'        => 'date',
-		'order'          => 'ASC',
-		'meta_key' => 'featured',
-		'meta_value' => 'yes',
-		'compare' => 'LIKE',
-	];
 
 	return new WP_Query( $args );
 }

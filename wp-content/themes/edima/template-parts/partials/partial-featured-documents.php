@@ -1,4 +1,4 @@
-<?php $documents = get_featured_documents(); ?>
+<?php $documents = get_documents(true); // get featured documents only ?>
 <?php if($documents->have_posts()) : ?>
 	<div class="stripe stripe--blue">
 		<div class="stripe__content">
