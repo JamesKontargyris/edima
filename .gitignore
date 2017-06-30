@@ -102,3 +102,4 @@ node_modules/
 
 # EDiMA-specific
 !wp-content/themes/edima
+!composer.json
