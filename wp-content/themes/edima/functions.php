@@ -134,6 +134,7 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-site-js', get_template_directory_uri() . '/js/site.js', array(), '20170621', true );
 	wp_enqueue_script( 'edima-page-header-js', get_template_directory_uri() . '/js/page-header.js', array(), '20170621', true );
 	wp_enqueue_script( 'edima-policy-area-js', get_template_directory_uri() . '/js/policy-area.js', array(), '20170621', true );
+	wp_enqueue_script( 'edima-modal-js', get_template_directory_uri() . '/js/modal.js', array(), '20170629', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -186,9 +187,11 @@ require_once('query_functions.php');
 /**
  * Image sizes
  */
-add_image_size( 'hero', 1500, 1000, true ); // used in hero banners
-add_image_size( 'news-extract', 800, 500, true ); // used in hero banners
-add_image_size( 'policy-area-graphic', 600, 600, true ); // used in hero banners
+add_image_size( 'hero', 1500, 1000, true );
+add_image_size( 'news-extract', 800, 500, true );
+add_image_size( 'policy-area-graphic', 600, 600, true );
+add_image_size( 'member-logo', 600, 600, false );
+add_image_size( 'document-cover', 350, 490, true );
 
 // AJAX related stuff
 $ajaxurl = '';

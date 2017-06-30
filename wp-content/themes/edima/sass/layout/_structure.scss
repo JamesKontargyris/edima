@@ -33,6 +33,12 @@
   }
 }
 
+.structure--main-col--full-width {
+  @include media($xl-up) {
+    @include span-columns(12);
+  }
+}
+
 .structure--sidebar--pull-left {
   @include media($xl-up) {
     @include shift(-12);

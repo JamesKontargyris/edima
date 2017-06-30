@@ -1,0 +1,156 @@
+.document-group {
+  margin-bottom:$base-spacing;
+}
+
+.document {
+  position: relative;
+  @include clearfix;
+  @include box();
+  padding:1.5rem 2rem 5rem; // Extra padding to allow for abs. positioned buttons at the bottom
+
+  @include media($l-up) {
+    min-height:20rem;
+  }
+}
+.document__cover-image {
+  @include span-columns(4);
+  display: none;
+
+  img {
+    box-shadow: 0 0.2rem 0.2rem rgba(black, 0.5);
+  }
+
+  @include media($m) {
+    @include span-columns(2);
+  }
+
+  @include media($m-up) {
+    display: block;
+  }
+
+  @include media($l) {
+    display: none;
+  }
+
+}
+
+.document__details {
+  @include span-columns(8);
+
+  @include media($xs) {
+    @include span-columns(12);
+  }
+
+  @include media($s) {
+    @include span-columns(12);
+  }
+
+  @include media($m) {
+    @include span-columns(10);
+  }
+
+  @include media($l) {
+    @include span-columns(12);
+  }
+
+  @include media($xl-up) {
+    min-height:16rem;
+  }
+}
+
+.document__categories {
+  border-bottom:1px solid darken($light-grey, 5%);
+  @include font-size(13, 14);
+  width:calc(100% + 4rem);
+  min-height:3.5rem;
+  text-transform: uppercase;
+  border-radius: $base-border-radius $base-border-radius 0 0;
+  margin:-1.5rem -2rem $base-spacing;
+  padding:0.8rem 0.5rem 0.8rem 1.5rem;
+}
+
+.document__title {
+  @include font-size(16, 18);
+  font-weight: 800;
+  margin-bottom:$small-spacing;
+
+  @include media($xl-up) {
+    @include font-size(18, 21);
+  }
+}
+
+.document__meta {
+  @include font-size(13, 14);
+  color:$dark-grey;
+  font-weight: 800;
+  margin-bottom:$small-spacing;
+  text-transform: uppercase;
+}
+
+.document__download-link {
+}
+
+.document__description {
+
+}
+
+.document__description__cover-image img {
+  display: none;
+
+  @include media($l-up) {
+    display: block;
+    float:left;
+    max-width:10rem;
+    margin:0 2rem 2rem 0;
+    box-shadow: 0 0.2rem 0.2rem rgba(black, 0.5);
+  }
+}
+
+.document__button-group {
+  position: absolute;
+  left:0;
+  bottom:0;
+  display: flex;
+  align-items: stretch;
+  width:100%;
+
+  .button {
+    width:50%;
+    min-height:3.5rem;
+    margin-bottom:0;
+    text-align: center;
+
+    &:first-of-type { // More Info button
+      border-radius: 0 0 0 $base-border-radius;
+    }
+
+    &:last-of-type { // download button
+      border-radius: 0 0 $base-border-radius 0;
+      border-left:1px solid darken($green, 10%);
+    }
+  }
+}
+
+.document--policy-area-document { // Used in related documents section of single-policy-area.php
+  min-height:auto;
+  padding:1rem 2rem; // Reset extra padding from above
+
+  .document__details {
+    min-height:auto;
+    width:100%;
+
+    .document__title {
+      width:100%;
+      @include font-size(16, 18);
+    }
+  }
+
+  .document__button-group--standard {
+    margin-top:$small-spacing;
+
+    @include media($m-up) {
+      float:right;
+      margin-top:0;
+    }
+  }
+}

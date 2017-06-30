@@ -1,9 +1,7 @@
 .related-doc {
   @include clearfix;
-  padding:1.3rem;
-  background:linear-gradient(to bottom, white 50%, darken(white, 10%) 100%);
+  @include box();
   border: 0.01rem solid lighten($grey, 20%);
-  border-radius: 0.5rem;
 }
 
 .related-doc__cover-image {

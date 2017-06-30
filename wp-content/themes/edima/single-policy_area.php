@@ -74,24 +74,59 @@ get_header(); ?>
 
                     <?php endif; ?>
 
-                    <div class="policy-area__related-info-block">
-                        <h6 class="policy-area__related-info-block__title policy-area__related-info-block__title--<?php echo get_field('colour_scheme'); ?> text--upper text--<?php echo get_field('banner_text_colour'); ?>"><i class="policy-area__related-info-block__title__icon fa fa-file-text-o"></i> <?php the_title(); ?> Documents</h6>
-                        <div class="policy-area__related-info-block__content">
-                            <div class="gallery gallery__row-of-1 margin--none">
-                                <div class="gallery__item margin--bottom-none">
-                                    <div class="related-doc">
-                                        <img class="related-doc__cover-image" src="http://lorempixel.com/80/112">
-                                        <div class="related-doc__details">
-                                            <div class="related-doc__title">A Digital Single Market for Users</div>
-                                            <div class="related-doc__meta"><strong class="text--upper">Report</strong> &bull; 348kb &bull; PDF</div>
-                                            <div class="related-doc__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit pariatur sed.</div>
-                                            <a href="#" class="button button--primary button--small">Download</a>
-                                        </div>
+	                <?php $documents = get_documents_by_policy_area(get_the_ID()); ?>
+	                <?php if($documents->have_posts()) : ?>
+
+                        <div class="policy-area__related-info-block">
+                            <h6 class="policy-area__related-info-block__title policy-area__related-info-block__title--<?php echo get_field('colour_scheme'); ?> text--upper text--<?php echo get_field('banner_text_colour'); ?>"><i class="policy-area__related-info-block__title__icon fa fa-file-text-o"></i> <?php the_title(); ?> Documents</h6>
+                            <div class="policy-area__related-info-block__content">
+
+                                <div class="document-group margin--none">
+                                    <div class="gallery margin--none gallery__row-of-1">
+				                        <?php while($documents->have_posts()) : $documents->the_post(); ?>
+                                            <div class="document document--policy-area-document gallery__item">
+                                                <div class="document__details">
+                                                    <div class="document__title"><?php the_title(); ?></div>
+                                                    <div class="document__meta margin--bottom">
+                                                        <?php echo get_field('file_type'); ?> | <?php echo get_field('file_size'); ?> | <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'document_categories')); ?>
+                                                        <div class="document__button-group--standard">
+                                                            <a href="#" id="document-more-info-button" data-modal-id="#modal-<?php the_ID(); ?>" class="button button--primary button--small modal-trigger"><?php echo get_theme_mod('document_more_info_button_text', 'More Info'); ?></a>
+		                                                    <?php $file = get_field('file'); ?>
+                                                            <a href="<?php echo $file['url']; ?>" class="button button--primary button--small" download><?php echo get_theme_mod('document_download_button_text', 'Download'); ?></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="modal-<?php the_ID(); ?>" class="modal">
+                                                <div class="modal__content">
+                                                    <div class="document__description">
+                                                        <h3><?php the_title(); ?></h3>
+								                        <?php if(has_post_thumbnail()) : ?>
+									                        <?php
+									                        $image_id = get_id_from_img_url(get_the_post_thumbnail_url());
+									                        $member_logo = wp_get_attachment_image_src($image_id, 'document-cover')[0];
+									                        ?>
+                                                            <div class="document__description__cover-image"><img src="<?php echo $member_logo; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"></div>
+								                        <?php endif; ?>
+								                        <?php if(get_field('description')) : ?>
+									                        <?php echo get_field('description'); ?>
+								                        <?php else : ?>
+                                                            <em>No further information available.</em>
+								                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="modal__close" data-modal-id="#modal-<?php the_ID(); ?>"><i class="fa fa-times fa-lg"></i></div>
+                                                </div>
+                                            </div>
+
+				                        <?php endwhile; ?>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                    </div>
+	                <?php endif; wp_reset_postdata(); ?>
 
                     <?php $news = get_news_by_policy_area($policy_area_id);
                         if($news->have_posts()) :?>

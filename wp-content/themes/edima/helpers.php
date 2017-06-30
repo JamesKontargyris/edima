@@ -60,14 +60,27 @@ function inline_categories($categories = [], $category_item_class = 'news-story_
  * @param $text
  * @param $limit
  *
+ * @param string $type
+ *
  * @return string
  */
-function limit_text($text, $limit) {
-	if (str_word_count($text, 0) > $limit) {
-		$words = str_word_count($text, 2);
-		$pos = array_keys($words);
-		$text = substr($text, 0, $pos[$limit]) . '...';
+function limit_text($text, $limit, $type = 'word') {
+	$text = trim($text);
+
+	if($type == 'char') {
+		if (strlen($text) > $limit) {
+			$text = wordwrap($text, $limit);
+			$text = explode("\n", $text, 2);
+			$text = $text[0] . '...';
+		}
+	} else {
+		if (str_word_count($text, 0) > $limit) {
+			$words = str_word_count($text, 2);
+			$pos = array_keys($words);
+			$text = substr($text, 0, $pos[$limit]) . '...';
+		}
 	}
+
 	return $text;
 }
 
