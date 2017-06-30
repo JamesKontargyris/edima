@@ -7,7 +7,7 @@ function ajax_load_more_news() {
 
 		wp_enqueue_script(
 			'edima-ajax-load-more-news',
-			plugins_url() . '/edima/AJAX/js/load-more-news.js',
+			plugins_url() . '/edima/ajax/js/load-more-news.js',
 			['jquery'],
 			'1.0',
 			true
@@ -42,7 +42,7 @@ function ajax_load_more_news() {
 			'ajax_load_more_news',
 			[
 				'maxStories' => $news_stories->found_posts,
-				'url' => plugins_url() . '/edima/AJAX/templates/load_more_news.php',
+				'url' => plugins_url() . '/edima/ajax/templates/load_more_news.php',
 				'offset' => $offset,
 				'isNewsArchive' => is_post_type_archive('news_story') ? 1 : 0,
 				'isDate' => is_date() ? 1 : 0,
