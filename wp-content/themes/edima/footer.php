@@ -60,7 +60,7 @@
 			<?php if ( $members->have_posts() ) : ?>
 
 				<?php while ( $members->have_posts() ) : $members->the_post(); ?>
-                    <div style="float:left; width:<?php if ( $members->post_count <= 6 ) : ?> 50% <?php else : ?> 33% <?php endif; ?>">
+                    <div style="float:left; width:50%">
                         <div class="text--white" style="display:inline-block; padding-bottom:1rem;"><?php the_title(); ?></div>
                     </div>
 				<?php endwhile; ?>
