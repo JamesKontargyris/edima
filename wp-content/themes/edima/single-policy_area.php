@@ -116,7 +116,7 @@ get_header(); ?>
                                                             <em>No further information available.</em>
 								                        <?php endif; ?>
                                                     </div>
-                                                    <div class="modal__close" data-modal-id="#modal-<?php the_ID(); ?>"><i class="fa fa-times fa-lg"></i></div>
+                                                    <div class="modal__close" data-modal-id="#modal-<?php the_ID(); ?>"></div>
                                                 </div>
                                             </div>
 
