@@ -147,6 +147,23 @@ function get_documents( $with_featured = true, $count = - 1, $offset = 0, $ignor
 	return new WP_Query( $args );
 }
 
+function get_featured_documents( $count = - 1, $offset = 0, $ignore_ids = [] ) {
+	$args = [
+		'post_status'    => 'publish',
+		'post_type'      => 'document',
+		'posts_per_page' => $count,
+		'post__not_in'   => $ignore_ids,
+		'offset'         => $offset,
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+		'meta_key' => 'featured',
+		'meta_value' => 'yes',
+		'compare' => 'LIKE',
+	];
+
+	return new WP_Query( $args );
+}
+
 function get_documents_by_policy_area( $policy_area_id = 0, $count = - 1, $offset = 0, $ignore_ids = [] ) {
 
 	$args = [
@@ -160,6 +177,27 @@ function get_documents_by_policy_area( $policy_area_id = 0, $count = - 1, $offse
 		'meta_key'       => 'policy_areas',
 		'meta_value'     => '"' . $policy_area_id . '"',
 		'meta_compare'   => 'LIKE'
+	];
+
+	return new WP_Query( $args );
+}
+
+function get_documents_by_document_category( $tax_id = '', $count = 3, $offset = 0, $ignore_ids = [] ) {
+	$args = [
+		'post_status'    => 'publish',
+		'post_type'      => 'document',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+		'posts_per_page' => $count,
+		'post__not_in'   => $ignore_ids,
+		'offset'         => $offset,
+		'tax_query'      => [
+			[
+				'taxonomy' => 'document_categories',
+				'field'    => 'term_id',
+				'terms'    => $tax_id,
+			]
+		]
 	];
 
 	return new WP_Query( $args );

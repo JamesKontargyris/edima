@@ -3,13 +3,18 @@
 }
 
 .document {
-  position: relative;
   @include clearfix;
+  position: relative;
   @include box();
   padding:1.5rem 2rem 5rem; // Extra padding to allow for abs. positioned buttons at the bottom
+  z-index:0; // To allow for modal to sit on top
 
   @include media($l-up) {
     min-height:20rem;
+  }
+
+  &.document--height-auto {
+    min-height:auto;
   }
 }
 .document__cover-image {
@@ -29,6 +34,10 @@
   }
 
   @include media($l) {
+    display: none;
+  }
+
+  &.document__cover-image--hide {
     display: none;
   }
 
@@ -56,6 +65,15 @@
   @include media($xl-up) {
     min-height:16rem;
   }
+
+  &.document__details--height-auto {
+    min-height:auto;
+  }
+
+  &.document__details--full-width {
+    @include span-columns(12);
+  }
+
 }
 
 .document__categories {

@@ -1,0 +1,40 @@
+.search-form {
+  display: none;
+  position: absolute;
+  bottom: -5rem;
+  right:0;
+  background:linear-gradient(to top, $red 90%, shade($red, 30%) 100%);
+  box-shadow: 0 0.2rem 0.1rem rgba(black, 0.2);
+  height:5rem;
+  width:100%;
+  padding:1rem;
+  text-align: left;
+
+  @include media($l-up) {
+    border-radius: 0 0 $base-border-radius $base-border-radius;
+    right: 7rem;
+    width:30rem;
+  }
+
+  input[type=search] {
+    display: block;
+    height:100%;
+    width:100%;
+    @include font-size(14, 14);
+    font-family: $base-font-family;
+  }
+
+  input[type=submit] {
+    display: none;
+  }
+}
+
+.search-form-trigger {
+  &.active {
+    svg {
+      fill:$red;
+      -webkit-filter: drop-shadow( 0 0 8px white );
+      filter: drop-shadow( 0 0 8px white );
+    }
+  }
+}

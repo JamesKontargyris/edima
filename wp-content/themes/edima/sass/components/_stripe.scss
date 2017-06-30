@@ -1,7 +1,7 @@
 .stripe {
-  position:relative;
   padding:$base-spacing * 2 0;
   margin:0 0 $base-spacing * 2 0;
+  z-index: 0; // fix so modal sits on top
 }
 
 .stripe--small-padding {

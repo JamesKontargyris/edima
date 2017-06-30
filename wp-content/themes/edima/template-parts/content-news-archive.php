@@ -1,7 +1,7 @@
 <?php get_template_part('template-parts/partials/partial', 'news-filters'); ?>
 
 <!-- Latest News Story Hero-->
-<div class="news-archive__hero-story stripe stripe--border-bottom">
+<div class="news-archive__hero-story stripe stripe--border-bottom position--relative">
 	<div class="stripe__content">
 		<div class="news-archive">
 			<?php $latest_news_story = get_latest_news(1, 0); ?>

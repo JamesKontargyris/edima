@@ -25,8 +25,9 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'edima' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner">
         <div class="site-header__content">
+
 
             <div class="site-header__mobile-menu-toggle-container">
                 <a class="site-header__mobile-menu-toggle-icon" aria-controls="primary-menu" aria-expanded="false">
@@ -65,8 +66,20 @@
             </nav> <!-- /site-header__nav-->
 
             <div class="site-header__sub-nav">
-                <?php echo file_get_contents(get_template_directory_uri() . '/img/icons/search.svg'); ?> <span class="hide--xs hide--s"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/email.svg'); ?></span>
+
+                <a href="#" class="search-form-trigger"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/search.svg'); ?></a>
+
+                <span class="hide--xs hide--s"><a href="/contact-us" class="modal-trigger" data-modal-id="#header-contact-modal"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/email.svg'); ?></a></span>
+
+                <?php get_template_part('template-parts/partials/partial', 'search-form'); ?>
             </div> <!-- /site-header__sub-nav -->
+        </div>
+
+        <div id="header-contact-modal" class="modal">
+            <div class="modal__content">
+                A contact form appears here, making it quicker and easier for users to send EDiMA an email than via the contact us form.
+                <div class="modal__close"></div>
+            </div>
         </div>
 
 	</header><!-- site-header -->

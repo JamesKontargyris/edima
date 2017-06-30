@@ -1,9 +1,9 @@
 .modal {
   position: fixed; /* Stay in place */
+  z-index:9999;
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -15,6 +15,7 @@
 
 .modal__content {
   position: relative;
+  z-index:99999;
   background-color: white;
   padding: 6rem 3rem 3rem;
   width: 90vw;
@@ -36,8 +37,15 @@
   right:2rem;
   cursor: pointer;
   color:$green;
+
   &:hover {
     color:$grey;
     opacity:0.7;
+  }
+
+  &:before {
+    font-family: 'FontAwesome';
+    content:'\f00d';
+    @include font-size(21, 21);
   }
 }

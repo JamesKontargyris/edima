@@ -104,10 +104,13 @@ function customizer_register( $wp_customize ) {
 
 	// Documents
 	$wp_customize->add_setting( 'document_banner_heading' , array(
-		'default'   => 'Policy Areas',
+		'default'   => 'Library',
 	) );
 	$wp_customize->add_setting( 'document_banner_text' , array(
 		'default'   => '',
+	) );
+	$wp_customize->add_setting( 'document_featured_text' , array(
+		'default'   => 'Featured',
 	) );
 	$wp_customize->add_setting( 'document_banner_heading_color' , array(
 		'default'   => '#ffffff',
@@ -237,6 +240,11 @@ function customizer_register( $wp_customize ) {
 		'label'      => __( 'Page Description', 'edima' ),
 		'section'    => 'edima_documents_section',
 		'settings'   => 'document_banner_text',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'document_featured_text_control', array(
+		'label'      => __( 'Featured Documents Section Title', 'edima' ),
+		'section'    => 'edima_documents_section',
+		'settings'   => 'document_featured_text',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'document_banner_heading_color_control', array(
 		'label'      => __( 'Banner Heading Colour', 'edima' ),
