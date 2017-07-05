@@ -17,25 +17,18 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <div class="stripe stripe--large-padding margin--none stripe--green">
-                <div class="stripe__content stripe__content--side-padding">
-
-                    <div class="page-header__content">
-
-                            <h1 class="page-header__title text--white text--center">Homepage</h1>
-
-                            <p class="page-header__intro text--white text--center">Coming soon...</p>
-
-                    </div>
-
+            <div class="home-hero">
+                <div class="home-hero__text-container">
+                    <h2 class="text--blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, rerum.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at consequatur dolore excepturi illo itaque, nostrum quidem? Cumque, est expedita, ipsa iste maiores, molestiae neque odit praesentium quas quis vero.</p>
+                    <a href="#" class="button button--primary button--large">A Button</a>
+                </div>
+                <div class="home-hero__map-container">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/home_hero_wires_map.svg" alt="EU map made up of connections" class="home-hero__map">
                 </div>
             </div>
 
-            <div class="container container--with-padding">
-                <p class="text--center">Homepage elements will appear here. In the meantime, use the links in the main menu above to explore the site.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+            Next bit here <br><br><br><br><br><br><br><br><br>
 
 
 

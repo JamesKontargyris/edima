@@ -25,7 +25,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'edima' ); ?></a>
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header <?php if(is_front_page()) :?> site-header--home <?php endif; ?>" role="banner">
         <div class="site-header__content">
 
 

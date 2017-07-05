@@ -11,6 +11,16 @@ header.site-header {
   border-bottom:0.3rem solid $green;
 }
 
+header.site-header--home {
+  @include media($xl-up) {
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(white, 0.6);
+    border-bottom:0.1rem solid rgba(white, 0.5);
+  }
+}
+
 .site-header__content {
   @include outer-container();
   position:relative;

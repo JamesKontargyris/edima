@@ -5,6 +5,15 @@
   text-transform: uppercase;
   @include font-size(12, 12);
   margin-bottom:0.5rem;
+
+}
+
+.button--xlarge {
+  @include font-size(16, 16);
+}
+
+.button--large {
+  @include font-size(14, 14);
 }
 
 .button--small {
@@ -27,6 +36,11 @@
     background:linear-gradient(to top, $green 0%, darken($green, 7%) 100%), $green;
   }
 
+  &.button--large,
+  &.button--xlarge {
+    padding:1.6rem 2rem;
+  }
+
   &.button--small,
   &.button--xsmall {
     padding:0.6rem 1rem;
@@ -45,6 +59,11 @@
     background:linear-gradient(to top, white 0%, darken($light-grey, 4%) 100%), white;
   }
 
+  &.button--large,
+  &.button--xlarge {
+    padding:1.6rem 2rem;
+  }
+
   &.button--small,
   &.button--xsmall {
     padding:0.6rem 1rem;
@@ -60,6 +79,11 @@
 
   &:hover {
     border:1px solid darken($light-grey, 5%);
+  }
+
+  &.button--large,
+  &.button--xlarge {
+    padding:1.6rem 2rem;
   }
 
   &.button--small,
