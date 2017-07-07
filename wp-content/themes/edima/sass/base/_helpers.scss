@@ -162,6 +162,12 @@
   font-weight: 800 !important;
 }
 
+.text--expand {
+  @include media($l-up) {
+    letter-spacing: 0.4rem;
+  }
+}
+
 .text--divider {
   padding:0 5px;
 }
@@ -171,7 +177,7 @@
   @include font-size(14, 20);
 
   @include media($m-up) {
-    @include font-size(15, 21);
+    @include font-size(16, 24);
     width: 60%;
   }
 }

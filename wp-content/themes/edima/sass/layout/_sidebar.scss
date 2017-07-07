@@ -1,7 +1,9 @@
-aside {
-  &:not(:last-of-type) {
-    padding-bottom:$base-spacing * 1.5;
-    border-bottom:1px solid darken($light-grey, 10%);
-    margin-bottom:$base-spacing * 1.5;
+.sidebar-menu {
+  @include box();
+}
+
+.sidebar-menu--pull-up {
+  @include media($xl-up) {
+    margin-top:-5rem;
   }
 }

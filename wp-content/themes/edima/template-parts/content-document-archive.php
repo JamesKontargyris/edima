@@ -16,11 +16,11 @@
 	</div>
 </div>
 
-<div class="news__sub-nav page-nav page-nav--green page-nav--center margin--bottom-large">
+<!--<div class="news__sub-nav page-nav page-nav--green page-nav--center margin--bottom-large">
     <div class="page-nav__content">
         Categories and Filters here
     </div>
-</div>
+</div>-->
 
 <!--Featured documents-->
 <?php get_template_part('template-parts/partials/partial', 'featured-documents'); ?>

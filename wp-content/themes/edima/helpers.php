@@ -147,3 +147,13 @@ function get_id_from_img_url($image_url) {
 	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));
 	return $attachment[0];
 }
+
+// Check to see if a post has children
+function has_children($post_id) {
+	$children = get_pages( array( 'child_of' => $post_id ) );
+	if( count( $children ) == 0 ) {
+		return false;
+	} else {
+		return true;
+	}
+}

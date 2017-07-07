@@ -14,32 +14,26 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
-			while ( have_posts() ) : the_post();
+    <div id="#content" class="content-area">
 
-			switch(get_post_type()) {
-                case 'news_story' :
-	                get_template_part( 'template-parts/content', 'news-story' );
-	                break;
-                default :
-	                get_template_part( 'template-parts/content', 'page' );
-	                break;
-            }
+        <?php if( ! get_field('hide_breadcrumbs')) : ?>
+            <div class="container">
+                <div class="breadcrumbs">
+                    <?php breadcrumbs(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				/*if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;*/
+        <?php get_template_part('template-parts/partials/partial', 'page-banner'); ?>
 
-			endwhile; // End of the loop.
-			?>
+	    <?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    </div>
+
+<?php endwhile; // End of the loop. ?>
+
 
 <?php
-get_sidebar();
 get_footer();

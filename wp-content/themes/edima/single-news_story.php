@@ -21,7 +21,7 @@ get_header(); ?>
     <?php if(has_post_thumbnail()) : ?>
         <style>
             .news-story__hero {
-                background: linear-gradient(to right, rgba(0,0,0, 0.6) 20%, rgba(0,0,0, 0) 100%), url(<?php the_post_thumbnail_url('hero') ?>) center, rgb(0, 59, 119);
+                background: linear-gradient(to right, rgba(0,0,0, 0.4) 20%, rgba(0,0,0, 0.4) 100%), url(<?php the_post_thumbnail_url('hero') ?>) center, rgb(0, 59, 119);
                 background-size: cover;
             }
         </style>
@@ -50,9 +50,8 @@ get_header(); ?>
         </div>
     </div>
 
-    <div id="#content" class="content-area">
-        <div id="primary" class="container--with-padding">
-            <main id="main" class="site-main" role="main">
+    <div id="#content" class="content-area container--with-padding">
+        <div id="primary" class="full-width">
 
                 <div class="news-story__content">
 
@@ -68,7 +67,6 @@ get_header(); ?>
 
                 </div>
 
-            </main><!-- #main -->
         </div><!-- #primary -->
     </div>
 

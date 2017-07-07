@@ -8,7 +8,7 @@ define('ARCHIVE_MONTHNUM', get_the_date( _x( 'n', 'monthly archives date format'
 
 <div class="container--with-padding margin--bottom">
 
-    <div class="breadcrumbs">
+    <div class="breadcrumbs tax-archive__breadcrumbs">
 		<?php breadcrumbs(); ?>
     </div>
 

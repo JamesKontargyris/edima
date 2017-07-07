@@ -87,29 +87,107 @@ function edima_content_width() {
 }
 add_action( 'after_setup_theme', 'edima_content_width', 0 );
 
+
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * Widget areas
  */
-function edima_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'edima' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'edima' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+function edima_widgets_init()
+{
+	register_sidebar([
+		'name' => __('Page Sidebar', 'edima'),
+		'id' => 'sidebar-1',
+		'description' => 'Displays widgets in the sidebar of standard pages',
+		'before_widget' => '<aside>',
+		'after_widget' => '</aside>',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
+	register_sidebar([
+		'name' => __('Footer Left', 'edima'),
+		'id' => 'footer-left',
+		'description' => 'Displays widgets in the left-third of the page footer (1st row on mobile devices)',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
+	register_sidebar([
+		'name' => __('Footer Middle', 'edima'),
+		'id' => 'footer-middle',
+		'description' => 'Displays widgets in the middle-third of the page footer (2nd row on mobile devices)',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
+	register_sidebar([
+		'name' => __('Footer Right', 'edima'),
+		'id' => 'footer-right',
+		'description' => 'Displays widgets in the right-third of the page footer (3rd row on mobile devices)',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
+	register_sidebar([
+		'name' => __('Site Info Bar', 'edima'),
+		'id' => 'site-info-left',
+		'description' => 'Displays widgets in the site info bar at the bottom of the page footer',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	]);
+	register_sidebar([
+		'name' => __('News Story', 'edima'),
+		'id' => 'expertise-area',
+		'description' => 'Displays widgets in the sidebar on all news story pages',
+		'before_widget' => '<aside>',
+		'after_widget' => '</aside>',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
+	register_sidebar([
+		'name' => __('Policy Area', 'edima'),
+		'id' => 'fipriot-profile',
+		'description' => 'Displays widgets in the sidebar on all policy area pages',
+		'before_widget' => '<aside>',
+		'after_widget' => '</aside>',
+		'before_title' => '<h6 class="text--upper margin--bottom-small">',
+		'after_title' => '</h6>',
+	]);
 }
-add_action( 'widgets_init', 'edima_widgets_init' );
+
+add_action('widgets_init', 'edima_widgets_init');
+
+// unregister widgets we won't use
+function remove_default_widgets() {
+	unregister_widget('WP_Widget_Pages');
+	unregister_widget('WP_Widget_Calendar');
+	unregister_widget('WP_Widget_Archives');
+	unregister_widget('WP_Widget_Links');
+	unregister_widget('WP_Widget_Meta');
+	unregister_widget('WP_Widget_Search');
+//    unregister_widget('WP_Widget_Text');
+	unregister_widget('WP_Widget_Categories');
+	unregister_widget('WP_Widget_Recent_Posts');
+	unregister_widget('WP_Widget_Recent_Comments');
+	unregister_widget('WP_Widget_RSS');
+	unregister_widget('WP_Widget_Tag_Cloud');
+//    unregister_widget('WP_Nav_Menu_Widget');
+}
+add_action('widgets_init', 'remove_default_widgets', 11);
+
+// remove <p> tags from text widget content, from 4.8 version WP adds these tags
+remove_filter('widget_text_content', 'wpautop');
 
 /**
  * Enqueue scripts and styles.
  */
 function edima_scripts() {
 	wp_enqueue_style( 'edima-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'edima-animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
+	wp_enqueue_style( 'edima-owl-carousel-css', '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css' );
 
 	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', false );
 	wp_enqueue_script( 'edima-jquery-ui-1.12.1', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array(), '20170630', false );
@@ -127,10 +205,12 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-news', get_template_directory_uri() . '/js/news.js', array(), '20170618', true );
 
 	wp_enqueue_script( 'edima-fontawesome', 'https://use.fontawesome.com/6d6e2737fb.js', array(), '20170617', true );
+	wp_enqueue_script( 'edima-owl-carousel-js', '/node_modules/owl.carousel/dist/owl.carousel.min.js', array(), '20170706', true );
 
 	wp_enqueue_script( 'edima-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'edima-header', get_template_directory_uri() . '/js/header.js', array(), '20170615', true );
+	wp_enqueue_script( 'edima-home', get_template_directory_uri() . '/js/home.js', array(), '20170706', true );
 
 	wp_enqueue_script( 'edima-site-js', get_template_directory_uri() . '/js/site.js', array(), '20170621', true );
 	wp_enqueue_script( 'edima-page-header-js', get_template_directory_uri() . '/js/page-header.js', array(), '20170621', true );

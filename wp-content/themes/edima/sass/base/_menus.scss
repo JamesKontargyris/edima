@@ -62,7 +62,8 @@
         color:white;
       }
 
-      &.current-menu-item {
+      &.current-menu-item,
+      &.current-page-ancestor {
         background: linear-gradient(to bottom, rgba($green, 0) 10%, rgba($green, 1) 95%);
         a {
           color:white;
@@ -71,6 +72,19 @@
     }
   }
 
+}
+
+// Homepage tweaks to main nav
+.site-header__primary-menu--home {
+  @include media($xl-up) {
+    li a:link, li a:visited {
+      color:$green;
+      &:hover {
+        background: linear-gradient(to bottom, rgba($green, 0) 0%, rgba($green, 0.2) 100%);
+        color:$blue;
+      }
+    }
+  }
 }
 
 .vertical-menu {
@@ -116,13 +130,93 @@
   .vertical-menu__link:link,
   .vertical-menu__link:visited,
   .vertical-menu__item a:link,
-  .vertical-menu__item a:visited {
+  .vertical-menu__item a:visited,
+  li a:link,
+  li a:visited,
+  ul li a:link,
+  ul li a:visited {
     color:white;
+    &:hover {
+      opacity:0.7;
+    }
   }
 }
 
 .vertical-menu__link:hover,
 .vertical-menu__item a:hover {
+  color:tint($blue, 40%) !important;
+  background: rgba(black, 0.1);
+  margin:0 -2rem;
+  padding-left:2rem;
+  padding-right:2rem;
+}
+
+
+
+.horizontal-menu,
+.horizontal-menu ul {
+  @include clearfix;
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+.horizontal-menu--centered,
+.horizontal-menu--centered ul {
+  display:inline-block;
+  margin:0 auto;
+}
+
+.horizontal-menu__item,
+.horizontal-menu li {
+  display:block;
+  float:left;
+
+  &:not(:last-of-type) {
+    margin-right:3rem;
+  }
+}
+
+.horizontal-menu__link:link,
+.horizontal-menu__link:visited,
+.horizontal-menu__item a:link,
+.horizontal-menu__item a:visited,
+.horizontal-menu li a:link,
+.horizontal-menu li a:visited {
+
+  &.active {
+    border-radius: $base-border-radius;
+    background: linear-gradient(to bottom, $green 0%, darken($green, 4%) 100%);
+    margin:0 -1rem;
+    padding-left:1rem;
+    color:white;
+    font-weight:800;
+    cursor: default;
+    box-shadow:0 0.2rem 0.2rem rgba(black, 0.1);
+    &:hover {
+      color:white !important;
+    }
+  }
+}
+
+.horizontal-menu--white-links {
+  .horizontal-menu__link:link,
+  .horizontal-menu__link:visited,
+  .horizontal-menu__item a:link,
+  .horizontal-menu__item a:visited,
+  li a:link,
+  li a:visited,
+  ul li a:link,
+  ul li a:visited {
+    color:white;
+    &:hover {
+      opacity:0.7;
+    }
+  }
+}
+
+.horizontal-menu__link:hover,
+.horizontal-menu__item a:hover {
   color:tint($blue, 40%) !important;
   background: rgba(black, 0.1);
   margin:0 -2rem;

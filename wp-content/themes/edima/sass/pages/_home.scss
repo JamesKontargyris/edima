@@ -1,56 +1,260 @@
 .home-hero {
   position: relative;
-  width:150vw;
-  margin-left:-25vw;
-  height:100vh;
-  max-height:90rem;
+  width:100vw;
+  /*margin-left:-25vw;*/
+  height:calc(100vh - 8rem);
+  max-height:150rem;
   background:
-          linear-gradient(to bottom right, rgba(17,134,156,0.3) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.0) 60%, rgba(17,134,156,0.4) 100%),
+          linear-gradient(to bottom right, rgba(17,134,156,0.3) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.0) 60%, rgba(17,134,156,0.2) 100%),
           linear-gradient(to bottom left, rgba(17,134,156,0.1) 0%, rgba(17,134,156,0) 20%, rgba(17,134,156,0.0) 80%, rgba(17,134,156,0.3) 100%),
-          url(img/bg_lines.png) top left repeat,
+          url(img/home_hero_bg_map.svg) center no-repeat,
           linear-gradient(to bottom right, #f2f9f9 10%, #a0d4d7 100%);
-  border-bottom-left-radius: 100% 100%;
-  border-bottom-right-radius: 100% 100%;
   box-shadow: inset 0 -0.5rem 2.5rem rgba(black, 0.2);
+  background-size: auto, auto, cover, auto;
   overflow:hidden;
+
+  @include media($l-up) {
+    height:100vh;
+    background:
+            linear-gradient(to bottom right, rgba(17,134,156,0.3) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.0) 60%, rgba(17,134,156,0.2) 100%),
+            linear-gradient(to bottom left, rgba(17,134,156,0.1) 0%, rgba(17,134,156,0) 20%, rgba(17,134,156,0.0) 80%, rgba(17,134,156,0.3) 100%),
+            url(img/bg_lines.png) top left repeat,
+            linear-gradient(to bottom right, #f2f9f9 10%, #a0d4d7 100%);
+  }
 
   @include media($xl-up) {
     background-attachment: fixed;
     margin-top:-8rem; // to allow for fixed header to sit on top
+    padding-top:8rem; // to allow for negative margin above
   }
+}
+
+.home-hero__content {
+  @include outer-container();
+  height:100%;
 }
 
 .home-hero__text-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   align-content: center;
   justify-content: center;
-  margin-left:25vw;
-  padding-left:8%;
+  text-align: center;
+  width:85vw;
+  margin:0 auto;
   height:100%;
-  width:45vw;
   /*background:grey;*/
+
+  @include media($l) {
+    padding-top:8vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:55vw;
+    margin-left:5vw;
+    text-align: left;
+  }
+
+  @include media($xl-up) {
+    width:40vw;
+    max-width:60rem;
+    margin:0;
+    text-align: left;
+    align-items:flex-start;
+  }
+}
+
+.home-hero__title {
+  @extend h2;
+
+  @include media($xl-up) {
+    @include font-size(34, 38);
+  }
+
+  @include media(min-width 1300px) {
+    @include font-size(40, 44);
+  }
+}
+
+.home-hero__para {
+  @include media($l-up) {
+    @include font-size(16, 24);
+    font-weight:500;
+  }
 }
 
 .home-hero__map-container {
   height:100%;
 }
 .home-hero__map {
-  position: absolute;
-  right:5vw;
-  top:-20rem;
-  width:80rem;
+  display: none;
 
-  @include media(min-width 1370px max-width 1799px) {
-    right:0;
-    top:-40rem;
-    width:110rem;
+  @include media($l) {
+    display: block;
+    position: absolute;
+    right:-10rem;
+    bottom:0;
+    width:80rem;
   }
 
-  @include media(min-width 1800px) {
-    right:0;
-    top:-80%;
-    width:50%;
+  @include media($xl-up) {
+    display: block;
+    position: absolute;
+    left:50vw;
+    top:50vh;
+    margin-top:-75rem;
+    width:100rem;
+  }
+}
+
+.home-block {
+  width: 100vw;
+  @include media($xl-up) {
+    height:100vh;
+  }
+}
+
+.home-block__content {
+  height:100%;
+  @include media($m-up) {
+    padding-left:$column;
+    padding-right:$column;
+
+  }
+  @include media($l-up) {
+    padding-left:$column * 2;
+    padding-right:$column * 2;
+  }
+
+  @include media($xl-up) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.home-block__image,
+.home-block__text {
+  @extend .grid--half;
+}
+
+.home-block__image img {
+  display: block;
+  margin:0 auto $base-spacing * 2;
+  max-width:20rem;
+
+  @include media($l-up) {
+    max-width:100%;
+  }
+
+  @include media($xl-up) {
+    margin:0 auto;
+  }
+}
+
+.home-block__text--full-width {
+  width:100%;
+}
+
+.home-block--flip { // flip the image and text around on larger displays
+  @include media($xl-up) {
+    .home-block__image {
+      @include shift(6);
+    }
+    .home-block__text {
+      @include shift(-12);
+    }
+  }
+}
+
+.home-block__text--narrow {
+  @include media($xl-up) {
+    padding-left:10rem;
+    padding-right:10rem;
+
+  }
+}
+
+.scroll-down-indicator {
+  @include box();
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width:3rem;
+  height:3rem;
+  left:50%;
+  bottom:2rem;
+  margin-left:-1.5rem;
+  border-radius: 50%;
+  z-index:999;
+  opacity:0;
+  animation: bob 1.5s ease-in-out infinite,
+  fadeInFromNone 2s linear forwards;
+  animation-delay: 2s;
+  text-align: center;
+}
+
+.home__members-carousel {
+  @extend .carousel;
+  margin:0 0 $base-spacing * 2 !important;
+}
+
+// TEMPORARY
+
+.home-block.stripe--blue {
+  background:
+          url(img/bg_lines_light_small.png) top left repeat,
+          url(img/bg_connecting_lines_right_only.png) center right no-repeat,
+          linear-gradient($blue 33%, darken($blue, 3%)), $blue;
+  background-size: auto, cover, auto;
+  background-attachment: fixed;
+}
+
+.home-block.stripe--red {
+  background:
+          url(img/bg_lines_light_small.png) top left repeat,
+          url(img/bg_connecting_lines_left_only.png) center left no-repeat,
+          linear-gradient($red 33%, darken($red, 3%)), $red;
+  background-size: auto, cover, auto;
+  background-attachment: fixed;
+}
+
+.home-block.stripe--green {
+  background:
+          url(img/bg_lines_light_small.png) top left repeat,
+          url(img/bg_connecting_lines_right_only.png) center right no-repeat,
+          linear-gradient($green 33%, darken($green, 3%)), $green;
+  background-size: auto, cover, auto;
+  background-attachment: fixed;
+}
+
+
+
+// ANIMATION
+
+@keyframes bob {
+  50% {
+    bottom:3rem;
+  }
+  100% {
+    bottom:2rem;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
   }
 }

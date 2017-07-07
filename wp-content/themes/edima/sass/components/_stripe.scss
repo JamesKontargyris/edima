@@ -1,4 +1,5 @@
-.stripe {
+.stripe,
+.stripe--standard-padding {
   padding:$base-spacing * 2 0;
   margin:0 0 $base-spacing * 2 0;
   z-index: 0; // fix so modal sits on top
@@ -21,6 +22,22 @@
 
   @include media($l-up) {
     padding: $base-spacing * 5 0;
+  }
+}
+
+.stripe--xxlarge-padding {
+  padding: $base-spacing * 5 0;
+
+  @include media($l-up) {
+    padding: $base-spacing * 8 0;
+  }
+}
+
+.stripe--xxxlarge-padding {
+  padding: $base-spacing * 8 0;
+
+  @include media($l-up) {
+    padding: $base-spacing * 12 0;
   }
 }
 

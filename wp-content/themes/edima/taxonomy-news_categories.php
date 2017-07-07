@@ -19,7 +19,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/partials/partial', 'news-sub-nav'); ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area full-width">
         <main id="main" class="site-main" role="main">
 
             <div class="container--with-padding margin--bottom">

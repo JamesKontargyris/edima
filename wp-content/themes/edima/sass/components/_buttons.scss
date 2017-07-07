@@ -38,7 +38,9 @@
 
   &.button--large,
   &.button--xlarge {
-    padding:1.6rem 2rem;
+    @include media($l-up) {
+      padding:1.3rem 1.6rem;
+    }
   }
 
   &.button--small,
@@ -61,7 +63,9 @@
 
   &.button--large,
   &.button--xlarge {
-    padding:1.6rem 2rem;
+    @include media($l-up) {
+      padding:1.3rem 1.6rem;
+    }
   }
 
   &.button--small,
@@ -83,7 +87,9 @@
 
   &.button--large,
   &.button--xlarge {
-    padding:1.6rem 2rem;
+    @include media($l-up) {
+      padding:1.3rem 1.6rem;
+    }
   }
 
   &.button--small,

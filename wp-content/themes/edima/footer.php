@@ -13,7 +13,7 @@
 
 </div><!-- #content -->
 
-<?php if ( ! is_post_type_archive( 'news_story' ) ) : ?>
+<?php if ( ! is_post_type_archive( 'news_story' ) && ! is_singular('news_story')) : ?>
 
     <div class="stripe stripe--no-margin stripe--light-blue--fade">
         <div class="stripe__content">
@@ -39,7 +39,14 @@
 <footer id="colophon" class="site-footer">
     <div class="site-footer__content">
         <div class="site-footer__nav">
-            Menu
+            <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'secondary',
+                    'menu_id'        => 'secondary-menu',
+                    'menu_class' => 'horizontal-menu horizontal-menu--white-links horizontal-menu--centered',
+                    'depth' => '1',
+                ) );
+            ?>
         </div>
     </div>
 
@@ -47,7 +54,14 @@
         <div class="site-footer__column-one-quarter">
             <div class="site-footer__logo">
 				<?php echo file_get_contents( get_template_directory_uri() . '/img/edima_logo.svg' ); ?>
-                <br>Menu here
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'edima',
+					'menu_id'        => 'edima-menu',
+					'menu_class' => 'vertical-menu vertical-menu--white-links',
+					'depth' => '1',
+				) );
+				?>
             </div>
         </div>
         <div class="site-footer__column-two-quarters">

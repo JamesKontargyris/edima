@@ -50,7 +50,7 @@ get_header(); ?>
             </div>
         </div>
 
-		<div id="primary" class="container--with-padding">
+		<div id="primary" class="container--with-padding full-width">
 			<main id="main" class="site-main" role="main">
 
                 <div class="policy-area__main structure--main-col structure--main-col--pull-right">

@@ -35,7 +35,9 @@ footer.site-footer {
 
 .site-footer__column-one-quarter {
   @include one-quarter;
+  margin-bottom:$base-spacing * 2;
 }
 .site-footer__column-two-quarters {
   @include one-half;
+  margin-bottom:$base-spacing * 2;
 }

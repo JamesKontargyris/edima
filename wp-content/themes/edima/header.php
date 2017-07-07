@@ -30,7 +30,7 @@
 
 
             <div class="site-header__mobile-menu-toggle-container">
-                <a class="site-header__mobile-menu-toggle-icon" aria-controls="primary-menu" aria-expanded="false">
+                <a class="site-header__mobile-menu-toggle-icon <?php if(is_front_page()) : ?> site-header__mobile-menu-toggle-icon--home <?php endif; ?>" aria-controls="primary-menu" aria-expanded="false">
                     <?php echo file_get_contents(get_template_directory_uri() . '/img/icons/menu.svg'); ?>
                 </a>
             </div>  <!-- /site-header__mobile-menu-toggle-container -->
@@ -43,8 +43,13 @@
 			    <?php endif; ?>
 
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-	                <span class="site-header__logo-static"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo.svg'); ?></span>
-	                <span class="site-header__logo-animated"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo_outline_animated.svg'); ?></span>
+                    <?php if(is_front_page()) : ?>
+                        <span class="site-header__logo-static"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo_home.svg'); ?></span>
+                        <span class="site-header__logo-animated"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo_home_outline_animated.svg'); ?></span>
+                    <?php else : ?>
+                        <span class="site-header__logo-static"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo.svg'); ?></span>
+                        <span class="site-header__logo-animated"><?php echo file_get_contents(get_template_directory_uri() . '/img/edima_logo_outline_animated.svg'); ?></span>
+                    <?php endif; ?>
                 </a>
 
                 <?php if ( is_front_page() && is_home() ) : ?>
@@ -56,16 +61,18 @@
 
             <nav id="site-navigation" class="main-navigation site-header__nav" role="navigation">
 		        <?php
+                $menu_class = 'site-header__primary-menu';
+                $menu_class .= is_front_page() ? ' site-header__primary-menu--home' : '';
 		        wp_nav_menu( array(
 			        'theme_location' => 'primary',
 			        'menu_id'        => 'primary-menu',
-                    'menu_class' => 'site-header__primary-menu',
+                    'menu_class' => $menu_class,
                     'depth' => '1',
 		        ) );
 		        ?>
             </nav> <!-- /site-header__nav-->
 
-            <div class="site-header__sub-nav">
+            <div class="site-header__sub-nav <?php if(is_front_page()) : ?> site-header__sub-nav--home <?php endif; ?>">
 
                 <a href="#" class="search-form-trigger"><?php echo file_get_contents(get_template_directory_uri() . '/img/icons/search.svg'); ?></a>
 
