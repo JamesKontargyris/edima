@@ -254,53 +254,10 @@
 
   #heromap {
     transform-origin: center;
-    animation: hoverInverse 4s ease-in-out infinite;
+    animation: hoverInverse 4s ease-in-out infinite,
+              fadeInFromNone 1s ease-out forwards;
+    animation-delay: 0s;
 
-    #dots  {
-      opacity:0;
-      transform-origin: center;
-      animation: fadeInFromNone 0.5s ease-out forwards;
-      animation-delay: 3s;
-      ellipse {
-        transform-origin: center;
-        animation: pulseSizeGrowBigger 2s ease-in-out infinite;
-
-        &:nth-of-type(2n) {
-          animation-delay: -1.5s
-        }
-        &:nth-of-type(3n) {
-          animation-delay: -2.8s
-        }
-        &:nth-of-type(4n) {
-          animation-delay: -1.2s
-        }
-      }
-    }
-
-    #chip {
-      opacity:0;
-      transform-origin: center;
-      animation: fadeInFromNone 1s ease-in-out forwards;
-      animation-delay: 1s;
-    }
-
-    #thicklines {
-      transform-origin: center;
-      g, polyline, > path {
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: drawLineAndStop 6s linear forwards;
-        transform-origin: center;
-        animation-delay: 2s;
-      }
-    }
-
-    #thinlines {
-      opacity:0;
-      transform-origin: center;
-      animation: fadeInFromNone 2s ease-out forwards;
-      animation-delay: 4s;
-    }
   }
 
 
@@ -471,18 +428,6 @@
     }
   }
 
-  #happylaptop {
-
-    #laptop {
-      transform-origin: center;
-      animation: hoverInverse 3s ease-in-out infinite;
-    }
-
-    #shadow {
-      transform-origin: center;
-      animation: hover 3s ease-in-out infinite;
-    }
-  }
 }
 
 #happylaptop { // all browsers

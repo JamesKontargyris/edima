@@ -2,7 +2,7 @@
 
     $(document).on('scroll', function()
     {
-        $('.scroll-down-indicator').fadeOut(300);
+        $('.scroll-down-indicator').fadeOut();
     })
 
     $('.home__members-carousel').owlCarousel({
