@@ -272,6 +272,7 @@ add_image_size( 'hero', 1500, 1000, true );
 add_image_size( 'news-extract', 800, 500, true );
 add_image_size( 'policy-area-graphic', 600, 600, true );
 add_image_size( 'member-logo', 600, 600, false );
+add_image_size( 'team-member-photo', 600, 600, false );
 add_image_size( 'document-cover', 350, 490, true );
 
 // AJAX related stuff
