@@ -108,6 +108,7 @@
 }
 
 .home-block {
+  position: relative;
   width: 100vw;
   @include media($xl-up) {
     height:100vh;
@@ -117,13 +118,9 @@
 .home-block__content {
   height:100%;
   @include media($m-up) {
-    padding-left:$column;
-    padding-right:$column;
+    padding-left:6rem;
+    padding-right:6rem;
 
-  }
-  @include media($l-up) {
-    padding-left:$column * 2;
-    padding-right:$column * 2;
   }
 
   @include media($xl-up) {
@@ -135,19 +132,31 @@
 .home-block__image,
 .home-block__text {
   @extend .grid--half;
+  text-align: center;
+
+  @include media($xl-up) {
+    text-align: left;
+  }
 }
+
+@include media($xl-up) {
+  .home-block__text {
+    @include span-columns(5.5);
+  }
+  .home-block__image {
+    @include span-columns(6.5);
+  }
+}
+
 
 .home-block__image img {
   display: block;
   margin:0 auto $base-spacing * 2;
-  max-width:20rem;
-
-  @include media($l-up) {
-    max-width:100%;
-  }
+  height:50vh;
+  overflow: visible;
 
   @include media($xl-up) {
-    margin:0 auto;
+    margin:0;
   }
 }
 
@@ -205,7 +214,7 @@
 .home-block.stripe--blue {
   background:
           url(img/bg_lines_light_small.png) top left repeat,
-          url(img/bg_connecting_lines_right_only.png) center right no-repeat,
+          url(img/comms_icons_bg.svg) top left repeat,
           linear-gradient($blue 33%, darken($blue, 3%)), $blue;
   background-size: auto, cover, auto;
   background-attachment: fixed;
@@ -214,7 +223,7 @@
 .home-block.stripe--red {
   background:
           url(img/bg_lines_light_small.png) top left repeat,
-          url(img/bg_connecting_lines_left_only.png) center left no-repeat,
+          url(img/bg_digital_squares.png) center right no-repeat,
           linear-gradient($red 33%, darken($red, 3%)), $red;
   background-size: auto, cover, auto;
   background-attachment: fixed;
@@ -230,8 +239,163 @@
 }
 
 
+#homeblock1svg {
+  margin-bottom:$base-spacing;
+  @include media($xl-up) {
+    margin-bottom:-10rem;
+  }
+
+  #logocircles {
+    & > g {
+      transform-origin: center;
+      animation: pulseSizeGrow 2s ease-in-out infinite,
+                hover 4s ease-in-out infinite;
+
+      &:nth-of-type(2n) { animation-delay: -1.5s }
+      &:nth-of-type(3n) { animation-delay: -2.8s }
+      &:nth-of-type(4n) { animation-delay: -1.2s }
+    }
+  }
+
+  #icons {
+    path,
+    g {
+      transform-origin: center;
+      animation: pulseSizeShrink 2s ease-in-out infinite;
+
+      &:nth-of-type(2n) { animation-delay: -0.5s }
+      &:nth-of-type(3n) { animation-delay: -0.8s }
+      &:nth-of-type(4n) { animation-delay: -1.2s }
+    }
+  }
+
+  #stars {
+    polygon {
+      transform-origin: center;
+      animation: starsFadeInOut 1.5s linear infinite,
+                starsRotate 6s linear infinite;
+
+      &:nth-of-type(2n) { animation-delay: -0.5s }
+      &:nth-of-type(3n) { animation-delay: -0.8s }
+      &:nth-of-type(4n) { animation-delay: -1.2s }
+    }
+  }
+
+  #lines {
+    & > g {
+      stroke-dasharray: 1.5;
+      animation: moveDottedLines 7.5s linear infinite;
+      &:nth-of-type(2n) { animation-delay: -1.5s }
+      &:nth-of-type(3n) { animation-delay: -2.8s }
+    }
+  }
+
+  #devices {
+    > g {
+      transform-origin: center;
+      animation: hover 6s ease-in-out infinite;
+
+      &:nth-of-type(2) { animation-delay: -1.2s }
+      &:nth-of-type(3) { animation-delay: -0.8s }
+    }
+
+    #laptop {
+      transform-origin: center;
+      animation: hoverInverse 6s ease-in-out infinite;
+    }
+  }
+}
+
+
+#homeblock2svg {
+  margin-bottom: $base-spacing;
+  @include media($xl-up) {
+    margin-bottom: 0;
+  }
+
+  #map {
+    g {
+      opacity:0.8;
+      &:nth-of-type(2n) { opacity:0.6; }
+      &:nth-of-type(3n) { opacity:0.7; }
+      &:nth-of-type(4n) { opacity:0.4; }
+    }
+  }
+
+  #blueelements {
+    transform-origin: center;
+    animation: rotate360 60s linear infinite;
+  }
+
+  #whiteelements {
+    transform-origin: center;
+    animation: rotate360 100s linear infinite;
+  }
+
+  #greenelements {
+    transform-origin: center;
+    animation: rotate360 60s linear infinite;
+    animation-direction: reverse;
+  }
+
+  #eustars {
+    transform-origin: center;
+
+    polygon {
+      transform-origin: center;
+      animation: pulseSizeShrink 2s linear infinite;
+
+      &:nth-of-type(2n) { animation-delay: -0.5s }
+      &:nth-of-type(3n) { animation-delay: -0.8s }
+      &:nth-of-type(4n) { animation-delay: -1.2s }
+    }
+
+    #pulsecircle1 {
+      transform-origin: center center;
+      animation: pulseDot 3s linear infinite;
+      animation-delay: 1s;
+    }
+    #pulsecircle2 {
+      transform-origin: center center;
+      animation: pulseDot 3s linear infinite;
+      animation-delay: 2s;
+    }
+  }
+}
+
+
 
 // ANIMATION
+
+@keyframes dsmCircle {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hover {
+  50% {
+    transform:translateY(3px);
+  }
+}
+
+@keyframes hoverInverse {
+  50% {
+    transform:translateY(-3px);
+  }
+}
 
 @keyframes bob {
   50% {
@@ -239,6 +403,52 @@
   }
   100% {
     bottom:2rem;
+  }
+}
+
+@keyframes starsFadeInOut {
+  50% {
+    opacity:0.3;
+  }
+}
+
+@keyframes starsRotate {
+  0% {
+    transform:rotate(0);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes countriesFadeInOut {
+  50% {
+    opacity:1;
+  }
+}
+
+@keyframes pulseSizeGrow {
+  50% {
+    transform:scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSizeShrink {
+  50% {
+    transform:scale(0.9);
+  }
+}
+
+@keyframes growIn {
+  0% {
+    transform:scale(0.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -256,5 +466,28 @@
   100% {
     display: block;
     opacity: 1;
+  }
+}
+
+@keyframes moveDottedLines {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes pulseDot{
+  0%{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.1;
+  }
+  70%{
+    opacity: 0.09;
+  }
+  100%{
+    transform: scale(5);
+    opacity: 0;
   }
 }

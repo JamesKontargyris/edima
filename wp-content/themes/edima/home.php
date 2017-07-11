@@ -36,7 +36,7 @@ get_header(); ?>
             <div class="home-block stripe stripe--xxxlarge-padding stripe--blue margin--none">
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/home_image_placeholder.png" alt="Image">
+                        <?php echo file_get_contents(get_template_directory_uri() . '/img/home_voice_for_companies.svg'); ?>
                     </div>
                     <div class="home-block__text">
                         <h5 class="text--upper with-line text--white">Our Aim</h5>
@@ -52,7 +52,7 @@ get_header(); ?>
             <div class="home-block home-block--flip stripe stripe--xxxlarge-padding stripe--red margin--none">
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/home_image_placeholder.png" alt="Image">
+	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/home_dsm2.svg'); ?>
                     </div>
                     <div class="home-block__text">
                         <h5 class="text--upper with-line text--white">Our Mission</h5>
