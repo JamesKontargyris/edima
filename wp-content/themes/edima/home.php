@@ -22,12 +22,12 @@ get_header(); ?>
                     <div class="home-hero__text-container">
                         <div class="home-hero__title text--blue">EDiMA: the trade association representing online platforms and other innovative companies.</div>
                         <p class="home-hero__para">We support policy initiatives that are pro-consumer and that promote innovation and growth towards a Digital Single Market for Europe.</p>
-                        <div class="button-group">
+                        <div class="home-hero__buttons button-group">
                             <a href="/about-us" class="button button--primary button--large">Read more</a> <a href="/policy-areas" class="button button--secondary button--large">Policy Areas</a>
                         </div>
                     </div>
                     <div class="home-hero__map-container">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/home_hero_wires_map.svg" alt="EU map made up of connections" class="home-hero__map">
+	                    <div class="home-hero__map"><?php echo file_get_contents(get_template_directory_uri() . '/img/home_hero_wires_map.svg'); ?></div>
                     </div>
                     <div class="scroll-down-indicator"><i class="fa fa-caret-down"></i></div>
                 </div>
@@ -68,7 +68,7 @@ get_header(); ?>
             <div class="home-block stripe stripe--xxxlarge-padding stripe--green margin--none">
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/home_image_placeholder.png" alt="Image">
+	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/home_engagement_with_institutions.svg'); ?>
                     </div>
                     <div class="home-block__text">
                         <h5 class="text--upper with-line text--white">Dialogue</h5>
@@ -83,7 +83,8 @@ get_header(); ?>
 
             <div class="home-block stripe stripe--xxlarge-padding stripe--light-blue margin--none" style="background:url(<?php echo get_template_directory_uri(); ?>/img/people_bg.jpg) top left repeat; background-attachment: fixed;">
                 <div class="home-block__content container" style="background:radial-gradient(rgba(255,255,255,0.7) 30%, rgba(255,255,255,0) 70%);">
-                    <div class="home-block__text home-block__text--full-width home-block__text--narrow text--center">
+                    <div class="home-block__text home-block__text--full-width home-block__text--narrow text--center" style="text-align: center">
+	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/happy_laptop.svg'); ?>
                         <h5 class="text--upper with-line text--red">stakeholder interests</h5>
                         <h2 class="text--blue">Everyone should benefit from the cultural and economic opportunities offered by the online and digital sector. </h2>
                         <p>Ensuring this enables the sector to continue as a driver for cultural diversity and economic growth in the EU.</p>
