@@ -103,4 +103,7 @@ body .wpcf7-mail-sent-ok {
 
 .wpcf7-textarea {
   height:10rem;
+  @include font-size(16, 18);
+  font-family: $base-font-family;
+  @include rem('padding', 8px);
 }
