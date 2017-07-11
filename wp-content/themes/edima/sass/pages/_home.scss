@@ -1,5 +1,6 @@
 .home-hero {
   position: relative;
+  z-index: -1;
   width:100vw;
   /*margin-left:-25vw;*/
   height:calc(100vh - 8rem);
@@ -109,6 +110,7 @@
 
 .home-block {
   position: relative;
+  overflow: visible;
   width: 100vw;
   @include media($xl-up) {
     height:100vh;
@@ -209,6 +211,39 @@
   margin:0 0 $base-spacing * 2 !important;
 }
 
+.connector-divider__container {
+  display:none;
+  position: relative;
+  width:100%;
+  background: darken($blue, 10%);
+
+  @include media($xl-up) {
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      display: block;
+      height:1rem;
+    }
+  }
+
+  .connector-divider {
+    display: none;
+    position: absolute;
+    top:-8rem;
+    left:50%;
+    margin-left:-2.5rem;
+    width:5rem;
+    z-index:9999;
+    overflow: visible;
+
+    #dot1 {
+      stroke: darken($blue, 10%);
+    }
+
+    &.visible {
+      display: block;
+    }
+  }
+}
+
 // TEMPORARY
 
 .home-block.stripe--blue {
@@ -252,11 +287,45 @@
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 
+  #connector {
+    opacity: 0;
+    transform-origin: center;
+    animation: hoverInverse 4s ease-in-out infinite,
+    fadeInFromNone 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+
+    #line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLineAndStop 5s linear forwards;
+      animation-delay: 0.5s;
+    }
+  }
+
   #heromap {
+    opacity: 0;
     transform-origin: center;
     animation: hoverInverse 4s ease-in-out infinite,
               fadeInFromNone 1s ease-out forwards;
-    animation-delay: 0s;
+    animation-delay: 0.5s;
+
+    #thicklines {
+      @include media($xl-up) {
+        & > g, path, polyline {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: drawLineAndStop 10s linear forwards;
+          animation-delay: 2s;
+        }
+      }
+    }
+
+    #thinlines {
+      opacity: 0;
+      transform-origin: center;
+      animation: fadeInFromNone 2s ease-out forwards;
+      animation-delay: 2s;
+    }
 
   }
 
@@ -439,6 +508,27 @@
     }
   }
 
+  #happylaptop {
+
+    @include media($xl-up) {
+      #laptop {
+        transform-origin: center;
+        animation: hoverInverseLarge 6s ease-in-out infinite;
+      }
+
+      #shadow {
+        transform-origin: center;
+        animation: hoverLarge 6s ease-in-out infinite;
+      }
+
+      #lines {
+      transform-origin: center;
+      animation: hoverInverseLarge 6s ease-in-out infinite;
+    }
+    }
+
+  }
+
 }
 
 #happylaptop { // all browsers
@@ -495,9 +585,21 @@
   }
 }
 
+@keyframes hoverLarge {
+  50% {
+    transform:translateY(6px);
+  }
+}
+
 @keyframes hoverInverse {
   50% {
     transform:translateY(-3px);
+  }
+}
+
+@keyframes hoverInverseLarge {
+  50% {
+    transform:translateY(-6px);
   }
 }
 

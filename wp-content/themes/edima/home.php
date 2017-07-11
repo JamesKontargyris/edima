@@ -33,7 +33,14 @@ get_header(); ?>
                 </div>
             </div>
 
+            <div class="connector-divider__container">
+                <div class="connector-divider">
+                    <?php echo file_get_contents(get_template_directory_uri() . '/img/connector-divider.svg'); ?>
+                </div>
+            </div>
+
             <div class="home-block stripe stripe--xxxlarge-padding stripe--blue margin--none">
+
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
                         <?php echo file_get_contents(get_template_directory_uri() . '/img/home_voice_for_companies.svg'); ?>
@@ -46,6 +53,12 @@ get_header(); ?>
                             <a href="#" class="button button--primary">A button</a> <a href="#" class="button button--secondary">A button</a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="connector-divider__container">
+                <div class="connector-divider">
+			        <?php echo file_get_contents(get_template_directory_uri() . '/img/connector-divider.svg'); ?>
                 </div>
             </div>
 
@@ -65,6 +78,12 @@ get_header(); ?>
                 </div>
             </div>
 
+            <div class="connector-divider__container">
+                <div class="connector-divider">
+			        <?php echo file_get_contents(get_template_directory_uri() . '/img/connector-divider.svg'); ?>
+                </div>
+            </div>
+
             <div class="home-block stripe stripe--xxxlarge-padding stripe--green margin--none">
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
@@ -81,8 +100,14 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="home-block stripe stripe--xxlarge-padding stripe--light-blue margin--none" style="background:url(<?php echo get_template_directory_uri(); ?>/img/people_bg.jpg) top left repeat; background-attachment: fixed;">
-                <div class="home-block__content container" style="background:radial-gradient(rgba(255,255,255,0.7) 30%, rgba(255,255,255,0) 70%);">
+            <div class="connector-divider__container">
+                <div class="connector-divider">
+			        <?php echo file_get_contents(get_template_directory_uri() . '/img/connector-divider.svg'); ?>
+                </div>
+            </div>
+
+            <div class="home-block stripe stripe--xxlarge-padding stripe--light-blue margin--none" style="background:url(<?php echo get_template_directory_uri(); ?>/img/bg_users.jpg) top left repeat; background-attachment: fixed;">
+                <div class="home-block__content container" style="background:radial-gradient(rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 70%);">
                     <div class="home-block__text home-block__text--full-width home-block__text--narrow text--center" style="text-align: center">
 	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/happy_laptop.svg'); ?>
                         <h5 class="text--upper with-line text--red">stakeholder interests</h5>
@@ -98,6 +123,11 @@ get_header(); ?>
 	        <?php $members = get_members();
 	        if($members->have_posts()) :
 		        ?>
+                <div class="connector-divider__container">
+                    <div class="connector-divider">
+				        <?php echo file_get_contents(get_template_directory_uri() . '/img/connector-divider.svg'); ?>
+                    </div>
+                </div>
                 <div class="stripe stripe--large-padding stripe--blue text--center margin--none">
                     <h6 class="text--center text--upper text--light-blue with-line text--expand margin--bottom-large">Our Members</h6>
                     <ul class="home__members-carousel owl-carousel owl-theme">

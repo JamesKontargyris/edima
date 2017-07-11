@@ -1,9 +1,28 @@
 (function() {
 
-    $(document).on('scroll', function()
-    {
+    $(window).scroll(function() {
         $('.scroll-down-indicator').fadeOut();
-    })
+
+        var wScroll = $(this).scrollTop();
+
+        $('.connector-divider').each(function()
+        {
+            if (wScroll > $(this).offset().top - ($(window).height() / 1.2)) {
+
+                $(this).addClass('visible');
+            }
+
+            else {
+                $(this).removeClass('visible');
+            }
+        });
+
+        if(wScroll > $(window).height()) {
+            $('.site-header--home').css('background', 'rgba(255,255,255,1)');
+        } else {
+            $('.site-header--home').css('background', 'rgba(255,255,255,0.7)');
+        }
+    });
 
     $('.home__members-carousel').owlCarousel({
         loop:true,
