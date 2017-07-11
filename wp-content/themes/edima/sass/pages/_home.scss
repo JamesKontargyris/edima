@@ -302,15 +302,16 @@
     }
   }
 
-  #heromap {
-    opacity: 0;
-    transform-origin: center;
-    animation: hoverInverse 4s ease-in-out infinite,
-              fadeInFromNone 1s ease-out forwards;
-    animation-delay: 0.5s;
+  @include media($xl-up) {
+    #heromap {
+      opacity: 0;
+      transform-origin: center;
+      animation: hoverInverse 4s ease-in-out infinite,
+      fadeInFromNone 1s ease-out forwards;
+      animation-delay: 0.5s;
 
-    #thicklines {
-      @include media($xl-up) {
+      #thicklines {
+
         & > g, path, polyline {
           stroke-dasharray: 1000;
           stroke-dashoffset: 1000;
@@ -318,17 +319,22 @@
           animation-delay: 2s;
         }
       }
-    }
 
-    #thinlines {
-      opacity: 0;
-      transform-origin: center;
-      animation: fadeInFromNone 2s ease-out forwards;
-      animation-delay: 2s;
-    }
+      #thinlines {
+        opacity: 0;
+        transform-origin: center;
+        animation: fadeInFromNone 2s ease-out forwards;
+        animation-delay: 2s;
+      }
 
+      #dots {
+        opacity: 0;
+        transform-origin: center;
+        animation: fadeInFromNone 2s ease-out forwards;
+        animation-delay: 2s;
+      }
+    }
   }
-
 
   #homeblock1svg {
     margin-bottom:$base-spacing;
