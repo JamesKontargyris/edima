@@ -84,7 +84,14 @@
 
         <div id="header-contact-modal" class="modal">
             <div class="modal__content">
-                A contact form appears here, making it quicker and easier for users to send EDiMA an email than via the contact us form.
+                <p>For more information about EDiMA, feel free to contact the Secretariat team:</p>
+	            <?php
+	            if ( $_SERVER["SERVER_ADDR"] == '127.0.0.1' ) {
+		            echo do_shortcode( '[contact-form-7 id="312" title="Contact form"]' );
+	            } else {
+		            echo do_shortcode( '[contact-form-7 id="376" title="Contact form"]' );
+	            }
+	            ?>
                 <div class="modal__close"></div>
             </div>
         </div>

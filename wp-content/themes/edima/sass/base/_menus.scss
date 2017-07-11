@@ -93,10 +93,15 @@
   margin:0;
 }
 
-.vertical-menu__item--large-spacing {
+.vertical-menu__item--large-spacing,
+.vertical-menu--large-spacing li {
   &:not(:last-of-type) {
-    margin-bottom:1rem;
+    margin-bottom:1.5rem;
   }
+}
+
+.vertical-menu--large-text {
+  @include font-size(15, 16);
 }
 
 .vertical-menu__link:link,

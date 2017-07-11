@@ -103,6 +103,15 @@
     border-bottom-color:$grey;
   }
 }
+
+.text--light-grey {
+  color:$light-grey !important;
+
+  &.with-line {
+    border-bottom-color:$light-grey;
+  }
+}
+
 .text--orange {
   color:$orange !important;
 
