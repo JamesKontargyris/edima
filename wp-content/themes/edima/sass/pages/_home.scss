@@ -280,14 +280,16 @@
     }
 
     #icons {
-      path,
-      g {
-        transform-origin: center;
-        animation: pulseSizeShrink 2s ease-in-out infinite;
+      @include media($xl-up) {
+        path,
+        g {
+          transform-origin: center;
+          animation: pulseSizeShrink 2s ease-in-out infinite;
 
-        &:nth-of-type(2n) { animation-delay: -0.5s }
-        &:nth-of-type(3n) { animation-delay: -0.8s }
-        &:nth-of-type(4n) { animation-delay: -1.2s }
+          &:nth-of-type(2n) { animation-delay: -0.5s }
+          &:nth-of-type(3n) { animation-delay: -0.8s }
+          &:nth-of-type(4n) { animation-delay: -1.2s }
+        }
       }
     }
 
@@ -305,25 +307,29 @@
 
     #lines {
       & > g {
-        stroke-dasharray: 1.5;
-        animation: moveDottedLines 7.5s linear infinite;
-        &:nth-of-type(2n) { animation-delay: -1.5s }
-        &:nth-of-type(3n) { animation-delay: -2.8s }
+        @include media($xl-up) {
+          stroke-dasharray: 1.5;
+          animation: moveDottedLines 7.5s linear infinite;
+          &:nth-of-type(2n) { animation-delay: -1.5s }
+          &:nth-of-type(3n) { animation-delay: -2.8s }
+        }
       }
     }
 
     #devices {
-      > g {
-        transform-origin: center;
-        animation: hover 6s ease-in-out infinite;
+      @include media($xl-up) {
+        > g {
+          transform-origin: center;
+          animation: hover 6s ease-in-out infinite;
 
-        &:nth-of-type(2) { animation-delay: -1.2s }
-        &:nth-of-type(3) { animation-delay: -0.8s }
-      }
+          &:nth-of-type(2) { animation-delay: -1.2s }
+          &:nth-of-type(3) { animation-delay: -0.8s }
+        }
 
-      #laptop {
-        transform-origin: center;
-        animation: hoverInverse 6s ease-in-out infinite;
+        #laptop {
+          transform-origin: center;
+          animation: hoverInverse 6s ease-in-out infinite;
+        }
       }
     }
   }
@@ -361,17 +367,19 @@
     }
 
     #eustars {
-      transform-origin: center;
+      @include media($xl-up) {
+        transform-origin: center;
 
-      #pulsecircle1 {
-        transform-origin: center center;
-        animation: pulseDot 3s linear infinite;
-        animation-delay: 1s;
-      }
-      #pulsecircle2 {
-        transform-origin: center center;
-        animation: pulseDot 3s linear infinite;
-        animation-delay: 2s;
+        #pulsecircle1 {
+          transform-origin: center center;
+          animation: pulseDot 3s linear infinite;
+          animation-delay: 1s;
+        }
+        #pulsecircle2 {
+          transform-origin: center center;
+          animation: pulseDot 3s linear infinite;
+          animation-delay: 2s;
+        }
       }
     }
   }
@@ -416,14 +424,17 @@
     }
 
     #lines {
-
-      & > g {
-        stroke-dasharray: 200;
-        animation: drawLine 3s linear infinite,
-        starsFadeInOut 3s infinite;
-        &:nth-of-type(2n) { animation-delay: -1.5s }
-        &:nth-of-type(3n) { animation-delay: -2.8s }
-        animation-direction: reverse;
+      display: none;
+      @include media($xl-up) {
+        display: block;
+        & > g {
+          stroke-dasharray: 200;
+          animation: drawLine 3s linear infinite,
+          starsFadeInOut 3s infinite;
+          &:nth-of-type(2n) { animation-delay: -1.5s }
+          &:nth-of-type(3n) { animation-delay: -2.8s }
+          animation-direction: reverse;
+        }
       }
     }
   }
