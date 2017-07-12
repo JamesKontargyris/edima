@@ -103,6 +103,7 @@
 }
 
 .button-group {
+  z-index:1;
   .button:not(:last-of-type) {
     margin-right:0.5rem;
   }
