@@ -67,7 +67,7 @@
 			        'theme_location' => 'primary',
 			        'menu_id'        => 'primary-menu',
                     'menu_class' => $menu_class,
-                    'depth' => '1',
+                    'depth' => '3',
 		        ) );
 		        ?>
             </nav> <!-- /site-header__nav-->
