@@ -100,6 +100,7 @@ function get_policy_areas( $count = - 1, $offset = 0, $ignore_ids = [], $random 
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
+		'orderby'        => 'modified'
 	];
 
 	if ( $random ) {
@@ -194,10 +195,10 @@ function get_documents_by_document_category( $tax_id = '', $count = 3, $offset =
 	return new WP_Query( $args );
 }
 
-function get_children_of_page($page_id) {
+function get_children_of_page( $page_id ) {
 	// Set up the objects needed
-	$query = new WP_Query();
-	$all_wp_pages = $query->query(['post_type' => 'page', 'posts_per_page' => '-1']);
+	$query        = new WP_Query();
+	$all_wp_pages = $query->query( [ 'post_type' => 'page', 'posts_per_page' => '-1' ] );
 
 // Filter through all pages and find children
 	$page_children = get_page_children( $page_id, $all_wp_pages );

@@ -34,7 +34,7 @@
                             <a class="policy-area-tile__full-size-link" href="<?php echo get_the_permalink(); ?>"></a> <!--full size link-->
                             <div class="policy-area-tile__content">
                                 <div class="policy-area-tile__title"><?php the_title(); ?></div>
-                                <div class="policy-area-tile__description"><?php echo limit_text(get_the_excerpt(), 20); ?></div>
+                                <!--<div class="policy-area-tile__description"><?php /*echo limit_text(get_the_excerpt(), 20); */?></div>-->
                             </div>
                             <a href="<?php echo get_the_permalink(); ?>" class="button button--small policy-area-tile__link">Learn more</a>
                         </div>

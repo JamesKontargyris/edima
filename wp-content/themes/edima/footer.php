@@ -79,7 +79,7 @@
 
             </div>
             <div class="grid--one-third">
-                <p>EDiMA<br>60 Rue du Trone<br>1050 Brussels<br>Belgium</p>
+                <p>EDiMA<br>c/o Instinctif Partners<br>60 Rue du Trone<br>1050 Brussels<br>Belgium</p>
                 <p>Tel: +32 (0) 2 626 1990 <br>
                     Fax: +32 (0) 2 626 9501</p>
                 <p>General enquiries:<br><a href="mailto:info@edima-eu.org">info@edima-eu.org</a></p>

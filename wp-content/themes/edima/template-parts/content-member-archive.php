@@ -35,7 +35,7 @@
 				        <?php endif; ?>
                     </div>
                     <div class="member__name"><?php the_title(); ?></div>
-                    <div class="member__meta">Member since <?php echo get_field('member_since'); ?></div>
+                    <div class="member__meta"><?php echo get_field('member_type'); ?></div>
                 </div>
 	        <?php endwhile; ?>
         </div>
