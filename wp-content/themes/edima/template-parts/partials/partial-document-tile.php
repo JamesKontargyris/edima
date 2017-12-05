@@ -17,10 +17,11 @@
 				<?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'document_categories')); ?>
             </div>
 		<?php endif; ?>
-
         <div class="document__cover-image <?php if( is_tax('document_categories') ) : ?> document__cover-image--hide <?php endif; ?>">
 			<?php if(has_post_thumbnail()) : ?>
                 <img src="<?php echo $member_logo; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+            <?php elseif(wp_get_terms_meta(wp_get_post_terms(get_the_ID(), 'document_categories')[0]->term_id, 'category-image' ,true)) : // does a category-image meta image exist for this category? If so, display it ?>
+                <img src="<?php echo wp_get_terms_meta(wp_get_post_terms(get_the_ID(), 'document_categories')[0]->term_id, 'category-image' ,true); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 			<?php else : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/img/document-cover-image-blank.png" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 			<?php endif; ?>
