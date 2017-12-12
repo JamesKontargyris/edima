@@ -1,11 +1,4 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package edima
- */
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>

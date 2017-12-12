@@ -157,3 +157,17 @@ function has_children($post_id) {
 		return true;
 	}
 }
+
+// Make the post type returned by get_post_type() look pretty
+function pretty_post_type($post_type)
+{
+	$post_type_parts = explode('_', $post_type);
+	$new_name = '';
+
+	foreach($post_type_parts as $part)
+	{
+			$new_name .= ucfirst($part) . ' ';
+	}
+
+	return $new_name;
+}

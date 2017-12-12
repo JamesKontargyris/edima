@@ -38,3 +38,26 @@
     }
   }
 }
+
+.search-result {
+  &:not(:last-of-type) {
+    padding-bottom:$base-spacing;
+    border-bottom:1px solid $green;
+    margin-bottom:$base-spacing;
+  }
+}
+
+.search-result__title {
+  margin-bottom:$small-spacing;
+}
+
+.search-result__meta {
+  text-transform: uppercase;
+  color: $blue;
+  @include font-size(14, 18);
+  margin-bottom:$small-spacing;
+}
+
+.search-result__summary {
+  font-style:italic;
+}
