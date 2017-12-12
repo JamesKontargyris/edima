@@ -38,16 +38,22 @@ function get_menu_items($menu_name = 'primary')
  * @param array $categories
  * @param string $category_item_class
  * @param string $category_link_class
+ * @param bool $with_links
  *
  * @return string
  */
-function inline_categories($categories = [], $category_item_class = 'news-story__category', $category_link_class = 'news-story__category-link')
+function inline_categories($categories = [], $with_links = true, $category_item_class = 'news-story__category', $category_link_class = 'news-story__category-link')
 {
 	$categories_output = "";
 
 	if(is_array($categories)) {
 		foreach($categories as $category) {
-			$categories_output .= "<span class=\"$category_item_class\"><a class=\"$category_link_class\" href=\"" . get_category_link($category->term_id) . "\">" . $category->name . "</a></span>"; // CSS :after pseudo-class takes care of commas
+			if($with_links)
+			{
+				$categories_output .= "<span class=\"$category_item_class\"><a class=\"$category_link_class\" href=\"" . get_category_link($category->term_id) . "\">" . $category->name . "</a></span>"; // CSS :after pseudo-class takes care of commas
+			} else {
+				$categories_output .= "<span class=\"$category_item_class\">" . $category->name . "</span>"; // CSS :after pseudo-class takes care of commas
+			}
 		}
 	}
 
