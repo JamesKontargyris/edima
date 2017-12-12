@@ -18,7 +18,7 @@
         <?php if ( get_post_type() === 'document' ) : ?>
             <div class="search-result__meta">
                 <strong><?php echo pretty_post_type(get_post_type()); ?></strong>
-                <?php echo 'posted in ' . inline_categories(wp_get_post_terms(get_the_ID(), 'document_categories')); ?>
+                <?php echo 'posted in ' . inline_categories(wp_get_post_terms(get_the_ID(), 'document_categories'), false); ?>
                 <?php echo ' on ' . get_the_date('j M y'); ?>
             </div>
             <div class="search-result__summary">
