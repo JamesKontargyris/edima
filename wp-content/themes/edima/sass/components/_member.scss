@@ -2,7 +2,7 @@
   @include box();
   position: relative;
   text-align: center;
-  padding:2.5rem;
+  padding:2rem;
   transition: all 0.3s;
   margin-bottom:3.5%; // same as gutter in row of 4 for consistency
 }
@@ -33,7 +33,7 @@
   margin-bottom:1.5rem;
 
   img {
-    max-height:9rem;
+    max-width:16rem;
   }
 }
 

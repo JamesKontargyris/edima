@@ -149,6 +149,16 @@
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // IE fix for SVG sizes
+  /* IE10+ CSS styles go here */
+  .home-block__image svg {
+    min-height:60rem;
+  }
+}
+
+
+
+
 
 .home-block__image img {
   display: block;
@@ -279,6 +289,7 @@
   transform-origin: center;
   animation: fadeInFromNone 1s ease-in-out forwards;
   animation-delay: 1s;
+  width:100%;
 }
 
 // SVG STUFF
@@ -316,6 +327,10 @@
           stroke-dashoffset: 1000;
           animation: drawLineAndStop 10s linear forwards;
           animation-delay: 2s;
+
+          @supports(-ms-ime-align: auto) { // Edge fix - don't adjust think lines on the map
+            stroke-dasharray: 0;
+          }
         }
       }
 
@@ -324,6 +339,11 @@
         transform-origin: center;
         animation: fadeInFromNone 2s ease-out forwards;
         animation-delay: 2s;
+
+        @supports(-ms-ime-align: auto) { // Edge fix - don't delay fade in
+          animation: fadeInFromNone 1.5s ease-out forwards;
+          animation-delay: 0s;
+        }
       }
 
       #dots {
@@ -331,6 +351,11 @@
         transform-origin: center;
         animation: fadeInFromNone 2s ease-out forwards;
         animation-delay: 2s;
+
+        @supports(-ms-ime-align: auto) { // Edge fix - don't delay fade in
+          animation: fadeInFromNone 1.5s ease-out forwards;
+          animation-delay: 0s;
+        }
       }
     }
   }

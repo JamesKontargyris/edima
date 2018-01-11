@@ -216,7 +216,7 @@ get_header(); ?>
 								        $image_id = get_id_from_img_url(get_the_post_thumbnail_url());
 								        $member_logo = wp_get_attachment_image_src($image_id, 'member-logo')[0];
 								        ?>
-                                        <img src="<?php echo $member_logo; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" style="width:auto;">
+                                        <img src="<?php echo $member_logo; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 							        <?php endif; ?>
                                 </div>
                             </li>
