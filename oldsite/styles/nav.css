@@ -1,0 +1,95 @@
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+
+#headerholder { height:120px; width: 100%; background:url(../images/general/header-bg.png) repeat-x; margin: 0; padding: 0; z-index: 99999; position: fixed}
+.headertop { height:120px; margin: 0 auto; width: 960px; max-width: 960px; min-width: 780px; padding: 0;}
+.headertoplogo { float:left; margin:20px 0 0 0; padding: 0; width: 210px; }
+.headertoplogo img {height:63px; width: 210px}
+
+.menu {width: 735px; height: 102px; float: right; background: none; }
+.menu li { float: left; margin: 0; list-style:none; background: none; float: right; }
+.menu li a { display: block; height: 102px; width: 75px; list-style:none; background: none; }
+.menu .menu-about a { width: 115px; background:url(../images/general/nav-about.png) no-repeat 0 0;}
+.menu .menu-about a:hover{ background-position: 0 -105px; }
+.menu .menu-key a { width: 103px; background:url(../images/general/nav-key.png) no-repeat 0 0px; }
+.menu .menu-key a:hover{ background-position: 0 -105px; }
+.menu .menu-documents a { width: 100px; background:url(../images/general/nav-docs.png) no-repeat 0 0px;}
+.menu .menu-documents a:hover{ background-position: 0 -105px; }
+.menu .menu-members a { width: 84px; background:url(../images/general/nav-members.png) no-repeat 0 0px;}
+.menu .menu-members a:hover{ background-position: 0 -105px; }
+.menu .menu-faqs a { width: 57px; background:url(../images/general/nav-faqs.png) no-repeat 0 0px;}
+.menu .menu-faqs a:hover{ background-position: 0 -105px; }
+.menu .menu-contact a { width: 100px; background:url(../images/general/nav-contact.png) no-repeat 0 0px;}
+.menu .menu-contact a:hover{ background-position: 0 -105px; }
+
+.menu .searchbar {width: 155px; height: 72px; float: right; margin: 0 0 0 5px; background:url(../images/general/search-header.png) no-repeat; background-position: 0 0;  padding: 38px 0 0 0}
+.menu .searchbar .zoom_searchbox{ float: left; width:118px; height: 20px; margin: 0 0 0 15px; border: 1px solid #003b77; color:#003b77; font-size:1.0em; padding: 0 5px 0 5px; font-weight: bold;}
+.menu .searchbar .zoom_button{ float: left; width:60px; height: 22px; margin: 4px 0 0 85px; background-color: #cf1b35; color:#FFF; font-size:1.0em; padding: 0; font-weight: bold; border: none}
+
+
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  top: 51px;
+  left: 20px;
+  z-index:999;
+  
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #FFF;
+  color: #cd0f36;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  width: 150px;
+  display: none;
+  opacity: 0;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+ul li ul li { 
+  background: #FFF; 
+  display: block; 
+  color: #003b77;
+  padding: 7px 10px 5px 10px;
+  width: 150px;
+  top:51px;
+  left: 20px;
+  border-bottom: 1px solid #88a2aa
+}
+
+ul li ul li a{ 
+  background:#FFF;
+  display: block; 
+  color: #FFF;
+  padding: 7px 10px 5px 10px;
+  width: 150px;
+}
+
+ul li ul li a:hover { color: #cd0f36; background: #FFF}
+
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}

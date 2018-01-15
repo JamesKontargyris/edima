@@ -104,3 +104,4 @@ node_modules/
 !wp-content/themes/edima
 !composer.json
 !package.json
+!oldsite/

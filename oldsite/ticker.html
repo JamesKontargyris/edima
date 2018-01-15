@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EDiMA - Shaping Internet Policy in the EU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+<link rel="stylesheet" type="text/css" href="styles/skin.css" />
+
+    
+</head>
+
+<body>
+ 
+ <script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        auto: 7,
+        wrap: 'last',
+        initCallback: mycarousel_initCallback
+    });
+});
+
+</script>
+<div id="wrap">
+			<ul id="mycarousel" class="jcarousel-skin-tango">
+            	<li><img src="images/ticker/ticker1.gif" width="960" height="90" /></li>
+                <li><img src="images/ticker/ticker2.gif" width="960" height="90" /></li>
+                <li><img src="images/ticker/ticker3.gif" width="960" height="90" /></li>
+            </ul>
+            </div>
+ 
+</body>
+</html>
