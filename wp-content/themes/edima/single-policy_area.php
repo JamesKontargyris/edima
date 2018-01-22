@@ -165,7 +165,6 @@ get_header(); ?>
 		<?php $more_policy_areas = get_policy_areas(3, 0, [get_the_ID()], true); ?>
 		<?php if($more_policy_areas->have_posts()) : ?>
             <div class="container container--with-padding">
-                <hr class="large-spacing">
                 <h4 class="text--center">More Policy Areas</h4>
                 <div class="policy-area-tile__group">
                     <div class="gallery gallery__row-of-3">
