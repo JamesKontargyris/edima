@@ -598,7 +598,7 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
 
 add_action( 'wp_head', 'google_analytics_opt_out' );
 function google_analytics_opt_out() {
-	if ( ! is_allowed_cookie( '_ga' ) ) {
+	if ( ! is_allowed_cookie( '_ga' ) || is_admin()) {
 		?>
 		<script>
             window['ga-disable-UA-100786434-1'] = true;
