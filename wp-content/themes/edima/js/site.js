@@ -16,7 +16,7 @@
     });
 
     // Prevent link from carrying out its default action
-    $('a.prevent-default').on('click', function()
+    $('a.prevent-default, .prevent-default a').on('click', function()
     {
         return false;
     });
