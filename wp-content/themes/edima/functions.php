@@ -590,3 +590,31 @@ function my_mce4_options( $init ) {
 	return $init;
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
+
+
+//-------------------------------------------------
+
+// GDPR
+
+add_action( 'wp_head', 'google_analytics_opt_out' );
+function google_analytics_opt_out() {
+	if ( ! is_allowed_cookie( '_ga' ) ) {
+		?>
+		<script>
+            window['ga-disable-UA-100786434-1'] = true;
+		</script>
+		<?php
+	} else {
+		?>
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100786434-1"></script>
+		<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-100786434-1');
+		</script>
+		<?php
+	}
+}
