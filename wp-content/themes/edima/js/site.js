@@ -15,4 +15,10 @@
         return false;
     });
 
+    // Prevent link from carrying out its default action
+    $('a.prevent-default').on('click', function()
+    {
+        return false;
+    });
+
 })();
