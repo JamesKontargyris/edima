@@ -25,6 +25,22 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Compatibility_Plugins' ) ) {
 		protected static $_instance = null;
 
 		/**
+		 * Flag to keep track of removed WPML filter on widget title
+		 *
+		 * @var boolean
+		 * @since 2.6.1
+		 */
+		private $wpml_removed_widget_title_filter = false;
+
+		/**
+		 * Flag to keep track of removed WPML filter on widget text
+		 *
+		 * @var boolean
+		 * @since 2.6.1
+		 */
+		private $wpml_removed_widget_text_filter = false;
+
+		/**
 		 * Return the single class instance
 		 *
 		 * @param string[] $plugins
@@ -126,16 +142,20 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Compatibility_Plugins' ) ) {
 		public function wpml_widget_before( $args, $instance ) {
 			if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
 				// Avoid native WPML string translation of widget titles
-				// For widgets inserted in pages built with Page Builder (SiteOrigin panels) and also when WPML Widgets is active
+				// for widgets inserted in pages built with Page Builder (SiteOrigin panels)
+				// and also when WPML Widgets is active and for WPML versions from 3.8.0 on
 				if ( false !== has_filter( 'widget_title', 'icl_sw_filters_widget_title' ) ) {
 					if ( isset( $instance['panels_info'] ) || isset( $instance['wp_page_widget'] ) || is_plugin_active( 'wpml-widgets/wpml-widgets.php' ) || version_compare( $this->wpml_get_version(), '3.8.0' ) >= 0 ) {
 						remove_filter( 'widget_title', 'icl_sw_filters_widget_title', 0 );
+						$this->wpml_removed_widget_title_filter = true;
 					}
 				}
 				// Avoid native WPML string translation of widget texts (for all widgets)
-				// Black Studio TinyMCE Widget already supports WPML string translation, so this is needed to prevent duplicate translations
+				// Note: Black Studio TinyMCE Widget already supports WPML string translation,
+				// so this is needed to prevent duplicate translations
 				if ( false !== has_filter( 'widget_text', 'icl_sw_filters_widget_text' ) ) {
 					remove_filter( 'widget_text', 'icl_sw_filters_widget_text', 0 );
+					$this->wpml_removed_widget_text_filter = true;
 				}
 			}
 
@@ -153,13 +173,19 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Compatibility_Plugins' ) ) {
 		 */
 		public function wpml_widget_after( $args, $instance ) {
 			if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
-				if ( false === has_filter( 'widget_title', 'icl_sw_filters_widget_title' ) && function_exists( 'icl_sw_filters_widget_title' ) ) {
-					if ( isset( $instance['panels_info'] ) || isset( $instance['wp_page_widget'] ) || is_plugin_active( 'wpml-widgets/wpml-widgets.php' ) || version_compare( $this->wpml_get_version(), '3.8.0' ) >= 0 ) {
+				// Restore widget title's native WPML string translation filter if it was removed
+				if ( $this->wpml_removed_widget_title_filter ) {
+					if ( false === has_filter( 'widget_title', 'icl_sw_filters_widget_title' ) && function_exists( 'icl_sw_filters_widget_title' ) ) {
 						add_filter( 'widget_title', 'icl_sw_filters_widget_title', 0 );
+						$this->wpml_removed_widget_title_filter = false;
 					}
 				}
-				if ( false === has_filter( 'widget_text', 'icl_sw_filters_widget_text' ) && function_exists( 'icl_sw_filters_widget_text' )  || version_compare( $this->wpml_get_version(), '3.8.0' ) >= 0 ) {
-					add_filter( 'widget_text', 'icl_sw_filters_widget_text', 0 );
+				// Restore widget text's native WPML string translation filter if it was removed
+				if ( $this->wpml_removed_widget_text_filter ) {
+					if ( false === has_filter( 'widget_text', 'icl_sw_filters_widget_text' ) && function_exists( 'icl_sw_filters_widget_text' ) ) {
+						add_filter( 'widget_text', 'icl_sw_filters_widget_text', 0 );
+						$this->wpml_removed_widget_text_filter = false;
+					}
 				}
 			}
 		}
@@ -236,7 +262,7 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Compatibility_Plugins' ) ) {
 				if ( function_exists( 'icl_st_is_registered_string' ) ) {
 					if ( icl_st_is_registered_string( 'Widgets', 'widget body - ' . $widget->id_base . '-' . $widget->number ) ) {
 						$wpml_st_url = admin_url( 'admin.php?page=wpml-string-translation%2Fmenu%2Fstring-translation.php&context=Widgets' );
-						echo '<div class="notice notice-warning"><p>';
+						echo '<div class="notice notice-warning inline"><p>';
 						/* translators: Warning displayed when deprecated translations of the current widget are detected */
 						echo sprintf( __( 'WARNING: This widget has one or more translations made using WPML String Translation plugin, which is now a deprecated method of translating widgets, in favor of the "Display on language" dropdown introduced with WPML 3.8. Please migrate your existing translations by creating new widgets and selecting the language of this widget and the new ones accordingly. Finally delete the existing translations from <a href="%s">WPML String Translation interface</a>.', 'black-studio-tinymce-widget' ), esc_url( $wpml_st_url ) );
 						echo '</p></div>';
