@@ -105,3 +105,4 @@ node_modules/
 !composer.json
 !package.json
 !oldsite/
+!vendor/
