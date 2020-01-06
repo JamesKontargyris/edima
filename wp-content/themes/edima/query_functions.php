@@ -100,7 +100,7 @@ function get_policy_areas( $count = - 1, $offset = 0, $ignore_ids = [], $random 
 		'posts_per_page' => $count,
 		'post__not_in'   => $ignore_ids,
 		'offset'         => $offset,
-		'orderby'        => 'modified'
+		'orderby'        => 'menu_order'
 	];
 
 	if ( $random ) {
