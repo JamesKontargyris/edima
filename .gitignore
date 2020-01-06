@@ -106,3 +106,4 @@ node_modules/
 !package.json
 !oldsite/
 !vendor/
+!node_modules/
