@@ -194,7 +194,7 @@ function edima_scripts() {
 
 	wp_enqueue_script( 'edima-parallax', get_template_directory_uri() . '/js/parallax.min.js', array(), '20170621', false );
 
-	wp_enqueue_script( 'edima-vivus', 'http://cdn.jsdelivr.net/vivus/latest/vivus.min.js', array(), '20170615', true );
+	wp_enqueue_script( 'edima-vivus', 'https://cdn.jsdelivr.net/vivus/latest/vivus.min.js', array(), '20170615', true );
 
 	wp_enqueue_script( 'edima-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20170616', true );
 
