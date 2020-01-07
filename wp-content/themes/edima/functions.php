@@ -623,17 +623,3 @@ function change_sort_order_policy_areas( $query ) {
 		$query->set( 'orderby', 'menu_order' );
 	endif;
 }
-
-// Disable all Google Analytics tracking by MonsterInsights if no consent has been given in the Cookie Notice plugin
-add_action( 'init', 'set_monsterinsight_cookie_according_to_cookie_notice' );
-
-function set_monsterinsight_cookie_according_to_cookie_notice() {
-	if ( function_exists( 'cn_cookies_accepted' ) && function_exists( 'monsterinsights_get_ua' ) ) {
-		if ( cn_cookies_accepted() ) {
-			setCookie( 'ga-disable-' . monsterinsights_get_ua(), 'false', time() - 3600 ); // remove cookie before setting it again, to be sure
-			setCookie( 'ga-disable-' . monsterinsights_get_ua(), 'false' );
-		} else {
-			setCookie( 'ga-disable-' . monsterinsights_get_ua(), 'true' );
-		}
-	}
-}
