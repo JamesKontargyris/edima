@@ -623,3 +623,22 @@ function change_sort_order_policy_areas( $query ) {
 		$query->set( 'orderby', 'menu_order' );
 	endif;
 }
+
+//-------------------------------------------------
+// GDPR
+add_action( 'wp_head', 'google_analytics_opt_out' );
+function google_analytics_opt_out() {
+	if( ! current_user_can('administrator') ) {
+		if(function_exists('is_allowed_cookie')) {
+
+			if ( ! is_allowed_cookie( '_ga' )) {
+				?>
+				<script>
+                    window['ga-disable-UA-100786434-1'] = true;
+				</script>
+				<?php
+			}
+
+		}
+	}
+}
