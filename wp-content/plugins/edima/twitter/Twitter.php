@@ -9,7 +9,7 @@ class Twitter
 	'consumer_secret' => "UZSHUeE7B8nHd1cgunU8elgKB8eXSxFEzWuBArB2xqUnjgRhXm"
 	];
 
-	private $screen_name = 'edima_eu';
+	private $screen_name = 'DOTEurope';
 
 	public function get_latest_tweets($count = 3, $include_retweets = false)
 	{

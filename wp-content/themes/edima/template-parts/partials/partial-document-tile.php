@@ -23,7 +23,7 @@
             <?php elseif(wp_get_terms_meta(wp_get_post_terms(get_the_ID(), 'document_categories')[0]->term_id, 'category-image' ,true)) : // does a category-image meta image exist for this category? If so, display it ?>
                 <img src="<?php echo wp_get_terms_meta(wp_get_post_terms(get_the_ID(), 'document_categories')[0]->term_id, 'category-image' ,true); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 			<?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/document-cover-image-blank.png" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/document-cover-image-blank-doteurope.png" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
 			<?php endif; ?>
 
         </div>

@@ -12,4 +12,4 @@
 
 </div>
 
-<a href="http://twitter.com/<?php echo get_theme_mod('twitter_handle', 'EDiMA_EU'); ?>" target="_blank" class="button button--primary">More Tweets</a>
+<a href="http://twitter.com/<?php echo get_theme_mod('twitter_handle', 'DOTEurope'); ?>" target="_blank" class="button button--primary">More Tweets</a>

@@ -6,7 +6,7 @@ header.site-header {
           url(img/bg_maze_white_transparency.png) top left repeat,
           linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
           $blue;
-  height:8rem;
+  height:10rem;
   /*border-bottom:0.3rem solid darken($blue, 10%);*/
   border-bottom:0.3rem solid $green;
 }
@@ -58,11 +58,7 @@ header.site-header--home {
 .site-header__logo {
   @include span-columns(6);
   text-align:center;
-  height:3.4rem;
-
-  .site-header__logo-animated {
-    display:none;
-  }
+  //height:3.4rem;
 
   h1 {
     margin:0;
@@ -70,25 +66,21 @@ header.site-header--home {
     font-size:3.2rem;
   }
 
-  svg {
-    max-height:3rem;
+  img {
+    margin-top:0.5rem;
+    height:7rem;
   }
 
   @include media($xl-up) {
-    @include span-columns(2);
-    text-align:left;
-
-    svg {
-      max-height:3.4rem;
-      max-width:130px;
-    }
+  @include span-columns(2);
+    text-align: left;
   }
 }
 
 .site-header__nav {
   position:absolute;
   left:0;
-  top:8rem;
+  top:10rem; // push it beneath the fixed header
   width:100%;
   background:
           url(img/bg_maze_white_transparency.png) top left repeat,

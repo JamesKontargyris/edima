@@ -59,7 +59,7 @@ get_header(); ?>
 
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
-                        <?php echo file_get_contents(get_template_directory_uri() . '/img/home_voice_for_companies.svg'); ?>
+                        <?php echo file_get_contents(get_template_directory_uri() . '/img/home_voice_for_companies_doteurope.svg'); ?>
                     </div>
                     <div class="home-block__text">
 
@@ -133,7 +133,7 @@ get_header(); ?>
             <div class="home-block stripe stripe--xxxlarge-padding stripe--green margin--none">
                 <div class="home-block__content container container--narrow">
                     <div class="home-block__image">
-	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/home_engagement_with_institutions.svg'); ?>
+	                    <?php echo file_get_contents(get_template_directory_uri() . '/img/home_engagement_with_institutions_doteurope.svg'); ?>
                     </div>
                     <div class="home-block__text">
 
