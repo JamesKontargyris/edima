@@ -11,7 +11,7 @@
 
   @include media($xl-up) {
     padding:0;
-    height:8rem;
+    height:10rem; // height of header
     display:flex;
     justify-content: center;
     align-items:center;
@@ -60,7 +60,7 @@
 
 
       a:link, a:visited {
-        height:8rem;
+        height:10rem; // height of header
         display:table-cell;
         vertical-align: middle;
         padding:0 1.5rem;
@@ -85,7 +85,7 @@
     li ul.sub-menu { // level 2
       position: absolute;
       display: none;
-      top:7.8rem;
+      top:9.8rem;
       left:0;
       list-style-type: none;
       margin:0;
