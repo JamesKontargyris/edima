@@ -219,6 +219,10 @@
 .home__members-carousel {
   @extend .carousel;
   margin:0 0 $base-spacing * 2 !important;
+
+  .member__logo img {
+    width:auto !important;
+  }
 }
 
 .connector-divider__container {
