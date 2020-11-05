@@ -16,7 +16,7 @@ $first_story = true;
 			<?php endif; ?>
 
             <div class="news-extract__details">
-                <div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?> </div>
+                <div class="news-extract__meta text--upper"><?php echo get_the_date('d F Y'); ?><?php if(wp_get_post_terms(get_the_ID(), 'news_categories')) : ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); endif; ?></div>
                 <div class="news-extract__extract margin--bottom-small"><?php echo limit_text(get_the_excerpt(), 40); // so it is inline ?></div>
                 <a href="<?php echo get_the_permalink(); ?>" class="button button--primary">Read More</a>
             </div>
@@ -29,7 +29,7 @@ $first_story = true;
 
             <div class="news-extract__details news-extract__details--full-width">
                 <div class="news-extract__headline news-extract__headline--small"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></div>
-                <div class="news-extract__meta text--upper margin--none"><?php echo get_the_date('d F Y'); ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); ?> </div>
+                <div class="news-extract__meta text--upper margin--none"><?php echo get_the_date('d F Y'); ?><?php if(wp_get_post_terms(get_the_ID(), 'news_categories')) : ?> in <?php echo inline_categories(wp_get_post_terms(get_the_ID(), 'news_categories'), 'news-extract__category', 'news-extract__category-link'); endif; ?></div>
             </div>
         </div>
     <?php endif; ?>
