@@ -2,7 +2,7 @@
   position: relative;
   width:100vw;
   /*margin-left:-25vw;*/
-  height:calc(100vh - 10rem); // 10rem = header height
+  height:calc(100vh - 7rem); // 7rem = header height
   max-height:150rem;
   background:
           linear-gradient(to bottom right, rgba(17,134,156,0.3) 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.0) 60%, rgba(17,134,156,0.2) 100%),
@@ -23,6 +23,7 @@
   }
 
   @include media($xl-up) {
+    height:calc(100vh - 10rem); // 10rem = header height
     background-attachment: fixed;
     margin-top:-10rem; // to allow for fixed header to sit on top
     padding-top:10rem; // to allow for negative margin above

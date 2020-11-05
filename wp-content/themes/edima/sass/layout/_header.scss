@@ -1,109 +1,117 @@
 header.site-header {
   position: relative;
-  width:100%;
-  z-index:10;
-  background:
-          url(img/bg_maze_white_transparency.png) top left repeat,
-          linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
-          $blue;
-  height:10rem;
+  width: 100%;
+  z-index: 10;
+  background: url(img/bg_maze_white_transparency.png) top left repeat,
+  linear-gradient(to bottom, $blue 50%, darken($blue, 3%) 100%),
+  $blue;
+  height: 7rem;
   /*border-bottom:0.3rem solid darken($blue, 10%);*/
-  border-bottom:0.3rem solid $green;
+  border-bottom: 0.3rem solid $green;
+
+  @include media($xl-up) {
+    height: 9rem;
+  }
 }
 
 header.site-header--home {
-  position:fixed;
-  top:0;
-  left:0;
-  background:white;
-  border-bottom:none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  border-bottom: none;
   @include media($xl-up) {
-    background:rgba(white, 0.7);
+    background: rgba(white, 0.7);
   }
 }
 
 .site-header__content {
   @include outer-container();
-  position:relative;
-  display:flex;
+  position: relative;
+  display: flex;
   justify-content: space-between;
-  align-items:center;
-  align-content:center;
-  height:100%;
+  align-items: center;
+  align-content: center;
+  height: 100%;
 }
 
 .site-header__mobile-menu-toggle-container {
-  display:block;
+  display: block;
   @include span-columns(3);
 
   @include media($xl-up) {
-    display:none;
+    display: none;
   }
 }
+
 .site-header__mobile-menu-toggle-icon svg {
-    margin:0;
-    max-height:2.2rem;
-    max-width:2.2rem;
-    fill: white;
+  margin: 0;
+  max-height: 2.2rem;
+  max-width: 2.2rem;
+  fill: white;
   cursor: pointer;
 }
 
 .site-header__mobile-menu-toggle-icon--home svg {
   fill: $blue;
+
   &:hover {
-    fill:$grey;
+    fill: $grey;
   }
 }
 
 .site-header__logo {
   @include span-columns(6);
-  text-align:center;
+  text-align: center;
   //height:3.4rem;
 
   h1 {
-    margin:0;
-    line-height:1 !important;
-    font-size:3.2rem;
+    margin: 0;
+    line-height: 1 !important;
+    font-size: 3.2rem;
   }
 
   img {
-    margin-top:0.5rem;
-    height:7rem;
+    margin-top: 0.5rem;
+    height: 4rem;
+
+    @include media($xl-up) {
+      height: 6rem;
+    }
   }
 
   @include media($xl-up) {
-  @include span-columns(2);
+    @include span-columns(2);
     text-align: left;
   }
 }
 
 .site-header__nav {
-  position:absolute;
-  left:0;
-  top:10rem; // push it beneath the fixed header
-  width:100%;
-  background:
-          url(img/bg_maze_white_transparency.png) top left repeat,
-          darken($blue, 3%);
+  position: absolute;
+  left: 0;
+  top: 7rem; // push it beneath the fixed header
+  width: 100%;
+  background: url(img/bg_maze_white_transparency.png) top left repeat,
+  darken($blue, 3%);
   box-shadow: 0 0.2rem 0 rgba(black, 0.3);
 
   @include media($xl-up) {
     @include span-columns(8);
-    position:relative;
-    top:0;
-    background:transparent;
+    position: relative;
+    top: 0;
+    background: transparent;
     box-shadow: none;
   }
 }
 
 .site-header__sub-nav {
-  width:23%; // to account for the absolute positioned nav on mobile
+  width: 23%; // to account for the absolute positioned nav on mobile
   text-align: right;
 
   svg {
-    max-width:3.5rem;
+    max-width: 3.5rem;
     max-height: 2.2rem;
-    fill:white;
+    fill: white;
   }
 
   @include media($xl-up) {
@@ -116,6 +124,7 @@ header.site-header--home {
 .site-header__sub-nav--home {
   svg {
     fill: $blue;
+
     &:hover {
       fill: $grey;
     }
