@@ -277,6 +277,7 @@ add_image_size( 'policy-area-graphic', 600, 600, true );
 add_image_size( 'member-logo', 600, 600, false );
 add_image_size( 'team-member-photo', 600, 600, false );
 add_image_size( 'document-cover', 350, 490, true );
+add_image_size( 'social-card', 1500, 1000, true );
 
 // AJAX related stuff
 $ajaxurl = '';

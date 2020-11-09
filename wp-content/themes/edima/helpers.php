@@ -91,7 +91,7 @@ function limit_text($text, $limit, $type = 'word') {
 }
 
 // SOCIAL MEDIA LINKS
-function social_media_link_twitter($url = '', $title = '', $via = 'EDiMA_EU', $additional_classes = '')
+function social_media_link_twitter($url = '', $title = '', $via = 'DOTEurope', $additional_classes = '')
 {
 	$link = '';
 
