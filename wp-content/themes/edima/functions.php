@@ -217,6 +217,7 @@ function edima_scripts() {
 	wp_enqueue_script( 'edima-page-header-js', get_template_directory_uri() . '/js/page-header.js', array(), '20170621', true );
 	wp_enqueue_script( 'edima-policy-area-js', get_template_directory_uri() . '/js/policy-area.js', array(), '20170621', true );
 	wp_enqueue_script( 'edima-modal-js', get_template_directory_uri() . '/js/modal.js', array(), '20170629', true );
+	wp_enqueue_script( 'edima-legislation-mapping-infobox-js', get_template_directory_uri() . '/js/legislation-mapping-infobox.js', array(), '20210209', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

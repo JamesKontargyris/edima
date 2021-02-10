@@ -1,0 +1,108 @@
+.legislation-mapping-infobox {
+  border-radius: $base-border-radius * 2;
+  padding: 1.5rem 2rem;
+  margin-bottom: $base-spacing * 0.5;
+}
+
+.legislation-mapping-infobox__title {
+  @extend h4;
+  @include font-size(20, 22);
+  color: white;
+  background: url(img/icon-up-chevron-white.svg) left center no-repeat;
+  background-size: 2.2rem;
+  padding-left: 2.8rem;
+  cursor: pointer;
+}
+
+.legislation-mapping-infobox__sub-section {
+  background: linear-gradient(to bottom, white 60%, shade(white, 10%) 100%);
+  border-radius: $base-border-radius * 1.5;
+  padding: 1.5rem;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+
+  &:not(:last-of-type) {
+    margin-bottom: $base-spacing * 0.5;
+  }
+}
+
+.legislation-mapping-infobox__sub-section__title {
+  @extend h5;
+  margin-bottom: $base-spacing * 0.5;
+  background: url(img/icon-up-chevron-black.svg) left center no-repeat;
+  background-size: 1.4rem;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+
+ul.legislation-mapping-infobox__sub-section__legislation-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  > li {
+    line-height: 1.5;
+
+    &:not(:last-of-type) {
+      padding-bottom: 0.75rem;
+      border-bottom: 0.1rem solid $light-grey;
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+.legislation-mapping-infobox.is-closed {
+  .legislation-mapping-infobox__title {
+    background: url(img/icon-down-chevron-white.svg) left center no-repeat;
+    background-size: 2.2rem;
+    margin-bottom: 0;
+  }
+
+  .legislation-mapping-infobox__sub-section {
+    display: none;
+  }
+}
+
+.legislation-mapping-infobox__sub-section.is-closed {
+  .legislation-mapping-infobox__sub-section__title {
+    background: url(img/icon-down-chevron-black.svg) left center no-repeat;
+    background-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  ul.legislation-mapping-infobox__sub-section__legislation-list {
+    display: none;
+  }
+}
+
+.legislation-mapping-infobox__modal {
+
+  .modal__content {
+    padding: 2rem;
+    width: 90vw;
+    height:auto;
+    max-height: 80vh;
+    max-width: 90rem;
+
+    @include media($l-up) {
+      padding: 3rem;
+    }
+
+    h6 {
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 3rem;
+
+      li {
+        margin-bottom: 1rem;
+
+        > ul { // nested ULs
+          margin-top: 1rem;
+          padding-left: 0rem;
+        }
+      }
+    }
+
+  }
+}

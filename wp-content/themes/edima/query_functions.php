@@ -195,6 +195,23 @@ function get_documents_by_document_category( $tax_id = '', $count = 3, $offset =
 	return new WP_Query( $args );
 }
 
+function get_legislation_mapping_infoboxes( $count = - 1, $offset = 0, $ignore_ids = [], $random = false ) {
+	$args = [
+		'post_status'    => 'publish',
+		'post_type'      => 'legislation-map',
+		'posts_per_page' => $count,
+		'post__not_in'   => $ignore_ids,
+		'offset'         => $offset,
+		'orderby'        => 'menu_order'
+	];
+
+	if ( $random ) {
+		$args['orderby'] = 'rand';
+	}
+
+	return new WP_Query( $args );
+}
+
 function get_children_of_page( $page_id ) {
 	// Set up the objects needed
 	$query        = new WP_Query();
