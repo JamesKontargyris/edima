@@ -2,6 +2,12 @@
 $infoboxes = get_legislation_mapping_infoboxes();
 $color     = '003b77';
 
+if(block_value('title')) : ?>
+
+<h3><?php block_field('title'); ?></h3>
+
+<?php endif;
+
 if ( $infoboxes->have_posts() ) : ?>
 
 	<?php while ( $infoboxes->have_posts() ) : $infoboxes->the_post(); ?>
