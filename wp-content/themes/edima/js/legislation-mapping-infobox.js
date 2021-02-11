@@ -1,7 +1,7 @@
 (function(){
     //init - hide all content except infobox title
-	$('.legislation-mapping-infobox').addClass('is-closed');
-	$('.legislation-mapping-infobox__sub-section').addClass('is-closed');
+	// $('.legislation-mapping-infobox').addClass('is-closed');
+	// $('.legislation-mapping-infobox__sub-section').addClass('is-closed');
 
 	$('.legislation-mapping-infobox__title').on('click', function() {
 	    $(this).parent('.legislation-mapping-infobox').toggleClass('is-closed');
