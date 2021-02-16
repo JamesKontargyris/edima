@@ -15,4 +15,4 @@
         </div>
         <div class="team-member__meta"><?php block_sub_field( 'position-role' ); ?></div>
     </div>
-<?php endwhile; ?>
+<?php endwhile; reset_block_rows( 'team-members' ); ?>
