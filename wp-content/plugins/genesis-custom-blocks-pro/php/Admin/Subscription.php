@@ -39,6 +39,13 @@ class Subscription extends ComponentAbstract {
 	const PRODUCT_INFO_OPTION_NAME = 'genesis_custom_blocks_pro_subscription_response';
 
 	/**
+	 * Error code when there is no subscription key.
+	 *
+	 * @var string
+	 */
+	const ERROR_CODE_NO_KEY = 'no-key';
+
+	/**
 	 * Option name where the subscription expiration is stored.
 	 *
 	 * @var string
@@ -62,14 +69,7 @@ class Subscription extends ComponentAbstract {
 	 * @return string|false The subscription key if it was valid, or false.
 	 */
 	public function save_subscription_key( $key ) {
-		$sanitized_key = $this->sanitize_subscription_key( $key );
-		if ( empty( $sanitized_key ) ) {
-			genesis_custom_blocks_pro()->admin->settings->prepare_notice( $this->get_subscription_empty_notice() );
-			delete_option( self::PRODUCT_INFO_OPTION_NAME );
-			delete_option( self::PRODUCT_INFO_OPTION_EXPIRATION );
-			return false;
-		}
-
+		$sanitized_key         = $this->sanitize_subscription_key( $key );
 		$subscription_response = $this->get_fresh_subscription_response( $sanitized_key );
 		if ( $subscription_response->is_valid() ) {
 			genesis_custom_blocks_pro()->admin->settings->prepare_notice( $this->get_subscription_success_notice() );
@@ -180,6 +180,24 @@ class Subscription extends ComponentAbstract {
 
 			case 'product-unknown':
 				return esc_html__( 'The product you requested information for is unknown. Please contact support.', 'genesis-custom-blocks-pro' );
+
+			case self::ERROR_CODE_NO_KEY:
+				return sprintf(
+					/* translators: %1$s: Link to the settings page. %2$s: The settings page text that is linked. */
+					__( 'There is no Genesis Pro subscription key entered. To get updates and the latest features, please enter your subscription key in the <a href="%1$s" target="_blank" rel="noreferrer noopener">%2$s</a>.', 'genesis-custom-blocks-pro' ),
+					esc_url(
+						admin_url(
+							add_query_arg(
+								[
+									'post_type' => genesis_custom_blocks()->get_post_type_slug(),
+									'page'      => 'genesis-custom-blocks-settings',
+								],
+								'edit.php'
+							)
+						)
+					),
+					esc_html__( 'Genesis Custom Blocks settings', 'genesis-custom-blocks-pro' )
+				);
 
 			default:
 				return sprintf(

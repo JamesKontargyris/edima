@@ -33,13 +33,13 @@ footer.site-footer {
   @include font-size(11, 16);
 }
 
-.site-footer__column-one-quarter {
-  @include one-quarter;
-  margin-bottom:$base-spacing * 2;
+.site-footer__column-one-third {
+  @include one-third-nom;
+  margin-bottom:$base-spacing;
   padding:0 1rem;
 }
-.site-footer__column-two-quarters {
-  @include one-half;
-  margin-bottom:$base-spacing * 2;
+.site-footer__column-two-thirds {
+  @include two-thirds-nom;
+  margin-bottom:$base-spacing;
   padding:0 1rem;
 }

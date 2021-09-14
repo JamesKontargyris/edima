@@ -82,25 +82,8 @@
                 <a href="#"
                    class="search-form-trigger"><?php echo file_get_contents( get_template_directory_uri() . '/img/icons/search.svg' ); ?></a>
 
-                <span class="hide--xs hide--s"><a href="/contact-us" class="modal-trigger"
-                                                  data-modal-id="#header-contact-modal"><?php echo file_get_contents( get_template_directory_uri() . '/img/icons/email.svg' ); ?></a></span>
-
 				<?php get_template_part( 'template-parts/partials/partial', 'search-form' ); ?>
             </div> <!-- /site-header__sub-nav -->
-        </div>
-
-        <div id="header-contact-modal" class="modal">
-            <div class="modal__content">
-                <p>For more information about DOT Europe, feel free to contact the Secretariat team:</p>
-				<?php
-				if ( $_SERVER["SERVER_ADDR"] == '127.0.0.1' ) {
-					echo do_shortcode( '[contact-form-7 id="312" title="Contact form"]' );
-				} else {
-					echo do_shortcode( '[contact-form-7 id="376" title="Contact form"]' );
-				}
-				?>
-                <div class="modal__close"></div>
-            </div>
         </div>
 
     </header><!-- site-header -->

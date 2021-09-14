@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283
+class ComposerStaticInit0aa81087e3124e1074699cb2f8e14292
 {
     public static $prefixLengthsPsr4 = array (
         'G' => 
@@ -54,7 +54,9 @@ class ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283
         'Genesis\\CustomBlocks\\Blocks\\Controls\\ControlAbstract' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/ControlAbstract.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\ControlSetting' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/ControlSetting.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Email' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Email.php',
+        'Genesis\\CustomBlocks\\Blocks\\Controls\\File' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/File.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Image' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Image.php',
+        'Genesis\\CustomBlocks\\Blocks\\Controls\\InnerBlocks' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/InnerBlocks.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Multiselect' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Multiselect.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Number' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Number.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Radio' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Radio.php',
@@ -66,6 +68,7 @@ class ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Url' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Controls/Url.php',
         'Genesis\\CustomBlocks\\Blocks\\Field' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Field.php',
         'Genesis\\CustomBlocks\\Blocks\\Loader' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/Loader.php',
+        'Genesis\\CustomBlocks\\Blocks\\TemplateEditor' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Blocks/TemplateEditor.php',
         'Genesis\\CustomBlocks\\ComponentAbstract' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/ComponentAbstract.php',
         'Genesis\\CustomBlocks\\ComponentInterface' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/ComponentInterface.php',
         'Genesis\\CustomBlocks\\Plugin' => __DIR__ . '/..' . '/studiopress/genesis-custom-blocks/php/Plugin.php',
@@ -78,9 +81,9 @@ class ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitafffe9bc47e924fd2db3025a6bb4d283::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0aa81087e3124e1074699cb2f8e14292::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0aa81087e3124e1074699cb2f8e14292::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0aa81087e3124e1074699cb2f8e14292::$classMap;
 
         }, null, ClassLoader::class);
     }

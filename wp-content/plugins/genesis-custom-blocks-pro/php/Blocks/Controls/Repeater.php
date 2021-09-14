@@ -52,18 +52,16 @@ class Repeater extends ControlAbstract {
 		$this->settings[] = new ControlSetting( $this->settings_config['help'] );
 		$this->settings[] = new ControlSetting(
 			[
-				'name'     => 'min',
-				'label'    => __( 'Minimum Rows', 'genesis-custom-blocks-pro' ),
-				'type'     => 'number_non_negative',
-				'sanitize' => [ $this, 'sanitize_number' ],
+				'name'  => 'min',
+				'label' => __( 'Minimum Rows', 'genesis-custom-blocks-pro' ),
+				'type'  => 'number_non_negative',
 			]
 		);
 		$this->settings[] = new ControlSetting(
 			[
-				'name'     => 'max',
-				'label'    => __( 'Maximum Rows', 'genesis-custom-blocks-pro' ),
-				'type'     => 'number_non_negative',
-				'sanitize' => [ $this, 'sanitize_number' ],
+				'name'  => 'max',
+				'label' => __( 'Maximum Rows', 'genesis-custom-blocks-pro' ),
+				'type'  => 'number_non_negative',
 			]
 		);
 		$this->settings[] = new ControlSetting(

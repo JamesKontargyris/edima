@@ -112,15 +112,6 @@ function edima_widgets_init() {
 		'after_title'   => '</h6>',
 	] );
 	register_sidebar( [
-		'name'          => __( 'Footer Middle', 'edima' ),
-		'id'            => 'footer-middle',
-		'description'   => 'Displays widgets in the middle-third of the page footer (2nd row on mobile devices)',
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h6 class="text--upper margin--bottom-small">',
-		'after_title'   => '</h6>',
-	] );
-	register_sidebar( [
 		'name'          => __( 'Footer Right', 'edima' ),
 		'id'            => 'footer-right',
 		'description'   => 'Displays widgets in the right-third of the page footer (3rd row on mobile devices)',
@@ -301,10 +292,12 @@ function add_editor_styles() {
 add_action( 'admin_init', 'add_editor_styles' );
 
 
-add_action( 'nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+//add_action( 'nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 
 /**
  * Mark (highlight) custom post type parent as active item in Wordpress Navigation. When you visit a custom post type's single page, the parent menu item (the post type archive) isn't marked as active. This code solves it by comparing the slug of the current post type with the navigation items, and adds a class accordingly.
+ *
+ * CURRENTLY DISABLED - SEE add_action ABOVE
  *
  * @param $classes
  * @param $item
@@ -317,7 +310,7 @@ function add_current_nav_class( $classes, $item ) {
 	global $post;
 
 	// Getting the post type of the current post
-	$current_post_type      = get_post_type_object( get_post_type( $post->ID ) );
+	$current_post_type = get_post_type_object( get_post_type( $post->ID ) );
 	$current_post_type_slug = $current_post_type->rewrite['slug'];
 
 	// Getting the URL of the menu item
@@ -546,19 +539,19 @@ function date_archive_current_month_selector( $link_html ) { // Uses ARCHIVE_DAT
 
 // Remove "Category:", "Archives:" etc. from archive titles
 function my_theme_archive_title( $title ) {
-    if ( is_category() ) {
-        $title = single_cat_title( '', false );
-    } elseif ( is_tag() ) {
-        $title = single_tag_title( '', false );
-    } elseif ( is_author() ) {
-        $title = '<span class="vcard">' . get_the_author() . '</span>';
-    } elseif ( is_post_type_archive() ) {
-        $title = post_type_archive_title( '', false );
-    } elseif ( is_tax() ) {
-        $title = single_term_title( '', false );
-    }
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_tax() ) {
+		$title = single_term_title( '', false );
+	}
 
-    return $title;
+	return $title;
 }
 
 add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
@@ -649,14 +642,14 @@ function change_sort_order_policy_areas( $query ) {
 // GDPR
 add_action( 'wp_head', 'google_analytics_opt_out' );
 function google_analytics_opt_out() {
-	if( ! current_user_can('administrator') ) {
-		if(function_exists('is_allowed_cookie')) {
+	if ( ! current_user_can( 'administrator' ) ) {
+		if ( function_exists( 'is_allowed_cookie' ) ) {
 
-			if ( ! is_allowed_cookie( '_ga' )) {
+			if ( ! is_allowed_cookie( '_ga' ) ) {
 				?>
-				<script>
+                <script>
                     window['ga-disable-UA-100786434-1'] = true;
-				</script>
+                </script>
 				<?php
 			}
 

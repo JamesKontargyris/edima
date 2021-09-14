@@ -664,6 +664,10 @@ video {
   display: grid;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -789,6 +793,10 @@ video {
   margin-right: 0.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -809,8 +817,12 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mt-10 {
@@ -833,13 +845,14 @@ video {
   max-width: 42rem;
 }
 
-.opacity-50 {
-  opacity: 0.5;
+.max-w-max {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 
-.focus\:outline-none:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .overflow-auto {
@@ -889,6 +902,10 @@ video {
 
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pl-2 {
@@ -1208,6 +1225,10 @@ body{
   position:absolute;
   width:1px;
   word-wrap:normal !important
+}
+
+.gcb-editor .components-toolbar{
+  flex-wrap:unset
 }
 
 .MuiSvgIcon-root{

@@ -80,6 +80,13 @@ class SubscriptionResponse {
 			]
 		);
 
+		if ( empty( $subscription_key ) ) {
+			$this->error_code = Subscription::ERROR_CODE_NO_KEY;
+			update_option( Subscription::PRODUCT_INFO_OPTION_EXPIRATION, time() + MINUTE_IN_SECONDS * 5, false );
+			update_option( Subscription::PRODUCT_INFO_OPTION_NAME, $this, false );
+			return;
+		}
+
 		if ( is_wp_error( $response ) || self::SUCCESS_CODE !== wp_remote_retrieve_response_code( $response ) ) {
 			if ( is_wp_error( $response ) ) {
 				$this->error_code = $response->get_error_code();

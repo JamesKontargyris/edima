@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78
+class ComposerStaticInitc13b71b5eb1d156340ce78737ed71011
 {
     public static $prefixLengthsPsr4 = array (
         'G' => 
@@ -34,7 +34,9 @@ class ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78
         'Genesis\\CustomBlocks\\Blocks\\Controls\\ControlAbstract' => __DIR__ . '/../..' . '/php/Blocks/Controls/ControlAbstract.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\ControlSetting' => __DIR__ . '/../..' . '/php/Blocks/Controls/ControlSetting.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Email' => __DIR__ . '/../..' . '/php/Blocks/Controls/Email.php',
+        'Genesis\\CustomBlocks\\Blocks\\Controls\\File' => __DIR__ . '/../..' . '/php/Blocks/Controls/File.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Image' => __DIR__ . '/../..' . '/php/Blocks/Controls/Image.php',
+        'Genesis\\CustomBlocks\\Blocks\\Controls\\InnerBlocks' => __DIR__ . '/../..' . '/php/Blocks/Controls/InnerBlocks.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Multiselect' => __DIR__ . '/../..' . '/php/Blocks/Controls/Multiselect.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Number' => __DIR__ . '/../..' . '/php/Blocks/Controls/Number.php',
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Radio' => __DIR__ . '/../..' . '/php/Blocks/Controls/Radio.php',
@@ -46,6 +48,7 @@ class ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78
         'Genesis\\CustomBlocks\\Blocks\\Controls\\Url' => __DIR__ . '/../..' . '/php/Blocks/Controls/Url.php',
         'Genesis\\CustomBlocks\\Blocks\\Field' => __DIR__ . '/../..' . '/php/Blocks/Field.php',
         'Genesis\\CustomBlocks\\Blocks\\Loader' => __DIR__ . '/../..' . '/php/Blocks/Loader.php',
+        'Genesis\\CustomBlocks\\Blocks\\TemplateEditor' => __DIR__ . '/../..' . '/php/Blocks/TemplateEditor.php',
         'Genesis\\CustomBlocks\\ComponentAbstract' => __DIR__ . '/../..' . '/php/ComponentAbstract.php',
         'Genesis\\CustomBlocks\\ComponentInterface' => __DIR__ . '/../..' . '/php/ComponentInterface.php',
         'Genesis\\CustomBlocks\\Plugin' => __DIR__ . '/../..' . '/php/Plugin.php',
@@ -58,9 +61,9 @@ class ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit00336c7e29336f5ee1f75afe7aecbd78::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc13b71b5eb1d156340ce78737ed71011::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc13b71b5eb1d156340ce78737ed71011::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc13b71b5eb1d156340ce78737ed71011::$classMap;
 
         }, null, ClassLoader::class);
     }

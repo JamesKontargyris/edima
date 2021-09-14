@@ -1,24 +1,24 @@
-div[class^=wp-block-genesis-custom-blocks-] :required:invalid,.edit-post-settings-sidebar__panel-block .components-panel__body :required:invalid{
+div[class^=wp-block-genesis-custom-blocks-] :required:invalid,.edit-post-settings-sidebar__panel-block .components-panel__body :required:invalid,.gcb-editor :required:invalid{
   border-color:#c00000
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .text-control__error,.edit-post-settings-sidebar__panel-block .components-panel__body .text-control__error{
+div[class^=wp-block-genesis-custom-blocks-] .text-control__error input,.edit-post-settings-sidebar__panel-block .components-panel__body .text-control__error input,.gcb-editor .text-control__error input{
   border-color:#d94f4f;
   box-shadow:0 0 0 1px #d94f4f
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control,.gcb-editor .genesis-custom-blocks-color-control .components-base-control{
   display:inline-block;
   margin-bottom:0 !important
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control .components-base-control__field,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control .components-base-control__field{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control .components-base-control__field,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control .components-base-control__field,.gcb-editor .genesis-custom-blocks-color-control .components-base-control .components-base-control__field{
   margin:0 !important;
   width:100%;
   height:100%
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover,.gcb-editor .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover{
   width:28px;
   height:28px;
   border-radius:50%;
@@ -34,11 +34,11 @@ div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control
   cursor:pointer
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover:hover,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover:hover{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover:hover,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover:hover,.gcb-editor .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover:hover{
   transform:scale(1.2)
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover .component-color-indicator,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover .component-color-indicator{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover .component-color-indicator,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover .component-color-indicator,.gcb-editor .genesis-custom-blocks-color-control .components-base-control.genesis-custom-blocks-color-popover .component-color-indicator{
   width:100%;
   height:100%;
   margin:0;
@@ -46,36 +46,40 @@ div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-color-control
   border-radius:50%
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__img,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__img{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__img,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__img,.gcb-editor .genesis-custom-blocks-media-controls .gcb-image__img{
   max-height:200px;
   display:block;
   margin-bottom:8px
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-placeholder,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-placeholder{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-placeholder,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-placeholder,.gcb-editor .genesis-custom-blocks-media-controls .components-placeholder{
   position:relative
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__placeholder .components-button.is-button,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__placeholder .components-button.is-button{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__placeholder .components-button.is-button,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__placeholder .components-button.is-button,.gcb-editor .genesis-custom-blocks-media-controls .gcb-image__placeholder .components-button.is-button{
   white-space:normal
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-form-file-upload,div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-media-library-button,div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__remove,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-form-file-upload,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-media-library-button,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__remove{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-form-file-upload,div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-media-library-button,div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .gcb-image__remove,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-form-file-upload,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-media-library-button,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .gcb-image__remove,.gcb-editor .genesis-custom-blocks-media-controls .components-form-file-upload,.gcb-editor .genesis-custom-blocks-media-controls .components-media-library-button,.gcb-editor .genesis-custom-blocks-media-controls .gcb-image__remove{
   margin:0 4px 4px 0;
   display:inline-block;
   vertical-align:top
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-base-control__field .components-base-control__help,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-base-control__field .components-base-control__help{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls .components-base-control__field .components-base-control__help,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls .components-base-control__field .components-base-control__help,.gcb-editor .genesis-custom-blocks-media-controls .components-base-control__field .components-base-control__help{
   margin-bottom:4px;
   margin-top:0
 }
 
-div[class^=wp-block-genesis-custom-blocks-]{
+div[class^=wp-block-genesis-custom-blocks-] .genesis-custom-blocks-media-controls pre,.edit-post-settings-sidebar__panel-block .components-panel__body .genesis-custom-blocks-media-controls pre,.gcb-editor .genesis-custom-blocks-media-controls pre{
+  margin-left:.5em
+}
+
+div[class^=wp-block-genesis-custom-blocks-],.gcb-editor{
   margin:0
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form{
+div[class^=wp-block-genesis-custom-blocks-] .block-form,.gcb-editor .block-form{
   border-left:none;
   background:rgba(139,139,150,.1);
   padding:22px 0 22px 22px;
@@ -84,67 +88,67 @@ div[class^=wp-block-genesis-custom-blocks-] .block-form{
   flex-wrap:wrap
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form h3{
+div[class^=wp-block-genesis-custom-blocks-] .block-form h3,.gcb-editor .block-form h3{
   color:#111;
   font-size:1rem;
   margin:0;
   flex:1 1 100%
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form h3 svg{
+div[class^=wp-block-genesis-custom-blocks-] .block-form h3 svg,.gcb-editor .block-form h3 svg{
   position:relative;
   top:6px;
   margin-right:4px
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form p{
+div[class^=wp-block-genesis-custom-blocks-] .block-form p,.gcb-editor .block-form p{
   font-size:1rem;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control,.gcb-editor .block-form .genesis-custom-blocks-control{
   flex-basis:100%;
   padding-right:22px
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-25{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-25,.gcb-editor .block-form .genesis-custom-blocks-control.width-25{
   flex-basis:25%
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-50{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-50,.gcb-editor .block-form .genesis-custom-blocks-control.width-50{
   flex-basis:50%
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-75{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-75,.gcb-editor .block-form .genesis-custom-blocks-control.width-75{
   flex-basis:75%
 }
 
 @media screen and (max-width: 782px){
-  div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-25,div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-50,div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-75{
+  div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-25,div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-50,div[class^=wp-block-genesis-custom-blocks-] .block-form .genesis-custom-blocks-control.width-75,.gcb-editor .block-form .genesis-custom-blocks-control.width-25,.gcb-editor .block-form .genesis-custom-blocks-control.width-50,.gcb-editor .block-form .genesis-custom-blocks-control.width-75{
     flex-basis:100%
   }
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control,.gcb-editor .block-form .components-base-control{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__field{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__field,.gcb-editor .block-form .components-base-control__field{
   margin:1em 0 0
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__field .components-base-control__label{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__field .components-base-control__label,.gcb-editor .block-form .components-base-control__field .components-base-control__label{
   display:block;
   font-weight:600
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__help{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .components-base-control__help,.gcb-editor .block-form .components-base-control__help{
   margin:0 0 1em .5em;
   font-size:1em;
   color:rgba(0,0,0,.8)
 }
 
-div[class^=wp-block-genesis-custom-blocks-] .block-form .components-select-control__input{
+div[class^=wp-block-genesis-custom-blocks-] .block-form .components-select-control__input,.gcb-editor .block-form .components-select-control__input{
   max-width:unset
 }
 

@@ -51,19 +51,13 @@
     </div>
 
     <div class="site-footer__content">
-        <div class="site-footer__column-one-quarter">
+        <div class="site-footer__column-one-third">
 
             <?php dynamic_sidebar('footer-left'); ?>
 
         </div>
 
-        <div class="site-footer__column-two-quarters">
-
-	        <?php dynamic_sidebar('footer-middle'); ?>
-
-        </div>
-
-        <div class="site-footer__column-one-quarter">
+        <div class="site-footer__column-two-thirds">
 
 	        <?php dynamic_sidebar('footer-right'); ?>
 

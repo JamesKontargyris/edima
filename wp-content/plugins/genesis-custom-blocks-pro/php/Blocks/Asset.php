@@ -69,10 +69,17 @@ class Asset extends ComponentAbstract {
 		wp_enqueue_script(
 			self::BLOCK_EDITOR_SCRIPT_SLUG,
 			$this->plugin->get_url( 'js/dist/block-editor-pro.js' ),
-			$js_config['dependencies'],
+			array_merge(
+				$js_config['dependencies'],
+				[ 'wp-tinymce' ]
+			),
 			$js_config['version'],
 			true
 		);
+
+		// So the Classic Text field works.
+		wp_enqueue_script( 'wp-block-library' );
+		wp_tinymce_inline_scripts();
 
 		// Enqueue optional editor only styles.
 		wp_enqueue_style(
@@ -96,6 +103,8 @@ class Asset extends ComponentAbstract {
 		) {
 			return;
 		}
+
+		$this->editor_assets();
 
 		$js_config = require $this->plugin->get_path( 'js/dist/edit-block-pro.asset.php' );
 		wp_enqueue_script(

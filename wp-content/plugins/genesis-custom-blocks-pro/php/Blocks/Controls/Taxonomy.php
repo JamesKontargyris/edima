@@ -50,11 +50,10 @@ class Taxonomy extends ControlAbstract {
 		$this->settings[] = new ControlSetting( $this->settings_config['help'] );
 		$this->settings[] = new ControlSetting(
 			[
-				'name'     => 'post_type_rest_slug',
-				'label'    => __( 'Taxonomy Type', 'genesis-custom-blocks-pro' ),
-				'type'     => 'taxonomy_type_rest_slug',
-				'default'  => 'categories',
-				'sanitize' => [ $this, 'sanitize_taxonomy_type_rest_slug' ],
+				'name'    => 'post_type_rest_slug',
+				'label'   => __( 'Taxonomy Type', 'genesis-custom-blocks-pro' ),
+				'type'    => 'taxonomy_type_rest_slug',
+				'default' => 'categories',
 			]
 		);
 	}
