@@ -4,7 +4,6 @@
     {
         var trigger = $(this),
             modalID = trigger.attr('data-modal-id');
-        console.log(modalID);
 
         $(modalID).css('display', 'flex').hide().fadeIn();
 

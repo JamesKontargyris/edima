@@ -21,4 +21,7 @@
         return false;
     });
 
+    // matchHeight init
+    $('.team-member').matchHeight();
+
 })();

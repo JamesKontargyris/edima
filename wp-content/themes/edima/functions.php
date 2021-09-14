@@ -183,6 +183,7 @@ function edima_scripts() {
 
 	wp_enqueue_script( 'edima-jquery-3.2.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20170615', false );
 	wp_enqueue_script( 'edima-jquery-ui-1.12.1', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array(), '20170630', false );
+	wp_enqueue_script( 'edima-vendor-matchheight', get_template_directory_uri() . '/js/vendor/jquery.matchHeight-min.js', array(), '20210914', false );
 
 	wp_enqueue_script( 'edima-parallax', get_template_directory_uri() . '/js/parallax.min.js', array(), '20170621', false );
 
