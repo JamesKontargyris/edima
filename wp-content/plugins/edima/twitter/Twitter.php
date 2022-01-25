@@ -2,14 +2,18 @@
 
 class Twitter
 {
-	private $settings = [
-	'oauth_access_token' => "480275907-3W7Q6DAVIoSaRJithG5gbcTmDG8ULp48un4JpC5Z",
-	'oauth_access_token_secret' => "lRypRNdqJATHcEVL6DLKk6zKDFuAYpQOaSZqceakRJZt6",
-	'consumer_key' => "ADdwTh4EqsJYL1EgpSwSkvpPc",
-	'consumer_secret' => "UZSHUeE7B8nHd1cgunU8elgKB8eXSxFEzWuBArB2xqUnjgRhXm"
-	];
-
+	private $settings = null;
 	private $screen_name = 'DOTEurope';
+
+	function __construct() {
+		$this->settings = array(
+			'oauth_access_token'        => $_ENV["TWITTER_OAUTH_ACCESS_TOKEN"],
+			'oauth_access_token_secret' => $_ENV["TWITTER_OAUTH_ACCESS_TOKEN_SECRET"],
+			'consumer_key'              => $_ENV["TWITTER_CONSUMER_KEY"],
+			'consumer_secret'           => $_ENV["TWITTER_CONSUMER_SECRET"]
+		);
+	}
+
 
 	public function get_latest_tweets($count = 3, $include_retweets = false)
 	{
